@@ -1,0 +1,45 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 20px;
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+  
+  .highlight {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .reverse {
+    flex-direction: row-reverse;
+  }
+  
+  .imageContainer {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .image {
+    height: auto;
+  }
+  
+  .textContainer {
+    flex: 1;
+    width: 80%;
+  }
+  
+  .title {
+    color: #005BE9;
+    margin-bottom: 10px;
+  }
+  
+  .contents {
+    color: #333;
+    line-height: 1.6;
+    text-align: justify; /* Căn lề hai bên */
+    max-width: 100%;
+}

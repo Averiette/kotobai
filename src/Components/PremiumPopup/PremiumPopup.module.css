@@ -1,0 +1,124 @@
+.popupOverlay {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+.popupContent {
+    background: white;
+    padding: 40px;
+    border-radius: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    width: fit-content;
+    position: relative;
+    text-align: center;
+}
+
+.closeButton {
+    position: absolute;
+    top: 30px; 
+    right: 30px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.closeIcon {
+    width: 24px;
+    height: 24px;
+    fill: var(--gray-500); 
+    transition: fill 0.2s ease-in-out;
+}
+
+.closeButton:hover .closeIcon {
+    fill: var(--primary-500); 
+}
+
+.discountBadge {
+    background: var(--secondary-red-500);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 100px;
+    display: inline-block;
+}
+
+.title {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.title span {
+    color: var(--primary-500);
+}
+
+.benefitsList {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    list-style: none; 
+    gap: 5px;
+}
+
+.benefitItem {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    color: var(--black);
+}
+
+.benefitItem::marker {
+    content: "";
+}
+
+.benefitItem::before {
+    display: none;
+}
+
+.checkIcon {
+    height: 20px;
+    width: 20px;
+    fill: var(--primary-500); 
+    margin-right: 8px;
+}
+
+.buttonContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0 auto;
+    gap: 10px;
+}
+.buttonPrimary {
+    width: 100%;
+    background: #2563eb;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.buttonSecondary {
+    background-color: var(--white);
+    color: var(--gray-500);
+    padding: 10px 30px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 100px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.buttonSecondary:hover {
+    color: var(--black);
+}

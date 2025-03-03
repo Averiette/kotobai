@@ -1,0 +1,312 @@
+.practice {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    padding: 20px 120px;
+    width: 100%;
+}
+
+/* Tiêu đề mục */
+.title {
+    text-align: left; 
+    margin: 0; 
+    width: 100%; 
+    margin-top: 20px;   
+    max-width: 1200px;
+}
+
+.practice-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 40px;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+  @media (max-width: 1024px) {
+    .cards-container {
+        grid-template-columns: repeat(1, 1fr); 
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .cards-container {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+.practice-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    background-color: white;
+    border-radius: 15px;
+    padding: 30px;
+    width: 580px;
+    height: 350px;
+    text-align: left;
+    position: relative;
+    align-items: center;
+    filter: drop-shadow(0px 0px 15px rgba(171, 190, 209, 0.5));
+    cursor: pointer;
+}
+  
+.practice-block-upper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 0;
+}
+
+/* Avatar người dùng */
+.avatar-frame {
+        display: flex;
+        flex-direction: row;
+        align-items: center;      
+        padding: 0; 
+}
+    
+.data-avatar {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-size: cover;
+        background-position: center;
+        border: 2px solid white;  
+        margin-left: -12px; 
+        z-index: 1; 
+}
+
+.data-avatar:first-child {
+    margin-left: 0;
+}
+    
+.data-avatar-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+    margin-left: -12px;       
+}
+    
+.data-avatar-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); 
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+    z-index: 2; 
+}
+    
+
+.avatar-count {
+    position: absolute;
+    color: white;
+    z-index: 3; 
+}
+
+/* Các trạng thái Catalogue */
+  .direction {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;  
+  }
+
+/* Trạng thái Đã hoàn thành - Xanh dương */
+.direction.completed .practice-category {
+    background: var(--primary-500);
+    color: white;
+    padding: 10px 15px;
+    height: 35px;
+    border-radius: 30px;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+}
+
+.direction.completed .practice-item-icon .icon-svg {
+    background: var(--primary-500);
+    color: white;
+    padding: 5px;
+    height: 35px;
+    width: 35px;
+    cursor: pointer;
+    display: flex;  
+    align-items: center;  
+    justify-content: center; 
+    text-align: center;
+    border-radius: 30px;
+}
+
+/* Trạng thái Đang làm - Vàng */
+.direction.doing .practice-category {
+    background: var(--secondary-yellow-500);
+    color: white;
+    padding: 10px 15px;
+    height: 35px;
+    border-radius: 30px;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+}
+
+.direction.doing .practice-item-icon .icon-svg {
+    background: var(--secondary-yellow-500);
+    color: white;
+    padding: 5px;
+    height: 35px;
+    width: 35px;
+    cursor: pointer;
+    display: flex;  
+    align-items: center;  
+    justify-content: center; 
+    text-align: center;
+    border-radius: 30px;
+}
+
+/* Trạng thái Đang khóa - Xám */
+.direction.locked .practice-category {
+    background: var(--gray-500);
+    color: white;
+    padding: 10px 15px;
+    height: 35px;
+    border-radius: 30px;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+}
+
+.direction.locked .practice-item-icon .icon-svg {
+    background: var(--gray-500);
+    color: white;
+    padding: 10px;
+    height: 35px;
+    width: 35px;
+    cursor: pointer;
+    display: flex;  
+    align-items: center;  
+    justify-content: center; 
+    text-align: center;
+    border-radius: 30px;
+}
+
+/* Trạng thái Đang làm - Vàng */
+.direction.upgrade .practice-category {
+    background: var(--secondary-red-400);
+    color: white;
+    padding: 10px 15px;
+    height: 35px;
+    border-radius: 30px;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+}
+
+.direction.upgrade .practice-item-icon .icon-svg {
+    background: var(--secondary-red-400);
+    color: white;
+    padding: 10px;
+    height: 35px;
+    width: 35px;
+    cursor: pointer;
+    display: flex;  
+    align-items: center;  
+    justify-content: center; 
+    text-align: center;
+    border-radius: 30px;
+}
+
+.practice-block-bottom {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.practice-left {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 20px;
+    justify-content: space-between;
+}
+  
+.practice-contents {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+.practice-title{
+    font-family: 'Noto Sans TC', sans-serif; 
+    font-size: 36px;
+    font-weight: 800;
+    line-height: auto;
+}
+
+.practice-desc {
+    color: var(--gray-500);
+
+}
+
+.practice-note{
+    color: var(--gray-500);
+    margin-bottom: 0;
+    justify-content: flex-end;
+}
+  
+.practice-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    width: 100%;
+    height: 100%;
+}
+
+
+.lesson-img {
+    width: 100%;
+    position: relative;
+    bottom: -7px;
+}
+
+.lesson-img.locked {
+    filter: grayscale(100%);
+    transition: filter 0.2s ease-in-out;
+}
+
+.lesson-img.locked:hover {
+    filter: grayscale(0%);
+}
+
+
+  
+.practice-progress {
+    background-color: rgba(128, 128, 128, 0.5);
+    z-index: 1;
+    height: 10px;
+    width: 100%;
+    border-radius: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+.progress-bar {
+    background-color: var(--primary-500);
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 30px;
+    transition: width 0.5s ease-in-out;
+    
+}

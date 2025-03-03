@@ -1,0 +1,38 @@
+.navbarIntro {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%; 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 120px;
+    background: white;
+    box-shadow: 0px 12px 15px rgba(171, 190, 209, 0.2);
+    z-index: 1000; 
+  }
+  
+  .navbarLeft {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    height: 30px;
+  }
+  
+  .navbarRight {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .navLink {
+    color: black;
+    text-decoration: none;
+  }
+  
+  .navLink:hover {
+    color: var(--primary-500)
+  }
+  

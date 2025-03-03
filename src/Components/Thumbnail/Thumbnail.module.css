@@ -1,0 +1,89 @@
+.thumbnail-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 40px;
+    margin: 40px auto;
+    margin-top: 120px;
+    max-width: 1440px;
+  }
+  
+  /* Phần hình ảnh bên trái */
+  .thumbnail-container-left {
+    display: flex;
+    width: 50%;
+    justify-content: flex-end;
+    align-items: center
+  }
+  
+  .thumbnail-img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    align-items: flex-end;
+  }
+  
+  /* Phần nội dung bên phải */
+  .thumbnail-container-right {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  
+  /* Tiêu đề */
+  .large-title {
+    font-size: 48px;
+    font-weight: 800;
+    line-height: 1.4;
+    color: #000;
+  }
+  
+  /* Container cho các nút */
+  .button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 20px;
+  }
+  
+  /* Nút chính màu xanh */
+  .Bluebtn {
+    background: linear-gradient(to bottom, #1E98FF 0%, #005BE9 100%);
+    color: white;
+    padding: 10px 30px;
+    height: 40px;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+    box-shadow: 0px 3px 12px rgba(171, 190, 209, 0.7);
+    width: 100%;
+  }
+  
+  .Bluebtn:hover {
+    background: linear-gradient(to bottom, #187cd6 0%, #004bbd 100%);
+}
+  
+  /* Nút phụ */
+  .Subbtn {
+    padding: 10px 30px;
+    background-color: var(--gray-200);
+    color: var(--black);
+    height: 40px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0px 3px 12px rgba(171, 190, 209, 0.7);
+    transition: 0.2s ease-in-out;
+  }
+  
+  .Subbtn:hover {
+    background-color: #e0e0e0;
+  }
+  

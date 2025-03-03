@@ -1,0 +1,19 @@
+.btnBlue {
+    background: linear-gradient(to bottom, #1E98FF 0%, #005BE9 100%);
+    color: white;
+    padding: 10px 30px;
+    font-size: 16px; 
+    font-weight: 600;
+    border: none;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+    box-shadow: 0px 3px 12px rgba(171, 190, 209, 0.7);
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.btnBlue:hover {
+    background: linear-gradient(to bottom, #187cd6 0%, #004bbd 100%);
+}

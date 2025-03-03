@@ -1,0 +1,129 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content {
+    flex: 1;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 40px 120px 20px;
+    background-color: var(--white);
+    border-top: 1px solid #ddd;
+    height: 200px;
+}
+    
+    .footer-section {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        max-width: 20%;
+    }
+
+    .icon-svg {
+        height: 40px;
+    }
+    
+    .footer-icons {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 15px;
+        margin-top: 10px;
+    }
+
+    .social-svg-fb {
+        width: 30px;
+        height: auto;
+        border-radius: 13px;
+    }
+    
+    .social-svg-ig {
+        width: 30px;
+        height: auto;
+        border-radius: 13px;
+    }
+
+    .social-svg-tt {
+        width: 30px;
+        height: auto;
+        border-radius: 13px;
+    }
+
+    .footer-links {
+        display: flex;
+        flex-direction: row;
+        gap: 40px;
+        width: 40%;
+        margin: 0 5% 0 10%;  
+    }
+
+    .footer-links div{
+        width: 100%;;
+    }
+    
+    .footer-links h6 {
+        margin-bottom: 10px;
+    }
+    
+    .footer-links ul {
+        list-style: none;
+        padding: 0;
+    }
+    
+    .footer-links li {
+        margin-bottom: 8px;
+    }
+    
+    .footer-links a {
+        text-decoration: none;
+        color: #333;
+    }
+    
+    .footer-feedback {
+        
+    }
+
+    .footer-feedback h6{
+        margin-bottom: 10px;
+    }
+    
+    .feedback-form {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--primary-500);
+        padding: 10px 20px 10px 6px;
+        border-radius: 50px;
+        height: 50px;
+        width: 100%;
+        gap: 10px;
+    }
+    
+    .feedback-form input {
+        flex: 1;
+        padding: 8px;
+        border: 1px solid var(--white);
+        height: 40px;
+        padding: 0 25px;
+        border-radius: 50px;
+    }
+    
+    .feedback-form button {
+        background: none;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+    
+    .feedback-form button:hover {
+        background-color: #0056b3;
+    }
+    
