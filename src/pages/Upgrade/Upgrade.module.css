@@ -1,0 +1,45 @@
+.background {
+    background: linear-gradient(to bottom, #E5EFFF 0%, #FFFFFF 30%);
+    width: 100%;
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+}
+  
+.container {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.title {
+    color: var(--primary-500);
+}
+
+.featuresGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 60px;
+    max-width: 1000px;
+
+  }
+  
+  .featureItem {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .featureIcon {
+    width: auto;
+    height: 80px;
+  }
+  
+  .featureTitle {   
+    margin-bottom: 10px;
+  }
+  
+  .featureDescription {
+    font-size: 14px;
+  }
+  

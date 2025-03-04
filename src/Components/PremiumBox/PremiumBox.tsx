@@ -54,6 +54,7 @@ const PremiumPlans = () => {
       <PremiumBox 
         title="Gói miễn phí"
         price="0đ/tháng"
+        originalPrice=" "
         features={[
           "Mở khóa toàn bộ bài tập",
           "10 câu hỏi với AI mỗi ngày",
@@ -66,6 +67,7 @@ const PremiumPlans = () => {
       <PremiumBox 
         title="Gói tiết kiệm"
         price="45.000đ/tháng"
+        originalPrice=" "
         features={[
           "Mở khóa toàn bộ bài tập",
           "AI giải đáp toàn diện câu hỏi",
