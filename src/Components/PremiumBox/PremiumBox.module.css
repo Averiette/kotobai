@@ -1,0 +1,136 @@
+.container {
+      display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 120px;
+  margin-bottom: 60px;
+  gap: 40px;
+}
+
+.premiumContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    gap: 40px;
+  }
+  
+  .premiumBox {
+    background: white;
+    border-radius: 15px;
+    padding: 40px;
+    text-align: left;
+    box-shadow: 0px 0px 15px rgba(171, 190, 209, 0.5);
+  }
+  
+  .header {
+    height: 31px;
+    margin-bottom: 10px;    
+  }
+  
+  .popularBadge {
+    background: var(--primary-500);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 100px;
+    position: absolute;
+    margin-bottom: 10px;
+  }
+  
+  .price {
+    color: var(--primary-500);
+    margin-bottom: 5px;
+  }
+  
+  .originalPrice {
+    color: gray;
+    margin-bottom: 20px;    
+  }
+  
+  .originalPricePopular {
+    color: red;
+    margin-bottom: 20px;
+  }
+  
+  .strikethrough {
+    text-decoration: line-through;
+  }
+  
+  .divider {
+    border: none;
+    display: block; /* Đảm bảo nó hiển thị */
+    visibility: visible;
+    width: 100%;
+    height: 2px;
+    background: var(--gray-300);
+    opacity: 30%;
+    margin: 10px 0 20px 0; 
+  }
+  .selectButton {
+    background: var(--primary-50);
+    color: var(--primary-500);
+    font-weight: bold;
+    padding: 10px;
+    width: 100%;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    margin: 15px 0;
+  }
+  
+  .selectButton:hover {
+    background-color: #dceeff;
+    color: #004599;
+  }
+
+  .selectButtonPopular {
+    background: var(--primary-500);
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    width: 100%;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    margin: 15px 0;
+  }
+
+  .selectButtonPopular:hover {
+    background-color: #004599;
+    opacity: 0.9;
+  }
+  
+  
+  .featuresList {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+  }
+  
+  .featuresList li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+  
+  .enabledFeature {
+    color: black;
+  }
+  
+  .disabledFeature {
+    color: var(--gray-500); 
+  }
+  
+  .disabledIcon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .CheckIcon {
+    width: 18px;
+    height: 18px;
+    fill: var(--primary-500)
+  }
+  
