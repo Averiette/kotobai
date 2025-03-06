@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom"; 
 import Navbar from "../../Components/Navbar/Navbar";
-import BackButton from "../../Components/BackButton/BackButton"
+import BackButton from "../../Components/Button/BackButton/BackButton"
 import PremiumBox from "../../Components/PremiumBox/PremiumBox";
 import Footer from "../../Components/Footer/Footer";
 
@@ -79,6 +79,7 @@ const Upgrade: React.FC = () => {
               <div>
                 <p className={`${styles.featureTitle} s6`}>{feature.title}</p>
                 <p className={`${styles.featureDescription} b7`}>{feature.description}</p>
+
               </div>
             </div>
           ))}

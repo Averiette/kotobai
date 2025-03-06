@@ -1,14 +1,16 @@
 import React from 'react';
 import { ReactComponent as ArrowIcon } from "../../assets/Icons/arrow.svg"; 
-import '../Cards/Cards.css'
+import '../Cards/Cards.css';
 
 interface CardItemProps {
   title: string;
   category: string;
   imageUrl: string;
   progress: number;
+  onClick?: () => void;
 }
 
+// Định dạng tiêu đề nếu cần
 const formatTitle = (title: string) => {
   if (title === "Nghe đều đặn Giao tiếp tự tin") {
     return (
@@ -20,13 +22,17 @@ const formatTitle = (title: string) => {
   return title;
 };
 
-const CardItem: React.FC<CardItemProps> = ({ title, category, imageUrl, progress }) => {
+const CardItem: React.FC<CardItemProps> = ({ title, category, imageUrl, progress, onClick }) => {
   return (
-    <div className="cardItem">
+    <div 
+      className="cardItem" 
+      onClick={onClick} 
+      style={{ cursor: onClick ? "pointer" : "default" }}
+    >
       <div className="cardItem-header">
         <span className="cardItem-category s8">{category}</span>
         <span className="cardItem-icon">
-          <ArrowIcon className="icon-svg" alt="Arrow Icon" />
+          <ArrowIcon className="icon-svg" />
         </span>
       </div>
       <h4 className="cardItem-title">{formatTitle(title)}</h4>

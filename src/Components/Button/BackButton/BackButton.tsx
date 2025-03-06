@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { ReactComponent as ArrowBackIcon } from "../../assets/Icons/back-arrow.svg";
+import { ReactComponent as ArrowBackIcon } from "../../../assets/Icons/back-arrow.svg";
 import styles from "./BackButton.module.css";
 
 interface BackButtonProps {

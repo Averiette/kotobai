@@ -30,8 +30,25 @@ const Lesson: React.FC = () => {
     const prevLessonId = lessonIndex > 0 ? NameLesson[lessonIndex - 1].id : null;
     const nextLessonId = lessonIndex < NameLesson.length - 1 ? NameLesson[lessonIndex + 1].id : null;
 
+    // Xử lý điều hướng khi chọn danh mục bài học
+    const handleCategoryClick = (category: string) => {
+        const routes: Record<string, string> = {
+            "Vocabulary": `/vocabulary/${id}`,
+            "Dialogue": `/dialogue/${id}`,
+            "Grammar": `/grammar/${id}`,
+            "Listen": `/listen/${id}`
+        };
+
+        if (routes[category]) {
+            navigate(routes[category]);
+        } else {
+            console.warn(`Danh mục ${category} không hợp lệ.`);
+        }
+    };
+
     return (
         <div className="main-layout">
+            {/* Header */}
             <div className={styles["lesson-container"]}>
                 <Navbar />
                 <div className={styles["heading"]}>
@@ -40,11 +57,11 @@ const Lesson: React.FC = () => {
                         Quay lại
                     </button>
                 
-                    {/* Hiển thị tiêu đề bài học */}
+                    {/* Tiêu đề bài học */}
                     <div className={styles["lesson-header"]}>
                         <h2 className={styles["lesson-title"]}>{lesson.name}</h2>
 
-                        {/* Nút điều hướng bài trước / bài sau */}
+                        {/* Điều hướng bài trước / bài sau */}
                         <div className={styles["lesson-navigation"]}>
                             {prevLessonId && (
                                 <button 
@@ -61,7 +78,7 @@ const Lesson: React.FC = () => {
                                     onClick={() => navigate(`/lesson/${nextLessonId}`)}
                                 >
                                     Bài sau
-                                    <ArrowNextIcon   className={styles["arrow-icon"]} />
+                                    <ArrowNextIcon className={styles["arrow-icon"]} />
                                 </button>
                             )}
                         </div>
@@ -69,15 +86,21 @@ const Lesson: React.FC = () => {
                 </div>
             </div>
 
+            {/* Danh sách bài học */}
             <div className={styles["lesson-container"]}>
-                <h3>BÀI HỌC: </h3>
+                <h3>BÀI HỌC:</h3>
                 <div className={styles["lesson-grid"]}>
                     {lessonCategories.map((item) => (
-                        <CardItem key={item.id} {...item} />
+                        <CardItem 
+                            key={item.id} 
+                            {...item} 
+                            onClick={() => handleCategoryClick(item.category)}
+                        />
                     ))}
                 </div>
             </div>
 
+            {/* Bài tập & Ghi chú */}
             <div className={styles["lesson-half-container"]}>
                 <div className={styles["container-left"]}>
                     <h3>BÀI TẬP</h3>

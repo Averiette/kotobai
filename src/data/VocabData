@@ -1,0 +1,4 @@
+export const vocabData = [
+  { id: 1, word: "わたし", kanji: "私", romaji: "watashi", 
+    meaning: "Tôi", starred: false },
+];

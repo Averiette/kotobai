@@ -9,6 +9,7 @@ import SignUp from "../pages/SignUp/SignUp";
 import LogIn from "../pages/LogIn/Login";
 import Lesson from "../pages/Lesson/Lesson";
 import Upgrade from "../pages/Upgrade/Upgrade";
+import Vocabulary from "../pages/Vocabulary/VOcabulary";
 
 const AppRoutes: React.FC = () => {
   return (
@@ -22,6 +23,7 @@ const AppRoutes: React.FC = () => {
       <Route path="/login" element={<LogIn />} />
       <Route path="/lesson/:id" element={<Lesson />} />
       <Route path="/upgrade" element={<Upgrade />} />
+      <Route path="/vocabulary/:id" element={<Vocabulary />} />
     </Routes>
   );
 };

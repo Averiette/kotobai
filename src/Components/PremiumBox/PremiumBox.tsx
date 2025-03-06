@@ -34,10 +34,10 @@ const PremiumBox: React.FC<PremiumBoxProps> = ({ title, price, originalPrice, is
             {features.map((feature, index) => {
               const isDisabled = feature.startsWith("-");
               return (
-                <li key={index} className={isDisabled ? styles.disabledFeature : styles.enabledFeature}>
-                  {isDisabled ? <DisabledCheckIcon className={styles.disabledIcon} /> : <CheckIcon className={styles.CheckIcon} />}
-                  {feature.replace(/^- /, "")}
-                </li>
+              <li key={index} className={`${isDisabled ? styles.disabledFeature : styles.enabledFeature} b7`}>
+                {isDisabled ? <DisabledCheckIcon className={styles.disabledIcon} /> : <CheckIcon className={styles.CheckIcon} />}
+                {feature.replace(/^- /, "")}
+              </li>
               );
             })}
           </ul>   
