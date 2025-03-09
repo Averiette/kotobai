@@ -34,7 +34,7 @@ const DialogueBubble: React.FC<DialogueBubbleProps> = ({ avatar, name, dialogue,
       </div>
 
       <div className={styles.iconContainer}>
-        <SoundIcon className={styles.icon} onClick={handlePlaySound} />
+        <SoundIcon className={`${styles.soundIcon}`} onClick={handlePlaySound} />
         <TranslateIcon className={styles.icon} onClick={() => setShowTranslation(!showTranslation)} />
       </div>
     </div>

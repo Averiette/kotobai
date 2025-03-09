@@ -80,11 +80,24 @@
 }
 
 .icon {
-    width: 24px;
-    height: 24px;
-    cursor: pointer;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  color: var(--gray-500);
 }
 
 .icon:hover {
-    opacity: 0.7;
+  opacity: 0.7;
 }
+
+.soundIcon {
+  fill: var(--gray-500);
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+.soundIcon:hover {
+  opacity: 0.7;
+}
+
