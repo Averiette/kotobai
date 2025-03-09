@@ -17,25 +17,24 @@ interface DialogueBubbleProps {
 const DialogueBubble: React.FC<DialogueBubbleProps> = ({ avatar, name, dialogue, translation, isRight }) => {
   const [showTranslation, setShowTranslation] = useState(false);
 
-  // Hàm phát âm thanh
   const handlePlaySound = () => {
-    playSpeech(name, dialogue); // Gọi hàm phát âm thanh với tên nhân vật và lời thoại
+    playSpeech(name, dialogue); 
   };
 
   return (
     <div className={`${styles.bubbleContainer} ${isRight ? styles.right : ""}`}>
-      {/* Avatar */}
       <img src={avatar} alt={name} className={styles.avatar} />
 
-      {/* Nội dung hội thoại */}
-      <div className={styles.bubbleContent}>
-        <p className={styles.dialogueText}>{dialogue}</p>
-        {showTranslation && <p className={styles.translationText}>{translation}</p>}
+      <div className={styles.bubbleBlock}>
+        <p className={`${styles.speakerName} b7`}>{name}</p>
+        <div className={styles.bubbleContent}>
+          <p className={styles.dialogueText}>{dialogue}</p>
+        </div>
+        <p className={`${styles.translationText} ${showTranslation ? styles.showTranslation : ""} b7`}>{translation}</p>
       </div>
 
-      {/* Icon chức năng */}
       <div className={styles.iconContainer}>
-        <SoundIcon className={styles.icon} onClick={handlePlaySound} /> {/* Gọi handlePlaySound khi bấm vào */}
+        <SoundIcon className={styles.icon} onClick={handlePlaySound} />
         <TranslateIcon className={styles.icon} onClick={() => setShowTranslation(!showTranslation)} />
       </div>
     </div>

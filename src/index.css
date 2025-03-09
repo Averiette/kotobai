@@ -179,6 +179,15 @@ s9 {
   padding: 0 120px;
   max-width: 1440px;
   gap: 40px;
+
+  background-color: #ffeaf0;
+}
+
+.lesson-container {
+  width: 100%;
+  margin: 0 auto;
+
+  background-color: #ffd8e2;
 }
 
 .heading {
@@ -187,14 +196,20 @@ s9 {
   margin: 0; 
   width: 100%;
   max-width: 1200px;
+
+  background-color: #ffafc3;
 }
 
 .lesson-title {
   font-family: 'Noto Sans TC', sans-serif; 
+
+  background-color: #ff87a5;
 }
 
 .lesson-header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+
+  background-color: #ff5680;
 }

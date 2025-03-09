@@ -1,7 +1,10 @@
 .bubbleContainer {
     display: flex;
-    align-items: center;
+    flex-direction: row;
+    align-items: flex-start;
     margin: 10px 0;
+
+    background-color: rgb(255, 255, 255);
   }
   
   .right {
@@ -9,45 +12,79 @@
   }
   
   .avatar {
+    display: flex;
     width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    margin: 0 10px;
+    height: auto;
+    margin: 15px 10px;
+
   }
+
+  .bubbleBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    max-width: 65%;
+  }
+
+  .speakerName {
+    color: var(--gray-500);
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 2px;
+  }
+
+  .right .speakerName {
+      text-align: right; 
+      align-self: flex-end; 
+  }
+
   
   .bubbleContent {
-    background-color: #f0f0f0;
+    background-color: var(--white);
     padding: 10px 15px;
     border-radius: 10px;
-    max-width: 60%;
+    max-width: 100%;
+    box-shadow: 0px 0px 15px rgba(171, 190, 209, 0.5);
   }
   
-  .dialogueText {
-    font-size: 16px;
+  .dialogueText { 
+    /* font size b6 */
     margin: 0;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: 'Noto Sans TC', sans-serif; 
   }
   
   .translationText {
-    font-size: 14px;
-    color: gray;
+    color: var(--gray-500);
     margin-top: 5px;
+    visibility: hidden; 
   }
+
+  .showTranslation {
+      visibility: visible;
+  }
+
   
   .iconContainer {
     display: flex;
-    flex-direction: column;
-    margin-left: 10px;
+    flex-direction: row;
+    align-items: center; 
+    justify-content: center;
+    align-self: center; 
+    margin: 0 10px;
     cursor: pointer;
-  }
-  
-  .icon {
+    height: 100%;
+    gap: 10px;
+    
+}
+
+.icon {
     width: 24px;
     height: 24px;
-    margin-bottom: 5px;
     cursor: pointer;
-  }
-  
-  .icon:hover {
+}
+
+.icon:hover {
     opacity: 0.7;
-  }
-  
+}

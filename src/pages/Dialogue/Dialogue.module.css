@@ -1,0 +1,22 @@
+.dialogueContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    width: 70%;
+    max-width: 1440px;
+    margin: 0 auto;
+
+    background-color: beige;
+  }
+  
+  .dialogueBubble {
+    display: flex;
+    align-items: center;
+    max-width: 80%;
+    padding: 14px;
+    border-radius: 16px;
+    font-size: 16px;
+    line-height: 1.5;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+  }
