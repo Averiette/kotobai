@@ -1,17 +1,19 @@
 .backButton {
     display: flex;
     align-items: center;
-    gap: 8px;
     background: none;
     border: none;
     cursor: pointer;
     color: var(--gray-500);
-    transition: color 0.2s ease-in-out, transform 0.2s ease-in-out;
+    
+    margin-bottom: 10px;
   }
   
   .backIcon {
     height: 24px;
     width: auto;
+    stroke: var(--gray-500);
+    fill: var(--gray-500);
   }
   
   .backButton:hover {

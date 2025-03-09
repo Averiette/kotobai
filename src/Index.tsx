@@ -5,6 +5,7 @@ import BannerSlider from "./Components/bannerslider/BannerSlider";
 import Cards from "./Components/Cards/Cards";
 import GroupFb from './Components/bannerjoingroup/GroupFb';
 import Footer from './Components/Footer/Footer'; 
+import ChatBox from './Components/AiChatBlock/ChatBox'
 
 const Home: React.FC = () => {
     return (
@@ -14,6 +15,7 @@ const Home: React.FC = () => {
         <BannerSlider />
         <Cards />
         <GroupFb />
+        <ChatBox />
         <Footer />  
       </div>
     );

@@ -9,7 +9,9 @@ import SignUp from "../pages/SignUp/SignUp";
 import LogIn from "../pages/LogIn/Login";
 import Lesson from "../pages/Lesson/Lesson";
 import Upgrade from "../pages/Upgrade/Upgrade";
-import Vocabulary from "../pages/Vocabulary/VOcabulary";
+import Vocabulary from "../pages/Vocabulary/Vocabulary";
+import Dialogue from "../pages/Dialogue/Dialogue"; 
+
 
 const AppRoutes: React.FC = () => {
   return (
@@ -24,6 +26,7 @@ const AppRoutes: React.FC = () => {
       <Route path="/lesson/:id" element={<Lesson />} />
       <Route path="/upgrade" element={<Upgrade />} />
       <Route path="/vocabulary/:id" element={<Vocabulary />} />
+      <Route path="/dialogue/:id" element={<Dialogue />} />
     </Routes>
   );
 };

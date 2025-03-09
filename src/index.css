@@ -20,7 +20,7 @@
   --primary-50: #EDF8FF;
 
   /* Secondary Colors */
-  --secondary-red-500: #E53F49;
+  --secondary-red-500: #E53C39;
   --secondary-red-400: #E73763;
   --secondary-red-300: #FF529A;
   --secondary-red-100: #FCE0EE;
@@ -92,7 +92,13 @@ h6 {
 .s4 {
   font-size: 22px;
   font-weight: 600;
-  line-height: 32px;
+  line-height: auto;
+}
+
+.s5 {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: auto;
 }
 
 .s6 {
@@ -173,4 +179,22 @@ s9 {
   padding: 0 120px;
   max-width: 1440px;
   gap: 40px;
+}
+
+.heading {
+  width: 100%;
+  text-align: left; 
+  margin: 0; 
+  width: 100%;
+  max-width: 1200px;
+}
+
+.lesson-title {
+  font-family: 'Noto Sans TC', sans-serif; 
+}
+
+.lesson-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }

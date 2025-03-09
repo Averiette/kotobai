@@ -1,0 +1,13 @@
+.star {
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+    fill: none;
+    stroke: var(--gray-700);
+    stroke-width: 2;
+}
+
+.filled {
+    fill: var(--secondary-yellow-500);
+    stroke: var(--secondary-yellow-500);
+}
