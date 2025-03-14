@@ -11,7 +11,7 @@ import Lesson from "../pages/Lesson/Lesson";
 import Upgrade from "../pages/Upgrade/Upgrade";
 import Vocabulary from "../pages/Vocabulary/Vocabulary";
 import Dialogue from "../pages/Dialogue/Dialogue"; 
-
+import DialogueDone from "../pages/DialogueDone/DialogueDone";
 
 const AppRoutes: React.FC = () => {
   return (
@@ -27,6 +27,7 @@ const AppRoutes: React.FC = () => {
       <Route path="/upgrade" element={<Upgrade />} />
       <Route path="/vocabulary/:id" element={<Vocabulary />} />
       <Route path="/dialogue/:id" element={<Dialogue />} />
+      <Route path="/dialogue/done" element={<DialogueDone />} />
     </Routes>
   );
 };

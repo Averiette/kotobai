@@ -32,18 +32,18 @@ const Footer: React.FC = () => {
                 <div>
                     <h6>Điều hướng</h6>
                     <ul>
-                        <li className="b6"><a href="#">Trang chủ</a></li>
-                        <li className="b6"><a href="#">Luyện tập</a></li>
-                        <li className="b6"><a href="#">Bảng chữ cái</a></li>
+                        <li className="b7"><a href="#">Trang chủ</a></li>
+                        <li className="b7"><a href="#">Luyện tập</a></li>
+                        <li className="b7"><a href="#">Bảng chữ cái</a></li>
                     </ul>
             </div>
         
             <div>
             <h6>Hỗ trợ</h6>
             <ul>
-                <li className="b6"><a href="#">Hỗ trợ khách hàng</a></li>
-                <li className="b6"><a href="#">Điều khoản & Điều kiện</a></li>
-                <li className="b6"><a href="#">Chính sách bảo mật</a></li>
+                <li className="b7"><a href="#">Hỗ trợ khách hàng</a></li>
+                <li className="b7"><a href="#">Điều khoản & Điều kiện</a></li>
+                <li className="b7"><a href="#">Chính sách bảo mật</a></li>
             </ul>
             </div>
         </div>
@@ -51,8 +51,8 @@ const Footer: React.FC = () => {
         <div className="footer-feedback">
             <h6>Gửi góp ý/phản hồi:</h6>
             <div className="feedback-form">
-            <input className="b6" type="text" placeholder="Nội dung..." />
-            <button className="s6">Gửi</button>
+            <input className="b7" type="text" placeholder="Nội dung..." />
+            <button className="b7">Gửi</button>
             </div>
         </div>
     </footer>

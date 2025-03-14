@@ -1,5 +1,5 @@
 import React from "react";
-import Tabs from "../TabAlphabet/tabAlphabet";
+import '../Hiragana/Hiragana.css'
 
 const kanjiList = [
     { id: 1, char: "日", meaning: "Mặt trời, ngày", kunyomi: "ひ", onyomi: "ニチ, ジツ" },
@@ -10,16 +10,6 @@ const kanjiList = [
 
 const KanjiBlock: React.FC = () => {
     return (
-        <div className="main-container">
-            <div className="title-box">
-                <h3 className="title">BẢNG CHỮ HÁN (KANJI)</h3>
-                <p className="subtitle">
-                    Kanji là chữ tượng hình, mỗi chữ mang một ý nghĩa riêng và có nhiều cách đọc khác nhau.
-                </p>
-            </div>
-
-            <div className="alphabet-container">
-                <Tabs />
                 <div className="alphabet-layout">
                     <div>
                         <h3 className="alphabet-title">Một số chữ Kanji cơ bản</h3>
@@ -35,8 +25,6 @@ const KanjiBlock: React.FC = () => {
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
     );
 };
 

@@ -7,6 +7,10 @@ import crown from "../../assets/Icons/crown.svg";
 import coins from "../../assets/Icons/coin.svg"; 
 import { ReactComponent as UpgradeIcon } from "../../assets/Icons/open.svg";
 import { ReactComponent as PlusIcon } from "../../assets/Icons/PLUS-01.svg";
+import { ReactComponent as HomeIcon } from "../../assets/Icons/home.svg";
+import { ReactComponent as PracticeIcon } from "../../assets/Icons/book.svg";
+import { ReactComponent as AlphabetIcon } from "../../assets/Icons/alphabet.svg";
+import { ReactComponent as AIChatIcon } from "../../assets/Icons/robot.svg";
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -33,16 +37,24 @@ const Navbar: React.FC = () => {
         </Link>
         <ul className="navbar-menu">
           <li className="s6">
-            <Link to="/" className="nav-link">Trang chủ</Link>
+            <Link to="/" className="nav-link">
+              <HomeIcon className="nav-icon" /> Trang chủ
+            </Link>
           </li>
           <li className="s6">
-            <Link to="/practice" className="nav-link">Luyện tập</Link>          
+            <Link to="/practice" className="nav-link">
+              <PracticeIcon className="nav-icon" /> Luyện tập
+            </Link>          
           </li>
           <li className="s6">
-            <Link to="/alphabet/hiragana" className="nav-link" >Bảng chữ cái</Link>
+            <Link to="/alphabet/hiragana" className="nav-link" >
+              <AlphabetIcon className="nav-icon" /> Bảng chữ cái
+            </Link>
           </li>
           <li className="s6">
-            <Link to="/aichat" className="nav-link">AI Chat</Link>
+            <Link to="/aichat" className="nav-link">
+              <AIChatIcon className="nav-icon" /> AI Chat
+            </Link>
           </li>
         </ul>
       </div>
@@ -52,7 +64,6 @@ const Navbar: React.FC = () => {
           <img src={crown} alt="crown" className="crown" />
           <p className="s7">Nâng cấp Pro</p>
         </Link>
-
 
         <button className="btn-yellow">
           <img src={coins} alt="coins" className="coins" />
@@ -70,17 +81,17 @@ const Navbar: React.FC = () => {
               <Link to="/intro" className="menu-item logout b6">Đăng xuất</Link>              
               <hr className="divider" />
               <div className="premium-section">
-              <Link to="/upgrade" className="premium-link">
-                <div className="premium-content">
-                  <h6 className="plus-text">
-                    Trải nghiệm Kotob<span className="highlight">A.I</span>
-                    <PlusIcon className="plus-icon" />
-                  </h6>
-                  <UpgradeIcon className="premium-icon" />
-                </div>
-                <p className="sub-text b8">Mở khóa toàn bộ tính năng độc quyền!</p></Link>
+                <Link to="/upgrade" className="premium-link">
+                  <div className="premium-content">
+                    <h6 className="plus-text">
+                      Trải nghiệm Kotob<span className="highlight">A.I</span>
+                      <PlusIcon className="plus-icon" />
+                    </h6>
+                    <UpgradeIcon className="premium-icon" />
+                  </div>
+                  <p className="sub-text b8">Mở khóa toàn bộ tính năng độc quyền!</p>
+                </Link>
               </div>
-              
             </div>
           )}
         </div>

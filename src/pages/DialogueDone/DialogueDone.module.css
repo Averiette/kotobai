@@ -1,0 +1,43 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+}
+
+.title {
+  margin-bottom: 20px;
+}
+
+.image {
+  width: auto;
+  max-width: 80%;
+  margin-bottom: 20px;
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 20px;
+}
+
+.button {
+  padding: 12px 20px;
+  width: 160px;
+  background-color: var(--primary-500);
+  color: white;
+  border: none;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #0056b3;
+}
+
+.icon {
+  height: 24px;
+  width: auto;  
+}
