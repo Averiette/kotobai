@@ -7,6 +7,8 @@ import PracticeList123 from "../../Components/PracticeJpd/PracticeJpd123";
 import PracticeList133 from "../../Components/PracticeJpd/PracticeJpd133";
 import GroupFb from "../../Components/bannerjoingroup/GroupFb";
 import Footer from "../../Components/Footer/Footer";
+import ChatBox from '../../Components/AiChatBlock/ChatBox'
+
 
 const Practice: React.FC = () => {
   return (
@@ -17,6 +19,7 @@ const Practice: React.FC = () => {
       <PracticeList113 />
       <PracticeList123 />
       <PracticeList133 />
+      <ChatBox />
       <GroupFb />
       <Footer />
     </div>

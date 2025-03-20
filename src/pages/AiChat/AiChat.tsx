@@ -1,12 +1,12 @@
 import React from 'react';
 import Navbar from '../../Components/Navbar/Navbar'
-import Footer from '../../Components/Footer/Footer'
+import ChatBlock from '../../Components/ChatBlock/ChatBlock'
 
 const AiChat: React.FC = () => {
   return (
     <div className="container">
       <Navbar />
-      <Footer />
+      <ChatBlock />
     </div>
   );
 };

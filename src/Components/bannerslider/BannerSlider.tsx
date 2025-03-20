@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import banner1 from "../../assets/Banner/Banner1.png";
+import banner1 from "../../assets/Banner/Banner5.png";
 import banner2 from "../../assets/Banner/Banner2.png";
 import banner3 from "../../assets/Banner/Banner3.png";
 import "./bannerslider.css";

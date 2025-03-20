@@ -1,0 +1,7 @@
+.question-title {
+    display: flex;
+    padding-top: 20vh;
+    width: 70vw;
+    justify-content: flex-start; 
+    align-items: center; 
+}

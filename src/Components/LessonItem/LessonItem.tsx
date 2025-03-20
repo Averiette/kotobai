@@ -18,7 +18,7 @@ const LessonItem: React.FC<LessonItemProps> = ({ title, subtitle, category, imag
         ? 'doing' 
         : 'not-started';
 
-    const imageClass = category === 'Chưa học' ? 'grayscale' : ''; // Thêm class grayscale nếu là "Chưa học"
+    const imageClass = category === 'Chưa học' ? 'grayscale' : ''; 
 
     return (
         <div className={`lesson-item ${categoryClass}`}>
@@ -34,11 +34,10 @@ const LessonItem: React.FC<LessonItemProps> = ({ title, subtitle, category, imag
 
             <div className="lesson-content">
                 <h5 className="lesson-title">{title}</h5>
-                <h5 className="lesson-subtitle">{subtitle}</h5> {/* Hiển thị tiếng Nhật */}
+                <h5 className="lesson-subtitle">{subtitle}</h5> 
                 <s9 className="lesson-description">{description}</s9>
             </div>
 
-            {/* Áp dụng class "grayscale" nếu category là "Chưa học" */}
             <img src={imageUrl} alt={title} className={`lesson-image ${imageClass}`} />
 
             <div className="lesson-progress">

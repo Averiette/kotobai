@@ -1,0 +1,75 @@
+.alphabetLayout {
+  display: grid;
+  justify-content: center;
+  align-items: flex-start;
+  border-left: 5px solid var(--primary-500); 
+  border-right: 5px solid var(--primary-500); 
+  border-bottom: 5px solid var(--primary-500); 
+  border-top: none; 
+  border-radius: 0 0 15px 15px; 
+  padding: 20px 40px 80px 40px; 
+}
+
+.kanjiTitle {
+  text-align: center; 
+  margin: auto; 
+  width: 100%;
+  padding: 20px 0;
+}
+  
+.kanjiGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  padding: 20px;
+  margin: auto;
+}
+
+.kanjiBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
+  height: 120px;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: bold;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.kanjiBox:nth-child(n) {
+  background-color: var(--primary-50); 
+}
+
+.kanjiBox:nth-child(n+11):nth-child(-n+20) {
+  background-color: var(--secondary-yellow-300)
+}
+
+.kanjiBox:nth-child(n+21):nth-child(-n+30) {
+  background-color: var(--secondary-red-100); 
+}
+
+.kanjiBox:nth-child(n+31):nth-child(-n+40) {
+  background-color: var(--secondary-blue-100); 
+}
+
+.kanjiBox:nth-child(n+41):nth-child(-n+48) {
+  background-color: var(--secondary-blue-500); 
+}
+
+.kanjiChar {
+  font-size: 32px;
+  font-weight: 600;
+}
+
+/* ID nhỏ phía trên chữ */
+.kanjiBox::before {
+  content: attr(data-id);
+  font-size: 12px;
+  color: #555;
+  position: absolute;
+  top: 5px;
+  left: 5
+}
+  

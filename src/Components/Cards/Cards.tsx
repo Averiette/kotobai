@@ -1,14 +1,19 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+
 import CardItem from '../CardLayout/CardLayout';
 import LessonItem from '../LessonItem/LessonItem';
 import PracticeItem, { practiceData } from '../CardPractice/CardPractice';
+
+// Import Assets
 import hiraganaImg from '../../assets/Cards/Hiragana.png';
 import katakanaImg from '../../assets/Cards/Katakana.png';
 import kanjiImg from '../../assets/Cards/Kanji.png';
 
+// Import Data
 import { lessonData } from "../../data/lessonData/lessonData";
 
+// Import Css
 import './Cards.css'  
 import '../LessonItem/LessonItem.css'
 
@@ -29,8 +34,8 @@ const Cards: React.FC = () => {
           <div 
             key={index} 
             className="card-item" 
-            onClick={() => navigate(card.link)} // Thêm sự kiện navigate
-            style={{ cursor: 'pointer' }} // Biểu thị có thể click
+            onClick={() => navigate(card.link)}
+            style={{ cursor: 'pointer' }} 
           >
             <CardItem {...card} />
           </div>
@@ -43,7 +48,7 @@ const Cards: React.FC = () => {
           <div 
             key={lesson.id} 
             className="lesson-card" 
-            onClick={() => navigate(`/lesson/${lesson.id}`)} // Điều hướng khi nhấn
+            onClick={() => navigate(`/lesson/${lesson.id}`)} 
           >
             <LessonItem {...lesson} />
           </div>
