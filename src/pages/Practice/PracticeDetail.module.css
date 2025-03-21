@@ -4,4 +4,36 @@
     width: 70vw;
     justify-content: flex-start; 
     align-items: center; 
+    max-width: 1200px;
+}
+
+.lesson-title {
+    font-family: 'Noto Sans TC', sans-serif; 
+    color: var(--gray-300);
+}
+
+.progress-block {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 10px; 
+}
+
+.progress-container {
+    flex-grow: 1; 
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+    height: 10px;
+}
+
+.progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #4caf50, #81c784);
+    transition: width 0.3s ease-in-out;
+    border-radius: 10px;
+}
+
+.progress-text {
+    white-space: nowrap;
 }

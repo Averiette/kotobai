@@ -2,10 +2,12 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Navbar from "../../components/Navbar/Navbar";
 import OptionsBlock from "../../components/OptionBlock/OptionBlock";
-import { practiceInfo } from "../../data/Practice/PracticeData";
+import BackButton from "../../Components/Button/BackButton/BackButton";
 import { PracticeQnA1 } from "../../data/Practice/PracticeQnA1";
 import { PracticeQnA2 } from "../../data/Practice/PracticeQnA2";
+import { practiceData } from "../../data/Practice/PracticeData"; 
 import styles from "./PracticeDetail.module.css";
+import { style } from "framer-motion/client";
 
 interface Choice {
   text: string;
@@ -30,8 +32,11 @@ const PracticeDetail: React.FC = () => {
   const lessonIdMatch = id?.match(/\d+/); // Tìm số trong id
   const lessonId = lessonIdMatch ? Number(lessonIdMatch[0]) : NaN;
 
+  // Lấy bài luyện tập từ practiceData
+  const lesson = practiceData.find((item) => item.id === lessonId);
+
   // Kiểm tra id hợp lệ
-  if (isNaN(lessonId) || !(lessonId in practiceQnAList)) {
+  if (isNaN(lessonId) || !(lessonId in practiceQnAList) || !lesson) {
     return <h2 className={styles.error}>Bài luyện tập không tồn tại!</h2>;
   }
 
@@ -74,9 +79,31 @@ const PracticeDetail: React.FC = () => {
     }
   };
 
+  // Tính phần trăm tiến độ
+  const progress = ((currentQuestionIndex + 1) / questions.length) * 100;
+
   return (
     <div className="main-layout">
       <Navbar />
+      <div className="heading">
+        <BackButton to={`/lesson/${id}`} label="Quay lại" />
+        <div className="lesson-header">
+          <h2 className={styles["lesson-title"]}>
+            <span>{lesson.subtitle}</span> {lesson.title}
+          </h2>
+        </div>
+        {/* Progress Bar */}
+      <div className={styles["progress-block"]}>
+        <div className={styles["progress-container"]}>
+          <div className={styles["progress-bar"]} style={{ width: `${progress}%` }}></div>
+        </div>
+        <p className={`${styles["progress-text"]} b7`}>
+          {currentQuestionIndex + 1}/{questions.length} câu hỏi
+        </p>
+      </div>
+      </div>
+      
+
       <div className={styles["practice-detail-container"]}>
         {isFinished ? (
           <h2 className={styles["completion-message"]}>

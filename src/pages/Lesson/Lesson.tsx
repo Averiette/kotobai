@@ -36,7 +36,8 @@ const Lesson: React.FC = () => {
             "Vocabulary": `/vocabulary/${id}`,
             "Dialogue": `/dialogue/${id}`,
             "Grammar": `/grammar/${id}`,
-            "Listen": `/listen/${id}`
+            "Listen": `/listen/${id}`,
+            "Practice": `/practice/${id}` // Sửa điều hướng đúng về practice theo id bài học
         };
 
         if (routes[category]) {
@@ -56,7 +57,7 @@ const Lesson: React.FC = () => {
                         <ArrowBackIcon className={styles["back-icon"]} />
                         Quay lại
                     </button>
-                
+                s
                     {/* Tiêu đề bài học */}
                     <div className={styles["lesson-header"]}>
                         <h2 className={styles["lesson-title"]}>{lesson.name}</h2>
@@ -106,7 +107,7 @@ const Lesson: React.FC = () => {
                     <h3>BÀI TẬP</h3>
                     <div className={styles["lesson-grid"]}>
                         {practiceCategories.map((item) => (
-                            <CardItem key={item.id} {...item} />
+                            <CardItem key={item.id} {...item} onClick={() => handleCategoryClick("Practice")} />
                         ))}
                     </div>
                 </div>
