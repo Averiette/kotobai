@@ -35,9 +35,9 @@ const Lesson: React.FC = () => {
         const routes: Record<string, string> = {
             "Vocabulary": `/vocabulary/${id}`,
             "Dialogue": `/dialogue/${id}`,
-            "Grammar": `/grammar/${id}`,
+            "Grammar": `/grammar`,
             "Listen": `/listen/${id}`,
-            "Practice": `/practice/${id}` // Sửa điều hướng đúng về practice theo id bài học
+            "Practice": `/practice/${id}` 
         };
 
         if (routes[category]) {
@@ -57,7 +57,6 @@ const Lesson: React.FC = () => {
                         <ArrowBackIcon className={styles["back-icon"]} />
                         Quay lại
                     </button>
-                s
                     {/* Tiêu đề bài học */}
                     <div className={styles["lesson-header"]}>
                         <h2 className={styles["lesson-title"]}>{lesson.name}</h2>

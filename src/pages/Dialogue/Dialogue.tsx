@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { useParams, useNavigate } from "react-router-dom"; // Thêm useNavigate
+import { useParams, useNavigate } from "react-router-dom";
 import styles from "./Dialogue.module.css";
 
 // Import Components
@@ -16,7 +16,9 @@ import { NameLesson } from "../../data/NameLesson";
 import DanielAvatar from "../../assets/Avatar/Daniel.png";
 import ParkAvatar from "../../assets/Avatar/Park.png";
 import WanAvatar from "../../assets/Avatar/Wan.png";
-import DefaultAvatar from "../../assets/Avatar/Daniel.png";
+import MaryAvatar from "../../assets/Avatar/Mary.png"
+import NvaAvatar from "../../assets/Avatar/NVA.png";
+import NvbAvatar from "../../assets/Avatar/NVB.png";
 
 // Ánh xạ ID bài hội thoại
 const dialogueData = { "1": dialogue1, "2": dialogue2 };
@@ -26,8 +28,9 @@ const avatarMapping = {
   Daniel: DanielAvatar,
   Park: ParkAvatar,
   Wan: WanAvatar,
-  A: DefaultAvatar,
-  B: DefaultAvatar,
+  Mary: MaryAvatar,
+  店員A: NvaAvatar,
+  店員B: NvbAvatar,
 };
 
 const getVoiceForLanguage = (lang) => {

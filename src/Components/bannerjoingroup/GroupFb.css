@@ -1,8 +1,7 @@
-/* Định dạng cho container chính */
 .group-fb-container {
     position: relative;
     width: 100%;
-    margin: 0 auto;
+    margin: 0 auto 40px auto;
     padding: 20px 120px;
     max-width: 1440px;
     display: flex;
@@ -10,7 +9,6 @@
     cursor: pointer;
 }
 
-/* Định dạng hình ảnh nhóm người */
 .group-fb-image {
     position: absolute;
     bottom: 20px;
@@ -18,7 +16,6 @@
     margin-left: 0px;
 }
 
-/* Định dạng SVG nền */
 .group-fb-background {
     width: 100%;
 }

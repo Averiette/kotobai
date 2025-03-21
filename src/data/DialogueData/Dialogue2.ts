@@ -1,11 +1,195 @@
 const dialogue2 = {
-    title: "Lesson 2: Ordering Food",
-    content: [
-      { speaker: "A", text: "I'd like a burger, please.", translation: "Tôi muốn gọi một chiếc burger." },
-      { speaker: "B", text: "Would you like fries with that?", translation: "Bạn có muốn thêm khoai tây chiên không?" },
-      { speaker: "A", text: "Yes, please!", translation: "Vâng, làm ơn!" }
-    ]
-  };
-  
-  export default dialogue2;
-  
+  id: 2,
+  title: "Bài hội thoại 2",
+  content: [
+    {
+      id: 1,
+      speaker: "店員A",
+      text: "いらっしゃいませ。",
+      translation: "Chào mừng quý khách.",
+      audio: "/audio/dialogue/dialogue2/1.mp3",
+      isRight: false,
+      question: {
+        text: '"いらっしゃいませ" có nghĩa là gì?',
+        choices: [
+          { text: "Cảm ơn quý khách", correct: false },
+          { text: "Chào mừng quý khách", correct: true },
+          { text: "Chúc quý khách ngon miệng", correct: false },
+          { text: "Xin lỗi quý khách", correct: false },
+        ],
+      },
+    },
+    {
+      id: 2,
+      speaker: "Mary",
+      text: "すみません。ワインうりばは　どこですか。",
+      translation: "Xin lỗi. Quầy bán rượu vang ở đâu ạ?",
+      audio: "/audio/dialogue/dialogue2/2.mp3",
+      isRight: true,
+      question: {
+        text: '"ワインうりば" có nghĩa là gì?',
+        choices: [
+          { text: "Quầy bán đồ uống", correct: false },
+          { text: "Quầy bán rượu vang", correct: true },
+          { text: "Quầy thanh toán", correct: false },
+          { text: "Quầy bán đồ ăn", correct: false },
+        ],
+      },
+    },
+    {
+      id: 3,
+      speaker: "店員A",
+      text: "ちか１かい でございます。",
+      translation: "Dạ, ở tầng hầm ạ.",
+      audio: "/audio/dialogue/dialogue2/3.mp3",
+      isRight: false,
+      question: {
+        text: '"ちか１かい" có nghĩa là gì?',
+        choices: [
+          { text: "Tầng 2", correct: false },
+          { text: "Tầng 3", correct: false },
+          { text: "Tầng hầm", correct: true },
+          { text: "Tầng 1", correct: false },
+        ],
+      },
+    },
+    {
+      id: 4,
+      speaker: "Mary",
+      text: "どうも",
+      translation: "Cảm ơn.",
+      audio: "/audio/dialogue/dialogue2/4.mp3",
+      isRight: true,
+      question: {
+        text: '"どうも" có nghĩa là gì?',
+        choices: [
+          { text: "Xin lỗi", correct: false },
+          { text: "Chào", correct: false },
+          { text: "Cảm ơn", correct: true },
+          { text: "Tạm biệt", correct: false },
+        ],
+      },
+    },
+    {
+      id: 5,
+      speaker: "Mary",
+      text: "すみません。その　ワインを　みせて　ください。",
+      translation: "Xin lỗi. Cho tôi xem chai rượu vang đó được không?",
+      audio: "/audio/dialogue/dialogue2/5.mp3",
+      isRight: true,
+      question: {
+        text: '"みせてください" có nghĩa là gì?',
+        choices: [
+          { text: "Cho tôi uống", correct: false },
+          { text: "Cho tôi thử", correct: false },
+          { text: "Cho tôi xem", correct: true },
+          { text: "Cho tôi mua", correct: false },
+        ],
+      },
+    },
+    {
+      id: 6,
+      speaker: "店員B",
+      text: "はい、どうぞ。",
+      translation: "Dạ, mời chị.",
+      audio: "/audio/dialogue/dialogue2/6.mp3",
+      isRight: false,
+      question: {
+        text: '"どうぞ" có nghĩa là gì?',
+        choices: [
+          { text: "Xin lỗi", correct: false },
+          { text: "Không có gì", correct: false },
+          { text: "Mời", correct: true },
+          { text: "Cảm ơn", correct: false },
+        ],
+      },
+    },
+    {
+      id: 7,
+      speaker: "Mary",
+      text: "これは　どこの　ワインですか。",
+      translation: "Chai rượu vang này của nước nào vậy?",
+      audio: "/audio/dialogue/dialogue2/7.mp3",
+      isRight: true,
+      question: {
+        text: '"どこの" có nghĩa là gì?',
+        choices: [
+          { text: "Của hãng nào", correct: false },
+          { text: "Của ai", correct: false },
+          { text: "Của nước nào", correct: true },
+          { text: "Của loại nào", correct: false },
+        ],
+      },
+    },
+    {
+      id: 8,
+      speaker: "店員B",
+      text: "日本のです。",
+      translation: "Của Nhật Bản ạ.",
+      audio: "/audio/dialogue/dialogue2/8.mp3",
+      isRight: false,
+      question: {
+        text: '"日本のです" có nghĩa là gì?',
+        choices: [
+          { text: "Của Ý", correct: false },
+          { text: "Của Nhật Bản", correct: true },
+          { text: "Của Mỹ", correct: false },
+          { text: "Của Pháp", correct: false },
+        ],
+      },
+    },
+    {
+      id: 9,
+      speaker: "Mary",
+      text: "いくらですか。",
+      translation: "Giá bao nhiêu ạ?",
+      audio: "/audio/dialogue/dialogue2/9.mp3",
+      isRight: true,
+      question: {
+        text: '"いくらですか" có nghĩa là gì?',
+        choices: [
+          { text: "Mấy giờ", correct: false },
+          { text: "Ở đâu", correct: false },
+          { text: "Giá bao nhiêu", correct: true },
+          { text: "Khi nào", correct: false },
+        ],
+      },
+    },
+    {
+      id: 10,
+      speaker: "店員B",
+      text: "2,500えんです。",
+      translation: "2,500 yên ạ.",
+      audio: "/audio/dialogue/dialogue2/10.mp3",
+      isRight: false,
+      question: {
+        text: '"2,500えん" có nghĩa là gì?',
+        choices: [
+          { text: "25,000 yên", correct: false },
+          { text: "2,005 yên", correct: false },
+          { text: "2,500 yên", correct: true },
+          { text: "250 yên", correct: false },
+        ],
+      },
+    },
+    {
+      id: 11,
+      speaker: "Mary",
+      text: "じゃ、これを　ください。",
+      translation: "Vậy cho tôi chai này.",
+      audio: "/audio/dialogue/dialogue2/11.mp3",
+      isRight: true,
+      question: {
+        text: '"ください" có nghĩa là gì?',
+        choices: [
+          { text: "Không có gì", correct: false },
+          { text: "Cho tôi", correct: true },
+          { text: "Cảm ơn", correct: false },
+          { text: "Xin lỗi", correct: false },
+        ],
+      },
+    },
+  ],
+};
+
+export default dialogue2;
