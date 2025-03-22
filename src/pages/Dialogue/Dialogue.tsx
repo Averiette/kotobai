@@ -56,7 +56,7 @@ const Dialogue: React.FC = () => {
   const params = useParams<{ id?: string }>();
   const id = params.id || "";
   const dialogueContainerRef = useRef<HTMLDivElement>(null);
-  const navigate = useNavigate(); // Khởi tạo useNavigate
+  const navigate = useNavigate(); 
 
   if (!id || !dialogueData[id]) {
     return <h2>Bài học không tồn tại</h2>;

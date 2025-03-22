@@ -25,12 +25,13 @@ const SearchBox: React.FC = () => {
     <div className={styles["search-container"]}>
       <div className={styles["search-upper"]}>
         <span className={`${styles["search-title"]} s6`}>TÌM KIẾM NGỮ PHÁP</span>
-        <input className="b7"
+        <input
           type="text"
           value={query}
           onChange={handleSearch}
           placeholder="Nhập nội dung..."
-          className={`${styles["search-input"]} b7`}/>
+          className={`${styles["search-input"]} b7`}
+        />
       </div>
 
       <div className={styles["search-results"]}>

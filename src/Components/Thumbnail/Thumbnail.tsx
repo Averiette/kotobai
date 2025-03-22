@@ -17,18 +17,19 @@ const Thumbnail: React.FC = () => {
           NẮM CHẮC KIẾN THỨC<br /> NHẬT NGAY PASS MÔN
         </h2>
         <div className={styles["button-container"]}>
-          {/* Dùng Link để điều hướng đến trang login */}
-          <Link to="/login">
-            <button className={styles["Bluebtn"]}>
-              Đăng nhập
-            </button>
-          </Link>
-          {/* Dùng Link để điều hướng đến trang signup */}
+          
           <Link to="/signup">
-            <button className={styles["Subbtn"]}>
+            <button className={`${styles["Bluebtn"]} b6`}>
               Đăng ký tài khoản
             </button>
           </Link>
+          
+          <Link to="/login">
+            <button className={`${styles["Subbtn"]} b6`}>
+            Đăng nhập
+            </button>
+          </Link>
+
         </div>
       </div>
     </div>

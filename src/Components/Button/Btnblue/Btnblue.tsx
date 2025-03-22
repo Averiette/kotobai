@@ -12,7 +12,7 @@ interface BtnBlueProps {
 const BtnBlue: React.FC<BtnBlueProps> = ({ text, to, onClick, className }) => {
   if (to) {
     return (
-      <Link to={to} className={`${styles.btnBlue} ${className || ""}`}>
+      <Link to={to} className={`${styles.btnBlue} ${className ? className : ""} b6`}>
         {text}
       </Link>
     );
