@@ -8,10 +8,30 @@
     transition: 0.2s ease-in-out;
     box-shadow: 0px 3px 12px rgba(171, 190, 209, 0.7);
     text-align: center;
-    display: inline-block;
+    display: flex;        
+    justify-content: center;
+    align-items: center;
     text-decoration: none;
 }
 
 .btnBlue:hover {
     background: linear-gradient(to bottom, #187cd6 0%, #004bbd 100%);
 }
+
+/* ✅ Tablet */
+@media screen and (max-width: 768px) {
+    .btnBlue {
+      padding: 10px 30px; 
+    }
+  }
+
+/* ✅ Mobile */
+@media screen and (max-width: 480px) {
+    .btnBlue {
+        width: 40vw;
+      padding: 10px 30px; 
+    }
+  }
+  
+  
+  

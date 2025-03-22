@@ -5,7 +5,7 @@ import styles from "./DialogueDone.module.css";
 // Import Navbar
 import Navbar from "../../Components/Navbar/Navbar";
 
-// Import hình ảnh minh họa hoàn thành
+// Import hình ảnh minh họa Đã xong
 import completeImage from "../../assets/Banner/Banner4.png";
 
 // Import icon SVG
@@ -20,8 +20,8 @@ const DialogueDone: React.FC = () => {
   return (
     <div className={styles.container}>
       <Navbar />
-      <h2 className={styles.title}>🎉 Chúc mừng! Bạn đã hoàn thành hội thoại 🎉</h2>
-      <img src={completeImage} alt="Hoàn thành" className={styles.image} />
+      <h2 className={styles.title}>🎉 Chúc mừng! Bạn Đã xong hội thoại 🎉</h2>
+      <img src={completeImage} alt="Đã xong" className={styles.image} />
 
       <div className={styles.buttonGroup}>
         <button className={`${styles.button} s6`} onClick={() => navigate(`/lesson/${lessonId}`)}>

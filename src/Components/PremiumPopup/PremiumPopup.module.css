@@ -99,8 +99,6 @@
     padding: 10px;
     border: none;
     border-radius: 999px;
-    font-size: 14px;
-    font-weight: bold;
     cursor: pointer;
     margin-top: 20px;
 }
@@ -109,8 +107,6 @@
     background-color: var(--white);
     color: var(--gray-500);
     padding: 10px 30px;
-    font-size: 16px;
-    font-weight: 600;
     border-radius: 100px;
     border: none;
     cursor: pointer;
@@ -121,4 +117,45 @@
 
 .buttonSecondary:hover {
     color: var(--black);
+}
+
+/* ✅ Mobile */
+@media (max-width: 480px) {
+    .popupContent {
+        padding: 15px;
+        width: 70vw;
+        border-radius: 15px;
+    }
+
+    .buttonContainer {
+        display: flex;
+        align-items: center;
+    }
+
+    .discountBadge {
+        padding: 8px 12px;
+    }
+    .benefitsList {
+        margin: 15px;
+        gap: 3px;
+    }
+    .buttonPrimary, .buttonSecondary {
+        padding: 3px;
+    }
+    .closeButton {
+        top: 10px;
+        right: 10px;
+    }
+    .checkIcon {
+        width: 14px;
+        height: 14px;
+    }
+    .closeIcon {
+        width: 18px;
+        height: 18px;
+    }
+    .closeButton {
+        top: 20px;
+        right: 20px;
+    }
 }

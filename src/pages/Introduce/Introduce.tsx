@@ -1,4 +1,5 @@
 import React from 'react';
+// Components
 import NavbarIntro from '../../Components/NavbarIntro/NavbarIntro'
 import Footer from '../../Components/Footer/Footer'
 import Thumbnail from "../../Components/Thumbnail/Thumbnail"

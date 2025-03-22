@@ -48,7 +48,6 @@
   border: none;
   padding: 0px 15px;
   border-radius: 20px;
-  font-size: 14px;
   cursor: pointer;
   gap: 5px;
   text-decoration: none;  
@@ -69,7 +68,6 @@
   border: 2px solid var(--secondary-yellow-500);
   padding: 8px 12px;
   border-radius: 20px;
-  font-size: 14px;
   cursor: pointer;
 }
 
@@ -107,7 +105,6 @@
 }
 
 .menu-item {
-  padding: 0px 20px;
   color: var(--black);
   text-decoration: none;
   display: block;
@@ -199,4 +196,68 @@
 .nav-link:hover, .nav-link:hover .nav-icon {
   color: var(--primary-500);
   fill: var(--primary-500);
+}
+
+/* ✅ Destop */
+@media (max-width: 1024px) {
+  .navbar {
+    padding: 15px 50px;
+  }
+
+  .navbar-menu {
+    display: flex;
+    gap: 30px;
+  }
+
+  .btn-red,
+  .btn-yellow {
+    display: none;
+  }
+}
+
+/* ✅ Tablet */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 10px 30px;
+  }
+
+  .navbar-left {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .navbar-menu {
+    display: flex;
+    gap: 30px;
+  }
+
+  .btn-red,
+  .btn-yellow {
+    display: none;
+  }
+
+  .avatar-container {
+    display: block;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 10px 20px;
+  }
+
+  .navbar-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .navbar-menu, .btn-red, .btn-yellow {
+    display: none;
+  }
+
+  .menu-item {
+    padding: 10px 20px;
+  }
 }

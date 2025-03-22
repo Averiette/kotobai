@@ -1,19 +1,16 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-
+// Components
 import CardItem from '../CardLayout/CardLayout';
 import LessonItem from '../LessonItem/LessonItem';
 import PracticeItem, { practiceData } from '../CardPractice/CardPractice';
-
-// Import Assets
+// Assets
 import hiraganaImg from '../../assets/Cards/Hiragana.png';
 import katakanaImg from '../../assets/Cards/Katakana.png';
 import kanjiImg from '../../assets/Cards/Kanji.png';
-
-// Import Data
+//Data
 import { lessonData } from "../../data/lessonData/lessonData";
-
-// Import Css
+//CSS
 import './Cards.css'  
 import '../LessonItem/LessonItem.css'
 
@@ -27,9 +24,12 @@ const Cards: React.FC = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="cards">
-      <h3 className="cards-title">BẢNG CHỮ CÁI</h3>
+    <div className="main-layout">
+      
+      <h3 className="title">BẢNG CHỮ CÁI</h3>
       <div className="cards-container">
+      <div className="card-block">
+        <div className="card-block">
         {cardData.map((card, index) => (
           <div 
             key={index} 
@@ -40,10 +40,13 @@ const Cards: React.FC = () => {
             <CardItem {...card} />
           </div>
         ))}
+        </div>
       </div>
-
-      <h3 className="cards-title">BÀI HỌC CƠ BẢN</h3>
+      </div>
+      
+      <h3 className="title">BÀI HỌC CƠ BẢN</h3>
       <div className="cards-container">
+      <div className="card-block">
         {lessonData.map((lesson) => (
           <div 
             key={lesson.id} 
@@ -54,13 +57,17 @@ const Cards: React.FC = () => {
           </div>
         ))}
       </div>
+      </div>
 
-      <h3 className="cards-title">LUYỆN THI</h3>
+      
+      <h3 className="title">LUYỆN THI</h3>
       <div className="cards-container">
+      <div className="card-block">
         {practiceData.map((card, index) => (
           <PracticeItem key={index} {...card} />
         ))}
       </div>
+    </div>
     </div>
   );
 };

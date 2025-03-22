@@ -16,13 +16,13 @@ interface PracticeInfo {
     subtitle: string;
     desc: string;
     note: string;
-    category: "Đã hoàn thành" | "Đang làm" | "Đang khóa";
+    category: "Đã xong" | "Đang làm" | "Đang khóa";
     image: string;
     progress: number;
   }
   
   const categoryClassMap = {
-    "Đã hoàn thành": "completed",
+    "Đã xong": "completed",
     "Đang làm": "doing",
     "Đang khóa": "locked",
     "Nâng cấp để mở": "upgrade",
@@ -67,7 +67,7 @@ const practiceInfo: PracticeInfo[] = [
                 <div className={`direction ${categoryClassMap[lesson.category]}`}>
                   <span className="practice-category s8 ">{lesson.category}</span>
                   <div className="practice-item-icon">
-                    {lesson.category === "Đã hoàn thành" || lesson.category === "Đang làm" ? (
+                    {lesson.category === "Đã xong" || lesson.category === "Đang làm" ? (
                       <ImgActive className="icon-svg" />) : (<ImgInactive className="icon-svg" />
                     )}
                   </div>                                      

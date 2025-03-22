@@ -23,20 +23,20 @@ interface PracticeInfo {
   subtitle: string;
   desc: string;
   note: string;
-  category: "Đã hoàn thành" | "Đang làm" | "Đang khóa";
+  category: "Đã xong" | "Đang làm" | "Đang khóa";
   image: string;
   progress: number;
 }
 
 const categoryClassMap = {
-  "Đã hoàn thành": "completed",
+  "Đã xong": "completed",
   "Đang làm": "doing",
   "Đang khóa": "locked",
 };
 
 const practiceInfo: PracticeInfo[] = [
-  { id: 1, title: "はじめまして", subtitle: "Ôn tập bài 1", desc: "Rất vui được gặp bạn", note: "Bài tập tổng hợp", category: "Đã hoàn thành", image: lesson1Img, progress: 40 },
-  { id: 2, title: "買い物・食事", subtitle: "Ôn tập bài 2", desc: "Mua sắm・Bữa ăn", note: "Bài tập tổng hợp", category: "Đã hoàn thành", image: lesson2Img, progress: 20 },
+  { id: 1, title: "はじめまして", subtitle: "Ôn tập bài 1", desc: "Rất vui được gặp bạn", note: "Bài tập tổng hợp", category: "Đã xong", image: lesson1Img, progress: 40 },
+  { id: 2, title: "買い物・食事", subtitle: "Ôn tập bài 2", desc: "Mua sắm・Bữa ăn", note: "Bài tập tổng hợp", category: "Đã xong", image: lesson2Img, progress: 20 },
   { id: 3, title: "スケジュール", subtitle: "Ôn tập bài 3", desc: "Lịch trình", note: "Bài tập tổng hợp", category: "Đang làm", image: lesson3Img, progress: 10 },
   { id: 4, title: "私の国・町", subtitle: "Ôn tập bài 4", desc: "Đất nước・Thị trấn của tôi", note: "Bài tập tổng hợp", category: "Đang khóa", image: lesson4Img, progress: 0 },
   { id: 5, title: "休みの日", subtitle: "Ôn tập bài 5", desc: "Ngày nghỉ", note: "Bài tập tổng hợp", category: "Đang khóa", image: lesson5Img, progress: 0 },
@@ -84,7 +84,7 @@ const PracticeList: React.FC = () => {
               <div className={`direction ${categoryClassMap[lesson.category]}`}>
                 <span className="practice-category s8">{lesson.category}</span>
                 <div className="practice-item-icon">
-                  {lesson.category === "Đã hoàn thành" || lesson.category === "Đang làm" ? (
+                  {lesson.category === "Đã xong" || lesson.category === "Đang làm" ? (
                     <ImgActive className="icon-svg" />
                   ) : (
                     <ImgInactive className="icon-svg" />

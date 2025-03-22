@@ -1,133 +1,166 @@
 .signupContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-radius: 15px;
-    margin: 0 auto;
-    height: fit-content;
-    max-width: fit-content;
-  }
-  
-  .title {
-    margin-bottom: 15px;
-  }
-  
-.form {
-    display: flex;
-    flex-direction: column;
-    width: 100%;    
-    gap: 10px;
-    
-  }
-  
-.input {
-  width: 100%;
-  padding: 10px 40px;
-  border: 2px solid var(--primary-300);
-  border-radius: 50px;
-  font-size: 16px;
-  font-weight: 500;
-  height: 50px;
-  color: var(--black);
-  background-color: var(--white);
-  }
-
-  input:focus {
-    outline: none;  
-    box-shadow: none; 
-    color: var(--black)
-  }
-  
-.passwordWrapper {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  width: auto;
+  margin: 0 auto;
+  height: fit-content;
+  max-width: fit-content;
+}
+
+.title {
+  margin-bottom: 15px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;    
+  gap: 10px;
+  
+}
+
+.input {
+width: 100%;
+padding: 10px 40px;
+border: 2px solid var(--primary-300);
+border-radius: 50px;
+height: 50px;
+color: var(--black);
+background-color: var(--white);
+}
+
+input:focus {
+  outline: none;  
+  box-shadow: none; 
+  color: var(--black)
+}
+
+.passwordWrapper {
+display: flex;
+flex-direction: row;
+align-items: center;
+width: auto;
 }
 
 .passwordWrapper input {
-  width: 100%;
-  border: none;
-  font-size: 16px;
-  font-weight: 500;
-  height: 50px;
-  color: var(--black);
-  background-color: transparent;
+width: 100%;
+border: none;
+height: 50px;
+color: var(--black);
+background-color: transparent;
+
 }
 
 .passwordWrapper input:focus {
-  outline: none;  
-  box-shadow: none; 
+outline: none;  
+box-shadow: none; 
 }
+
+
+.eyeIcon {
+  position: relative;
+  cursor: pointer;
+  display: flex;  
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+}
+.eyeIcon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.helperText {
+  color: var(--gray-500);
+  text-align: right;
+  width: 100%;
+  margin-top: 5px;
+  text-decoration: none;
+}
+
+.helperText:hover {
+  color: var(--primary-500);
+}
+
+.submitButton {
+  margin: 0 auto;
+  margin-top: 10px;
+}
+
+.submitButton:hover {
+  background: linear-gradient(to bottom, #187cd6 0%, #004bbd 100%);
+}
+
+
+.googleButton {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 30px;
+  background-color: var(--white);
+  color: var(--black);
+  height: 50px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0px 3px 12px rgba(171, 190, 209, 0.7);
+  transition: 0.2s ease-in-out;
+  gap: 10px;
+  margin-top: 100px
+}
+
+.googleButton:hover {
+  background-color: var(--gray-200);
+}
+
+.googleIcon {
+  height: 24px ;
+  width: auto;
+  align-items: center;
+  justify-content: center;
+
+}
+
+/* ✅ Destop */
+@media screen and (min-width: 1024px) {
+  .signupContainer {
+      max-width: 450px;
+  }
+}
+
+/* ✅ Tablet */
+@media screen and (max-width: 768px) {
+  .signupContainer {
+      max-width: 100%;
+  }
   
-  
+  .googleButton {
+    margin-top: 30px;
+  }
+}
+
+/* ✅ Mobile */
+@media screen and (max-width: 480px) {
+  .signupContainer {
+      max-width: 100%;
+      padding: 15px;
+  }
+
+  .input, .passwordWrapper input, .submitButton, .googleButton {
+      height: 45px;
+      padding: 10px;
+  }
+
   .eyeIcon {
-    position: relative;
-    cursor: pointer;
-    display: flex;  
-    align-items: center;
-    justify-content: center;
-    width: 24px;
-    height: 24px;
+      width: 20px;
+      height: 20px;
   }
-  .eyeIcon svg {
-    width: 24px;
-    height: 24px;
-  }
-
-  .helperText {
-    font-size: 16px;
-    font-weight: 500    ;
-    color: var(--gray-500);
-    text-align: right;
-    width: 100%;
-    margin-top: 5px;
-    text-decoration: none;
-  }
-  
-  .helperText:hover {
-    color: var(--primary-500);
-  }
-
-  .submitButton {
-    margin: 0 auto;
-    margin-top: 10px;
-  }
-
-  .submitButton:hover {
-    background: linear-gradient(to bottom, #187cd6 0%, #004bbd 100%);
-  }
-  
 
   .googleButton {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    padding: 10px 30px;
-    background-color: var(--white);
-    color: var(--black);
-    height: 50px;
-    font-size: 16px;
-    font-weight: 600;
-    border-radius: 30px;
-    border: none;
-    cursor: pointer;
-    box-shadow: 0px 3px 12px rgba(171, 190, 209, 0.7);
-    transition: 0.2s ease-in-out;
-    gap: 10px;
-    margin-top: 100px
+      margin-top: 10px;
+      padding: 0 20px;
   }
-
-  .googleButton:hover {
-    background-color: var(--gray-200);
-  }
-  
-  .googleIcon {
-    height: 24px ;
-    width: auto;
-    align-items: center;
-    justify-content: center;
-
-  }
+}

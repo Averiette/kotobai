@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom"; 
-import styles from "./PremiumPopup.module.css"; 
+// Components
 import BtnBlue from "../Button/Btnblue/Btnblue"
-
-// Import Assets
+// Assets
 import { ReactComponent as CheckIcon } from "../../assets/Icons/check.svg";
 import { ReactComponent as CloseIcon } from "../../assets/Icons/close.svg";
+//CSS
+import styles from "./PremiumPopup.module.css"; 
 
 const PremiumPopup: React.FC = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -19,12 +20,10 @@ const PremiumPopup: React.FC = () => {
         isOpen && (
             <div className={styles.popupOverlay}>
                 <div className={styles.popupContent}>
-                    {/* Nút đóng */}
                     <button className={styles.closeButton} onClick={() => setIsOpen(false)}>
                         <CloseIcon className={styles.closeIcon} />
                     </button>
 
-                    {/* Banner */}
                     <div className={styles.textCenter}>
                         <p className={`${styles.discountBadge} h7`}>GIẢM GIÁ 20%</p>
                         <h4 className={styles.title}>
@@ -33,7 +32,6 @@ const PremiumPopup: React.FC = () => {
                         </h4>
                     </div>
 
-                    {/* Lợi ích */}
                     <ul className={`${styles.benefitsList} b6`}>
                         {[
                             "Không có quảng cáo",
@@ -48,10 +46,9 @@ const PremiumPopup: React.FC = () => {
                         ))}
                     </ul>
 
-                    {/* Nút hành động */}
                     <div className={styles.buttonContainer}>
-                        <BtnBlue text="Mở khóa ngay" onClick={() => navigate("/upgrade")} />
-                        <button className={styles.buttonSecondary} onClick={() => setIsOpen(false)}>
+                        <BtnBlue className="b6" text="Mở khóa ngay" onClick={() => navigate("/upgrade")} />
+                        <button className={`${styles.buttonSecondary} b6`} onClick={() => setIsOpen(false)}>
                             Không phải bây giờ
                         </button>
                     </div>

@@ -347,3 +347,77 @@
 .chatInput button:hover {
   background-color: #c0392b;
 }
+
+/* Media query cho màn hình nhỏ hơn hoặc bằng 768px */
+@media (max-width: 768px) {
+  /* Ẩn phần tử strong */
+  strong {
+    display: block;
+  }
+
+  /* Ẩn aiblockchat cho màn hình dưới 768px */
+  .aiblockchat {
+    display: none;
+  }
+
+  /* Có thể thêm các thay đổi khác để tối ưu giao diện */
+  .chatBoxContainer {
+    bottom: 10px;  /* Điều chỉnh vị trí của chat box */
+    right: 10px;   /* Điều chỉnh vị trí của chat box */
+  }
+
+  .chatContainer {
+    width: 100%;
+    height: auto;  /* Điều chỉnh chiều cao */
+  }
+
+  .header {
+    padding-bottom: 8px;
+  }
+
+  .header-action {
+    margin-bottom: 5px;
+  }
+
+  .favicon {
+    width: 40px;
+    height: 40px;
+    padding: 8px;
+  }
+
+  .heading {
+    font-size: 36px;
+    margin-left: 0;
+  }
+
+  .footer {
+    flex-direction: column;
+  }
+
+  .footerItem {
+    gap: 4px;
+  }
+
+  .footerIcon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .messButton {
+    font-size: 14px;
+  }
+}
+
+/* ✅ Tablet */
+@media (max-width: 768px) {
+  .chatBoxContainer {
+  display: none;
+  }
+}
+
+/* ✅ Mobile */
+@media (max-width: 480px) {
+  .chatBoxContainer {
+  display: none;
+  }
+}

@@ -19,3 +19,28 @@
 .group-fb-background {
     width: 100%;
 }
+
+@media (max-width: 768px) {
+    .group-fb-container {
+        padding: 20px 40px;  
+        flex-direction: column;  
+        align-items: flex-start; 
+    }
+
+    .group-fb-image {
+        width: 230px;  
+        bottom: 20px;  
+    }
+}
+
+@media (max-width: 480px) {
+    .group-fb-container {
+        padding: 15px 20px;  
+    }
+
+    .group-fb-image {
+        width: 120px; 
+        bottom: 15px; 
+    }
+    
+}

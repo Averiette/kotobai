@@ -1,13 +1,13 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-
-// Import Assets
+// Assets
 import { ReactComponent as ArrowIcon } from "../../assets/Icons/arrow.svg"; 
 import practiceImg from '../../assets/Cards/Practice.png';
 import testImg from '../../assets/Cards/Test.png';
 import dictionaryImg from '../../assets/Cards/Dictionary.png';
 import grammarImg from '../../assets/Cards/Grammar.png';
 
+import '../Cards/Cards.css'
 interface PracticeItemProps {
     title: string;
     category: string;
@@ -17,10 +17,10 @@ interface PracticeItemProps {
 }
 
 export const practiceData = [
-    { title: 'Khổ luyện thành tài', category: 'Practice', imageUrl: practiceImg, progress: 30, link: '/practice' },
-    { title: 'Giải đề không ngừng nghỉ', category: 'Test', imageUrl: testImg, progress: 60, link: '/test' },
-    { title: 'Tra từ thật dễ', category: 'Dictionary', imageUrl: dictionaryImg, progress: 40, link: '/dictionary' },
-    { title: 'Phá đảo ngữ pháp\nTrở thành cao thủ', category: 'Grammar', imageUrl: grammarImg, progress: 70, link: '/grammar' },
+    { title: 'Khổ luyện', category: 'Practice', imageUrl: practiceImg, progress: 30, link: '/practice' },
+    { title: 'Giải đề', category: 'Test', imageUrl: testImg, progress: 60, link: '/test' },
+    { title: 'Tra từ', category: 'Dictionary', imageUrl: dictionaryImg, progress: 40, link: '/dictionary' },
+    { title: 'Ngữ pháp', category: 'Grammar', imageUrl: grammarImg, progress: 70, link: '/grammar' },
 ];
 
 const PracticeItem: React.FC<PracticeItemProps> = ({ title, category, imageUrl, progress, link }) => {

@@ -14,7 +14,7 @@ export const lessonData = [
       id: 1,
       title: 'Bài 1', 
       subtitle: 'はじめまして', 
-      category: 'Đã hoàn thành', 
+      category: 'Đã xong', 
       imageUrl: lesson1Img, 
       progress: 100, 
       description: 'Rất vui được gặp bạn' 
@@ -23,7 +23,7 @@ export const lessonData = [
       id: 2,
       title: 'Bài 2', 
       subtitle: '買い物・食事', 
-      category: 'Đã hoàn thành', 
+      category: 'Đã xong', 
       imageUrl: lesson2Img, 
       progress: 100, 
       description: 'Mua sắm - Bữa ăn' 
@@ -32,7 +32,7 @@ export const lessonData = [
       id: 3,
       title: 'Bài 3', 
       subtitle: 'スケジュール', 
-      category: 'Đã hoàn thành', 
+      category: 'Đã xong', 
       imageUrl: lesson3Img, 
       progress: 100, 
       description: 'Lịch trình' 

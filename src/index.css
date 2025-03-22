@@ -74,7 +74,9 @@ h6, .h6 { font-size: 16px; font-weight: 800; }
   flex-direction: column;
   align-items: center;
   margin: auto;
-  padding: 0 5vw;
+  margin-top: 120px;
+  margin-bottom: 60px;
+  padding: 0 120px;
   max-width: 1440px;
   gap: 40px;
 }
@@ -93,7 +95,7 @@ h6, .h6 { font-size: 16px; font-weight: 800; }
 }
 
 /* Responsive Typography */
-@media (max-width: 1200px) {
+@media (max-width: 1440px) {
   h1 { font-size: 32px; }
   h2 { font-size: 28px; }
   h3 { font-size: 22px; }
@@ -121,6 +123,8 @@ h6, .h6 { font-size: 16px; font-weight: 800; }
   h3 { font-size: 20px; }
   h4 { font-size: 18px; }
   h5 { font-size: 16px; }
+  h6, .h6 { font-size: 14px; }
+  .h7 { font-size: 12px; }
   .s4 { font-size: 18px; }
   .s5 { font-size: 16px; }
   .s6 { font-size: 14px; }
@@ -130,7 +134,12 @@ h6, .h6 { font-size: 16px; font-weight: 800; }
   .b7 { font-size: 12px; }
   .b8 { font-size: 10px; }
   .b9 { font-size: 8px; }
-  .main-layout { padding: 0 3vw; }
+  .main-layout {
+    padding: 0 5vw;
+    margin-top: 100px;
+    margin-bottom: 50px;
+    gap: 30px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -139,30 +148,58 @@ h6, .h6 { font-size: 16px; font-weight: 800; }
   h3 { font-size: 18px; }
   h4 { font-size: 16px; }
   h5 { font-size: 14px; }
+  h6, .h6 { font-size: 12px; }
+  .h7 { font-size: 10px; }
   .s4 { font-size: 16px; }
   .s5 { font-size: 14px; }
   .s6 { font-size: 12px; }
   .s7 { font-size: 10px; }
+  .s8 { font-size: 10px; }
   .b6 { font-size: 12px; }
   .b7 { font-size: 10px; }
-  .b8 { font-size: 8px; }
+  .b8 { font-size: 10px; }
+
   .lesson-header { flex-direction: column; }
-  .main-layout { padding: 0 2vw; }
+
+  .main-layout {
+    padding: 0 4vw;
+    margin-top: 80px;
+    margin-bottom: 40px;
+    gap: 25px;
+    max-width: 90vw;
+  }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 480px) {
   h1 { font-size: 20px; }
   h2 { font-size: 18px; }
   h3 { font-size: 16px; }
   h4 { font-size: 14px; }
   h5 { font-size: 12px; }
+  h6, .h6 { font-size: 10px}
+  .h7 { font-size: 10px; }
   .s4 { font-size: 14px; }
   .s5 { font-size: 12px; }
   .s6 { font-size: 10px; }
   .s7 { font-size: 8px; }
+  .s8 { font-size: 8px; }
   .b6 { font-size: 10px; }
-  .b7 { font-size: 8px; }
-  .b8 { font-size: 6px; }
+  .b7 { font-size: 10px; }
+  .b8 { font-size: 10px; }
+
   .lesson-header { flex-direction: column; }
-  .main-layout { padding: 0 10px; gap: 20px; }
+
+  .main-layout {
+    padding: 0 20px;
+    margin-top: 60px;
+    margin-bottom: 30px;
+    gap: 20px;
+    max-width: 80vw;
+  }
+
+  .title {
+    text-align: left;
+    margin-top: 10px;
+    max-width: 480px;
+  }
 }

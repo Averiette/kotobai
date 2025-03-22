@@ -32,3 +32,33 @@
     align-items: center;
     margin: auto;
   }
+
+/* ✅ Tablet */
+/* ✅ Mobile */
+@media screen and (max-width: 768px) {
+  .thumbnail-container {
+    flex-direction: column;
+    padding: 20px;
+    margin-top: 80px;
+    align-items: center;
+  }
+
+  .thumbnail-container-left {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  } 
+
+  .thumbnail-container-right {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .thumbnail-img {
+    width: 100%;
+    max-width: 80vw; 
+    height: auto;
+  }
+}

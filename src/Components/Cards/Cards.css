@@ -15,27 +15,19 @@
 }
 
 .cards-container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr); 
-  gap: 40px; 
+  display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 auto;
   max-width: 1200px;
+  grid-auto-flow: row; 
 }
 
-@media (max-width: 1024px) {
-  .cards-container {
-    grid-template-columns: repeat(2, 1fr); 
-  }
+.card-block {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); 
+  gap: 40px; 
 }
-
-@media (max-width: 768px) {
-  .cards-container {
-    grid-template-columns: repeat(1, 1fr); 
-  }
-}
-
 
 .cardItem {
   display: flex;
@@ -106,7 +98,7 @@
   height: auto;
   position: relative;
   bottom: -10px;
-  z-index: -1; /* Đảm bảo nằm dưới progress bar */
+  z-index: -1; 
 }
 
 .cardItem-progress {
@@ -129,3 +121,115 @@
   transition: width 0.5s ease-in-out;
 }
 
+/* ✅ Tablet */
+@media (max-width: 768px) {
+  .cards-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px; 
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0 auto;
+    width: 100%; 
+  }
+
+  .card-block {
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 20px; 
+  }
+
+  .cardItem {
+    padding: 18px;
+    width: 135px;
+    height: 175px;
+  }
+
+  .cardItem-header {
+    padding-bottom: 3px;
+  }
+  
+  .cardItem-category {
+    padding: 0 10px;
+    height: 20px;
+  }
+  
+  
+  .cardItem-icon {
+    padding: 5px;
+    height: 20px;
+    width: 20px;
+  }
+  
+  .cardItem-icon img {
+    height: 20px;
+    width: auto;
+    filter: invert(1);
+  }
+  
+  .cardItem-title {
+    text-align: left; 
+    width: 100%; 
+    margin-left: 0; 
+  }
+
+  .cardItem-progress {
+    min-height: 5px;
+    height: 5px;
+  }
+}
+
+/* ✅ Mobile */
+@media (max-width: 480px) {
+  .cards-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px; 
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0 auto;
+    width: 100%; 
+  }
+
+  .card-block {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .cardItem {
+    padding: 18px;
+    width: 135px;
+    height: 175px;
+  }
+
+  .cardItem-header {
+    padding-bottom: 3px;
+  }
+  
+  .cardItem-category {
+    padding: 0 10px;
+    height: 20px;
+  }
+  
+  
+  .cardItem-icon {
+    padding: 5px;
+    height: 20px;
+    width: 20px;
+  }
+  
+  .cardItem-icon img {
+    height: 20px;
+    width: auto;
+    filter: invert(1);
+  }
+  
+  .cardItem-title {
+    text-align: left; 
+    width: 100%; 
+    margin-left: 0; 
+  }
+
+  .cardItem-progress {
+    min-height: 5px;
+    height: 5px;
+  }
+}

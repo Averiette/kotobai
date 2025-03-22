@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+// Components
 import BtnBlue from "../Button/Btnblue/Btnblue";
-import styles from "./NavbarIntro.module.css";
+// Assets
 import { ReactComponent as Logo } from "../../assets/logo-01.svg";
 import { ReactComponent as MenuToggleIcon } from "../../assets/icons/menu.svg"; 
+//CSS
+import styles from "./NavbarIntro.module.css";
 
 const NavbarIntro: React.FC = () => {
     const [menuOpen, setMenuOpen] = useState(false);

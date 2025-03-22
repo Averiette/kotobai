@@ -1,17 +1,18 @@
 import React from "react";
-import styles from "./HighlightIntro.module.css";
 
-// Import hình ảnh
+// Assets
 import Highlight1 from "../../assets/Introduce/600px x 450px_hl1.png";
 import Highlight2 from "../../assets/Introduce/600px x 450px_hl2.png";
 import Highlight3 from "../../assets/Introduce/600px x 450px_hl3.png";
 
-// Định nghĩa kiểu dữ liệu
+//CSS
+import styles from "./HighlightIntro.module.css";
+
 interface HighlightItem {
   id: number;
   title: string;
   contents: string;
-  image: string; // Đường dẫn ảnh
+  image: string; 
 }
 
 const highlightData: HighlightItem[] = [
@@ -20,7 +21,7 @@ const highlightData: HighlightItem[] = [
     title: "Học tiếng Nhật hiệu quả chuẩn FPT UNIVERSITY",
     contents:
       "Chúng tôi hiểu rằng mỗi sinh viên FPT đều có những mục tiêu học tập khác nhau. Vì vậy, KOTOBA.I được thiết kế bám sát theo lộ trình của các lớp học tiếng Nhật tại Trường Đại học FPT. Điều này giúp bạn dễ dàng làm quen và tiếp thu kiến thức một cách nhanh chóng và hiệu quả nhất. Chúng tôi cam kết cung cấp cho bạn một nền tảng vững chắc để chinh phục tiếng Nhật.",
-    image: Highlight1, // Sử dụng biến đã import
+    image: Highlight1, 
   },
   {
     id: 2,
@@ -46,12 +47,10 @@ const HighlightIntro: React.FC = () => {
             key={item.id}
             className={`${styles.highlight} ${index % 2 === 0 ? styles.reverse : ""}`}>
 
-          {/* Hình ảnh */}
           <div className={styles.imageContainer}>
             <img src={item.image} alt={item.title} className={styles.image} />
           </div>
 
-          {/* Nội dung */}
           <div className={styles.textContainer}>
             <h1 className={styles.title}>{item.title}</h1>
             <p className={`${styles.contents} b6`}>{item.contents}</p>

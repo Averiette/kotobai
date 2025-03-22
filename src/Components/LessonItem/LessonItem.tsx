@@ -12,7 +12,7 @@ interface LessonItemProps {
 }
 
 const LessonItem: React.FC<LessonItemProps> = ({ title, subtitle, category, imageUrl, progress, description }) => {
-    const categoryClass = category === 'Đã hoàn thành' 
+    const categoryClass = category === 'Đã xong' 
         ? 'completed' 
         : category === 'Đang học' 
         ? 'doing' 
@@ -33,9 +33,9 @@ const LessonItem: React.FC<LessonItemProps> = ({ title, subtitle, category, imag
             </div>
 
             <div className="lesson-content">
-                <h5 className="lesson-title">{title}</h5>
-                <h5 className="lesson-subtitle">{subtitle}</h5> 
-                <s9 className="lesson-description">{description}</s9>
+                <h6 className="lesson-title">{title}</h6>
+                <h6 className="lesson-subtitle">{subtitle}</h6> 
+                <p className={`${'lesson-description'} b9`}>{description}</p>
             </div>
 
             <img src={imageUrl} alt={title} className={`lesson-image ${imageClass}`} />

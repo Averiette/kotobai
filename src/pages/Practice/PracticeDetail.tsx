@@ -107,7 +107,7 @@ const PracticeDetail: React.FC = () => {
       <div className={styles["practice-detail-container"]}>
         {isFinished ? (
           <h2 className={styles["completion-message"]}>
-            Bạn đã hoàn thành bài luyện tập!
+            Bạn Đã xong bài luyện tập!
           </h2>
         ) : (
           <>

@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+// Components
 import BtnBlue from "../Button/Btnblue/Btnblue";
-import styles from "./SignUpBlock.module.css";
-
+// Assets
 import { ReactComponent as GoogleIcon } from "../../assets/Icons/Google.svg";
 import { ReactComponent as EyeOpenIcon } from "../../assets/Icons/eye.svg";
 import { ReactComponent as EyeClosedIcon } from "../../assets/Icons/hidden.svg";
-
+//CSS
+import styles from "./SignUpBlock.module.css";
 
 const SignUpBlock: React.FC = () => {
   const [showPassword, setShowPassword] = useState(false);
