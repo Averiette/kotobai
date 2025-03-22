@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import styles from "./ChatBox.module.css";
-import { ReactComponent as CloseIcon } from "@icons/close.svg";
-import { ReactComponent as BackIcon } from "@icons/back-arrow.svg";
-import BotIcon from "@assets/Avatar/BotChat.png";
+import { ReactComponent as CloseIcon } from "../../assets/icons/close.svg";
+import { ReactComponent as BackIcon } from "../../assets/Icons/back-arrow.svg";
+import BotIcon from "../../assets/Avatar/BotChat.png";
 
 interface ChatBoxBlockProps {
   onClose: () => void; // Quay về ChatBoxOpen
