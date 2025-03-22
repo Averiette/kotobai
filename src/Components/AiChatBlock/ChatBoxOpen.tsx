@@ -1,13 +1,13 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./ChatBox.module.css";
-import { ReactComponent as ArrowCircle } from "../../assets/icons/arrow-right-circle.svg";
-import { ReactComponent as ArrowRightBorder } from "../../assets/icons/arrow-right-border.svg";
-import { ReactComponent as CloseIcon } from "../../assets/icons/close.svg";
-import { ReactComponent as Favicon } from "../../assets/icons/favicon.svg";
-import { ReactComponent as HomeIcon } from "../../assets/icons/home.svg";
-import { ReactComponent as MessageIcon } from "../../assets/icons/message.svg";
-import BotchatImg from "../../assets/Avatar/BotChat.png";
+import { ReactComponent as ArrowCircle } from "@icons/arrow-right-circle.svg";
+import { ReactComponent as ArrowRightBorder } from "@icons/arrow-right-border.svg";
+import { ReactComponent as CloseIcon } from "@icons/close.svg";
+import { ReactComponent as Favicon } from "@icons/favicon.svg";
+import { ReactComponent as HomeIcon } from "@icons/home.svg";
+import { ReactComponent as MessageIcon } from "@icons/message.svg";
+import BotchatImg from "@assets/Avatar/BotChat.png";
 
 interface ChatBoxOpenProps {
   onClose: () => void;

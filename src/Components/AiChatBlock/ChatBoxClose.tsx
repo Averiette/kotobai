@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./ChatBox.module.css";
-import { ReactComponent as MessageIcon } from "../../assets/icons/message.svg";
+import { ReactComponent as MessageIcon } from "@icons/message.svg";
 
 interface ChatBoxCloseProps {
   onOpen: () => void;
