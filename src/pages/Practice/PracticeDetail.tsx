@@ -84,6 +84,7 @@ const PracticeDetail: React.FC = () => {
 
   return (
     <div className="main-layout">
+      <div className="lesson-container">
       <Navbar />
       <div className="heading">
         <BackButton to={`/lesson/${id}`} label="Quay lại" />
@@ -91,6 +92,7 @@ const PracticeDetail: React.FC = () => {
           <h2 className={styles["lesson-title"]}>
             <span>{lesson.subtitle}</span> {lesson.title}
           </h2>
+        </div>
         </div>
         {/* Progress Bar */}
       <div className={styles["progress-block"]}>
