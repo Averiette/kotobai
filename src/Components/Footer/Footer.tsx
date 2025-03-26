@@ -1,9 +1,10 @@
 import React from "react";
 // Assets
-import { ReactComponent as Logo } from "../../assets/logo-01.svg";
-import { ReactComponent as FacebookSvg } from "../../assets/Icons/facebook.svg";
-import { ReactComponent as InstagramSvg } from "../../assets/Icons/instagram.svg";
-import { ReactComponent as MessengerSvg } from "../../assets/Icons/messenger.svg";
+import Logo from '@assets/logo-01.svg';
+import FacebookIcon from '@assets/Icons/Facebook'
+import InstagramIcon from '@assets/Icons/Instagram'
+import MessengerIcon from '@assets/Icons/Messenger'
+
 //CSS
 import styles from "./Footer.module.css"; 
 
@@ -11,19 +12,19 @@ const Footer: React.FC = () => {
     return (
         <footer className={styles.footerContainer}>
             <div className={styles.footerSection}>
-                <Logo className={styles.iconSvg} />
+                <img src={Logo} alt="Logo" className={styles.iconSvg} />
                 <p className={`${styles.footerDescription} b7`}>
                     Phương pháp học tiếng Nhật hiệu quả dành riêng cho sinh viên Trường Đại học FPT.
                 </p>
                 <div className={styles.footerIcons}>
                     <a href="https://www.facebook.com/profile.php?id=61571846685917" target="_blank" rel="noopener noreferrer">
-                        <FacebookSvg className={styles.socialSvgFb} />
+                        <FacebookIcon className={styles.socialSvgFb} />
                     </a>
                     <a href="https://www.instagram.com/kotob.ai/" target="_blank" rel="noopener noreferrer">
-                        <InstagramSvg className={styles.socialSvgIg} />
+                        <InstagramIcon className={styles.socialSvgIg} />
                     </a>
                     <a href="https://www.facebook.com/messages/t/526302420570674" target="_blank" rel="noopener noreferrer">
-                        <MessengerSvg className={styles.socialSvgTt} />
+                        <MessengerIcon className={styles.socialSvgTt} />
                     </a>
                 </div>
             </div>

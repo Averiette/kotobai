@@ -1,7 +1,7 @@
 import React from "react";
 // Assets
-import communityimg from "../../assets/Banner/Banner.png"
-import backgroundSvg from "../../assets/Banner/Banner.svg";
+import communityimg from "@assets/Banner/Banner.png"
+import backgroundSvg from "@assets/Banner/Banner.svg";
 //CSS
 import "./GroupFb.css"
 

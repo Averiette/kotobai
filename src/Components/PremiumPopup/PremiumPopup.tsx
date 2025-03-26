@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom"; 
 // Components
-import BtnBlue from "../Button/Btnblue/Btnblue"
+import BtnBlue from '@Components/Button/Btnblue/Btnblue'
 // Assets
-import { ReactComponent as CheckIcon } from "../../assets/Icons/check.svg";
-import { ReactComponent as CloseIcon } from "../../assets/Icons/close.svg";
+import CheckIcon from "@assets/Icons/Check";
+import CloseIcon from "@assets/Icons/Close";
 //CSS
 import styles from "./PremiumPopup.module.css"; 
 

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom"; 
 // Assets
-import thumbnailImg from "../../assets/Banner/Thumnail 1450px x 1080px.png";
+import thumbnailImg from '@assets/Banner/Thumnail 1450px x 1080px.png'
 //CSS
 import styles from "./Thumbnail.module.css";
 

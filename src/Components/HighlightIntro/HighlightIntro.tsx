@@ -1,9 +1,9 @@
 import React from "react";
 
 // Assets
-import Highlight1 from "../../assets/Introduce/600px x 450px_hl1.png";
-import Highlight2 from "../../assets/Introduce/600px x 450px_hl2.png";
-import Highlight3 from "../../assets/Introduce/600px x 450px_hl3.png";
+import Highlight1 from "@assets/Introduce/600px x 450px_hl1.png";
+import Highlight2 from "@assets/Introduce/600px x 450px_hl2.png";
+import Highlight3 from "@assets/Introduce/600px x 450px_hl3.png";
 
 //CSS
 import styles from "./HighlightIntro.module.css";

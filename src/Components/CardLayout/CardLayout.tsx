@@ -2,7 +2,7 @@ import React from 'react';
 // Assets
 import { ReactComponent as ArrowIcon } from "../../assets/Icons/arrow.svg"; 
 //CSS
-import '../Cards/Cards.css';
+import '@Components/Cards/Cards.css';
 
 interface CardItemProps {
   title: string;

@@ -1,18 +1,18 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 // Components
-import CardItem from '../CardLayout/CardLayout';
-import LessonItem from '../LessonItem/LessonItem';
-import PracticeItem, { practiceData } from '../CardPractice/CardPractice';
+import CardItem from '@Components/CardLayout/CardLayout';
+import LessonItem from '@Components/LessonItem/LessonItem';
+import PracticeItem, { practiceData } from '@Components/CardPractice/CardPractice';
 // Assets
-import hiraganaImg from '../../assets/Cards/Hiragana.png';
-import katakanaImg from '../../assets/Cards/Katakana.png';
-import kanjiImg from '../../assets/Cards/Kanji.png';
+import hiraganaImg from '@assets/Cards/Hiragana.png';
+import katakanaImg from '@assets/Cards/Katakana.png';
+import kanjiImg from '@assets/Cards/Kanji.png';
 //Data
-import { lessonData } from "../../data/lessonData/lessonData";
+import { lessonData } from "@data/lessonData/lessonData";
 //CSS
 import './Cards.css'  
-import '../LessonItem/LessonItem.css'
+import '@Components/LessonItem/LessonItem.css'
 
 const cardData = [
   { title: 'Hiragana', category: 'Alphabet', imageUrl: hiraganaImg, progress: 80, link: '/alphabet/hiragana' },

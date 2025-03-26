@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 // Components
-import BtnBlue from "../Button/Btnblue/Btnblue";
+import BtnBlue from '@Components/Button/Btnblue/Btnblue'
 // Assets
-import { ReactComponent as GoogleIcon } from "../../assets/Icons/Google.svg";
-import { ReactComponent as EyeOpenIcon } from "../../assets/Icons/eye.svg";
-import { ReactComponent as EyeClosedIcon } from "../../assets/Icons/hidden.svg";
+import GoogleIcon from "@assets/Icons/Google";
+import EyeOpenIcon from "@assets/Icons/EyeOpen";
+import EyeClosedIcon from "@assets/Icons/EyeClosed";
 //CSS
 import styles from "../SignUpblock/SignUpBlock.module.css";
 

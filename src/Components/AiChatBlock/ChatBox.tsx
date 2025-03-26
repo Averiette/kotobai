@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+// Components
 import ChatBoxOpen from "./ChatBoxOpen";
 import ChatBoxClose from "./ChatBoxClose";
 import ChatBoxBlock from "./ChatBoxBlock";
+//CSS
 import styles from "./ChatBox.module.css";
 
 const ChatBox: React.FC = () => {

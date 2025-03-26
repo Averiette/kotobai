@@ -1,11 +1,13 @@
 import React, { useState } from "react";
+// Assets
+import CloseIcon from "@assets/Icons/Close";
+import BackIcon from "@assets/Icons/BackArrow";
+import BotIcon from "@assets/Avatar/BotChat.png";
+// CSS
 import styles from "./ChatBox.module.css";
-import { ReactComponent as CloseIcon } from "../../assets/icons/close.svg";
-import { ReactComponent as BackIcon } from "../../assets/Icons/back-arrow.svg";
-import BotIcon from "../../assets/Avatar/BotChat.png";
 
 interface ChatBoxBlockProps {
-  onClose: () => void; // Quay về ChatBoxOpen
+  onClose: () => void; 
 }
 
 interface Message {
@@ -27,8 +29,8 @@ const ChatBoxBlock: React.FC<ChatBoxBlockProps> = ({ onClose }) => {
     setInput("");
 
     setTimeout(() => {
-      setMessages((prev) => [
-        ...prev,
+      setMessages((prevMessages) => [
+        ...prevMessages,
         { sender: "bot", text: "Đang phản hồi..." }
       ]);
     }, 1000);
@@ -41,7 +43,7 @@ const ChatBoxBlock: React.FC<ChatBoxBlockProps> = ({ onClose }) => {
         <button className={styles.backButtonBlock} onClick={onClose}>
           <BackIcon />
         </button>
-        <p className="s6">Hỗ trợ trực tuyến</p>
+        <p className={styles.s6}>Hỗ trợ trực tuyến</p> {/* Đảm bảo styles.s6 tồn tại */}
         <button className={styles.closeButtonBlock} onClick={onClose}>
           <CloseIcon />
         </button>
@@ -60,7 +62,7 @@ const ChatBoxBlock: React.FC<ChatBoxBlockProps> = ({ onClose }) => {
       </div>
 
       {/* Ô nhập tin nhắn */}
-      <div className={`${styles.chatInput} b7`}>
+      <div className={`${styles.chatInput} ${styles.b7}`}>
         <input
           type="text"
           placeholder="Nhập tin nhắn..."
@@ -68,7 +70,7 @@ const ChatBoxBlock: React.FC<ChatBoxBlockProps> = ({ onClose }) => {
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={(e) => e.key === "Enter" && sendMessage()}
         />
-        <button onClick={sendMessage} className={`s7 ${styles.sendButton}`}>
+        <button onClick={sendMessage} className={`${styles.s7} ${styles.sendButton}`}>
           Gửi
         </button>
       </div>

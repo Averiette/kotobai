@@ -1,15 +1,15 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 // Assets
-import banner1 from "../../assets/Banner/Banner5.png";
-import banner2 from "../../assets/Banner/Banner2.png";
-import banner3 from "../../assets/Banner/Banner3.png";
-import banner1Tablet from "../../assets/Banner/banner5_tablet.png";
-import banner2Tablet from "../../assets/Banner/banner2_tablet.png";
-import banner3Tablet from "../../assets/Banner/banner3_tablet.png";
-import banner1Mobile from "../../assets/Banner/Banner5_Mobile.png";
-import banner2Mobile from "../../assets/Banner/Banner2_Mobile.png";
-import banner3Mobile from "../../assets/Banner/Banner3_Mobile.png";
+import banner1 from "@assets/Banner/Banner5.png";
+import banner2 from "@assets/Banner/Banner2.png";
+import banner3 from "@assets/Banner/Banner3.png";
+import banner1Tablet from "@assets/Banner/banner5_tablet.png";
+import banner2Tablet from "@assets/Banner/banner2_tablet.png";
+import banner3Tablet from "@assets/Banner/banner3_tablet.png";
+import banner1Mobile from "@assets/Banner/Banner5_Mobile.png";
+import banner2Mobile from "@assets/Banner/Banner2_Mobile.png";
+import banner3Mobile from "@assets/Banner/Banner3_Mobile.png";
 // CSS
 import styles from "./bannerSlider.module.css"; 
 
