@@ -1,21 +1,21 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+// Assets
+import lesson1Img from "@assets/Practice List/260px x 230px_L1.png";
+import lesson2Img from "@assets/Practice List/260px x 230px_L2.png";
+import lesson3Img from "@assets/Practice List/260px x 230px_L3.png";
+import lesson4Img from "@assets/Practice List/260px x 230px_L4.png";
+import lesson5Img from "@assets/Practice List/260px x 230px_L5.png";
+import lesson6Img from "@assets/Practice List/260px x 230px_L6.png";
+import lesson7Img from "@assets/Practice List/260px x 230px_L7.png";
+import lesson8Img from "@assets/Practice List/260px x 230px_L8.png";
+import lesson9Img from "@assets/Practice List/260px x 230px_L9.png";
+import lesson10Img from "@assets/Practice List/260px x 230px_L10.png";
+import DataAvaIcon from "@assets/Icons/data-avatar.svg";
+import ImgActive from "@assets/Icons/Arrow";
+import ImgInactive from "@assets/Icons/Lock";
+//CSS
 import "./PracticeList.css";
-
-import lesson1Img from "../../assets/Practice List/260px x 230px_L1.png";
-import lesson2Img from "../../assets/Practice List/260px x 230px_L2.png";
-import lesson3Img from "../../assets/Practice List/260px x 230px_L3.png";
-import lesson4Img from "../../assets/Practice List/260px x 230px_L4.png";
-import lesson5Img from "../../assets/Practice List/260px x 230px_L5.png";
-import lesson6Img from "../../assets/Practice List/260px x 230px_L6.png";
-import lesson7Img from "../../assets/Practice List/260px x 230px_L7.png";
-import lesson8Img from "../../assets/Practice List/260px x 230px_L8.png";
-import lesson9Img from "../../assets/Practice List/260px x 230px_L9.png";
-import lesson10Img from "../../assets/Practice List/260px x 230px_L10.png";
-
-import DataAvaIcon from "../../assets/Icons/data-avatar.svg";
-import { ReactComponent as ImgActive } from "../../assets/Icons/arrow.svg";
-import { ReactComponent as ImgInactive } from "../../assets/Icons/lock.svg";
 
 interface PracticeInfo {
   id: number;

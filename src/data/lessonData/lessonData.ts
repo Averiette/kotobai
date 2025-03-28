@@ -1,13 +1,13 @@
-import lesson1Img from '../../assets/Lesson/L1.png';
-import lesson2Img from '../../assets/Lesson/L2.1.png';
-import lesson3Img from '../../assets/Lesson/L3.1.png';
-import lesson4Img from '../../assets/Lesson/L4.1.png';
-import lesson5Img from '../../assets/Lesson/L5.1.png';
-import lesson6Img from '../../assets/Lesson/L6.1.png';
-import lesson7Img from '../../assets/Lesson/L7.1.png';
-import lesson8Img from '../../assets/Lesson/L8.1.png';
-import lesson9Img from '../../assets/Lesson/L9.1.png';
-import lesson10Img from '../../assets/Lesson/L10.1.png';
+import lesson1Img from '@assets/Lesson/L1.png';
+import lesson2Img from '@assets/Lesson/L2.1.png';
+import lesson3Img from '@assets/Lesson/L3.1.png';
+import lesson4Img from '@assets/Lesson/L4.1.png';
+import lesson5Img from '@assets/Lesson/L5.1.png';
+import lesson6Img from '@assets/Lesson/L6.1.png';
+import lesson7Img from '@assets/Lesson/L7.1.png';
+import lesson8Img from '@assets/Lesson/L8.1.png';
+import lesson9Img from '@assets/Lesson/L9.1.png';
+import lesson10Img from '@assets/Lesson/L10.1.png';
 
 export const lessonData = [
     { 

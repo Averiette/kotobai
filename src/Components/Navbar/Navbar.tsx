@@ -1,16 +1,16 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom"; 
 // Assets
-import logo from "../../assets/logo-01.svg"; 
-import avatar from "../../assets/Avatar/Avatar1.jpg"; 
-import crown from "../../assets/Icons/crown.svg";
-import coins from "../../assets/Icons/coin.svg"; 
-import { ReactComponent as UpgradeIcon } from "../../assets/Icons/open.svg";
-import { ReactComponent as PlusIcon } from "../../assets/Icons/PLUS-01.svg";
-import { ReactComponent as HomeIcon } from "../../assets/Icons/home.svg";
-import { ReactComponent as PracticeIcon } from "../../assets/Icons/book.svg";
-import { ReactComponent as AlphabetIcon } from "../../assets/Icons/alphabet.svg";
-import { ReactComponent as AIChatIcon } from "../../assets/Icons/robot.svg";
+import logo from "@assets/logo-01.svg"; 
+import avatar from "@assets/Avatar/Avatar1.jpg"; 
+import crown from "@assets/Icons/crown.svg";
+import coins from "@assets/Icons/coin.svg"; 
+import UpgradeIcon from "@assets/Icons/Upgrade";
+import PlusIcon from "@assets/Icons/Plus";
+import HomeIcon from "@assets/Icons/Home";
+import PracticeIcon from "@assets/Icons/Book";
+import AlphabetIcon from "@assets/Icons/Alphabet";
+import AIChatIcon from "@assets/Icons/Robot";
 //CSS
 import "./Navbar.css";
 

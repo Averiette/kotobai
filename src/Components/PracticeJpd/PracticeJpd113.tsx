@@ -1,36 +1,32 @@
-import React from "react";
-import '../PracticeList/PracticeList.css'
-
-// Import ảnh của từng bài học
-import lesson1Img from "../../assets/Practice List/P113-1-1_260px x 230px.png";
-import lesson2Img from "../../assets/Practice List/P113-2-1_260px x 230px.png";
-import lesson3Img from "../../assets/Practice List/P113-3-1_260px x 230px.png";
-import lesson4Img from "../../assets/Practice List/P113-4-1_260px x 230px.png";
-
-import DataAvaIcon from "../../assets/Icons/data-avatar.svg"; 
-import { ReactComponent as ImgActive } from "../../assets/Icons/arrow.svg"; 
-import { ReactComponent as ImgInactive } from "../../assets/Icons/lock.svg"; 
-
+import React, { useState } from "react";
+// Assets
+import lesson1Img from "@assets/Practice List/P113-1-1_260px x 230px.png";
+import lesson2Img from "@assets/Practice List/P113-2-1_260px x 230px.png";
+import lesson3Img from "@assets/Practice List/P113-3-1_260px x 230px.png";
+import lesson4Img from "@assets/Practice List/P113-4-1_260px x 230px.png";
+import DataAvaIcon from "@assets/Icons/data-avatar.svg"; 
+import ImgActive from "@assets/Icons/Arrow";
+import ImgInactive from "@assets/Icons/Lock";
+//CSS
+import '@Components/PracticeList/PracticeList.css'
 
 interface PracticeInfo {
-    id: number;
-    title: string;
-    subtitle: string;
-    desc: string;
-    note: string;
-    category: "Đã xong" | "Đang làm" | "Đang khóa";
-    image: string;
-    progress: number;
-  }
-  
-  const categoryClassMap = {
-    "Đã xong": "completed",
-    "Đang làm": "doing",
-    "Đang khóa": "locked",
-    "Nâng cấp để mở": "upgrade",
-};
+  id: number;
+  title: string;
+  subtitle: string;
+  desc: string;
+  note: string;
+  category: "Đã xong" | "Đang làm" | "Đang khóa" | "Nâng cấp để mở";
+  image: string;
+  progress: number;
+}
 
-  
+const categoryClassMap: Record<PracticeInfo["category"], string> = {
+  "Đã xong": "completed",
+  "Đang làm": "doing",
+  "Đang khóa": "locked",
+  "Nâng cấp để mở": "upgrade",
+};
 
   const practiceInfo: PracticeInfo[] = [
     { id: 1, title: "ĐỀ SỐ 1", subtitle: "Ôn tập:", desc: "JPD113", 
@@ -45,7 +41,8 @@ interface PracticeInfo {
  
   
   const getRandomCount = () => Math.floor(Math.random() * 50) + 1;
-  
+  const [isOpen, setIsOpen] = useState(false);
+
   const PracticeList113: React.FC = () => {
     return (
       <div className="practice">

@@ -1,6 +1,6 @@
 import React from 'react';
 // Assets
-import { ReactComponent as ArrowIcon } from "../../assets/Icons/arrow.svg"; 
+import ArrowIcon from "@assets/Icons/Arrow";
 //CSS
 import '@Components/Cards/Cards.css';
 
@@ -12,7 +12,6 @@ interface CardItemProps {
   onClick?: () => void;
 }
 
-// Định dạng tiêu đề nếu cần
 const formatTitle = (title: string) => {
   if (title === "Nghe đều đặn Giao tiếp tự tin") {
     return (

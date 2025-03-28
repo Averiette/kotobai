@@ -1,6 +1,6 @@
 import React from 'react';
 import './LessonItem.css';
-import { ReactComponent as ArrowIcon } from "../../assets/Icons/arrow.svg"; 
+import ArrowIcon from "@assets/Icons/Arrow"; 
 
 interface LessonItemProps {
     title: string;
