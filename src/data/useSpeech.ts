@@ -1,16 +1,15 @@
 const playedDialogue = new Set<string>(); // Lưu trữ hội thoại đã phát
 
-export const playSpeech = (speaker: string, text: string) => {
+export const playSpeech = (text: string, lang: string = "en-US") => {
   const utterance = new SpeechSynthesisUtterance(text);
-  utterance.lang = "en-US"; // Tuỳ chỉnh ngôn ngữ nếu cần
+  utterance.lang = lang; // Tuỳ chỉnh ngôn ngữ
   window.speechSynthesis.speak(utterance);
 };
 
-export const playSpeechOnce = (speaker: string, text: string) => {
-  const dialogueKey = `${speaker}-${text}`;
-  if (!playedDialogue.has(dialogueKey)) {
-    playSpeech(speaker, text); // Phát âm thanh nếu chưa từng phát
-    playedDialogue.add(dialogueKey); // Đánh dấu hội thoại đã phát
+export const playSpeechOnce = (text: string, lang: string = "en-US") => {
+  if (!playedDialogue.has(text)) {
+    playSpeech(text, lang); // Phát âm thanh nếu chưa từng phát
+    playedDialogue.add(text); // Đánh dấu hội thoại đã phát
   }
 };
 
