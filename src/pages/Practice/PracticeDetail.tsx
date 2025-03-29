@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import Navbar from "../../components/Navbar/Navbar";
-import OptionsBlock from "../../components/OptionBlock/OptionBlock";
-import BackButton from "../../Components/Button/BackButton/BackButton";
-import { PracticeQnA1 } from "../../data/Practice/PracticeQnA1";
-import { PracticeQnA2 } from "../../data/Practice/PracticeQnA2";
-import { practiceData } from "../../data/Practice/PracticeData"; 
+import Navbar from "@Components/Navbar/Navbar";
+import OptionsBlock from "@Components/OptionBlock/OptionBlock";
+import BackButton from "@Components/Button/BackButton/BackButton";
+import { PracticeQnA1 } from "@data/Practice/PracticeQnA1";
+import { PracticeQnA2 } from "@data/Practice/PracticeQnA2";
+import { practiceData } from "@data/Practice/PracticeData"; 
 import styles from "./PracticeDetail.module.css";
-import { style } from "framer-motion/client";
 
 interface Choice {
   text: string;
@@ -117,6 +116,7 @@ const PracticeDetail: React.FC = () => {
               {questions[currentQuestionIndex]?.text || "Câu hỏi không tồn tại"}
             </p>
             <OptionsBlock
+              questionText={questions[currentQuestionIndex]?.text || "Câu hỏi không tồn tại"}
               choices={questions[currentQuestionIndex]?.choices || []}
               selectedAnswer={selectedAnswer}
               isWrong={isWrong}
