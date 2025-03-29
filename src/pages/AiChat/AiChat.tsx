@@ -1,6 +1,7 @@
 import React from 'react';
-import Navbar from '../../Components/Navbar/Navbar'
-import ChatBlock from '../../Components/ChatBlock/ChatBlock'
+// Components
+import Navbar from '@Components/Navbar/Navbar'
+import ChatBlock from '@Components/ChatBlock/ChatBlock'
 
 const AiChat: React.FC = () => {
   return (

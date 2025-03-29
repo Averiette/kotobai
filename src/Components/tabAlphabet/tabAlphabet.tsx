@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import HiraganaBlock from '../Alphabet/Hiragana/Hiragana';
-import KatakanaBlock from '../Alphabet/Katakana/KatakanaBlock';
-import KanjiBlock from '../Alphabet/Kanji/Kanji';
+import HiraganaBlock from '@Components/Alphabet/Hiragana/Hiragana';
+import KatakanaBlock from '@Components/Alphabet/Katakana/KatakanaBlock';
+import KanjiBlock from '@Components/Alphabet/Kanji/Kanji';
 import styles from './tabAlphabet.module.css';
 
 const Tabs: React.FC = () => {

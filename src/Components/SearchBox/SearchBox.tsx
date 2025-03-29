@@ -1,7 +1,10 @@
 import React, { useState } from "react";
+// Components
+import DropdownBlock from "@Components/DropdownBlock/DropdownBlock";
+//Data
+import { grammarTopics } from "@data/Grammar/Grammar";
+//CSS
 import styles from "./SearchBox.module.css";
-import { grammarTopics } from "../../data/Grammar/Grammar";
-import DropdownBlock from "../DropdownBlock/DropdownBlock";
 
 const SearchBox: React.FC = () => {
   const [query, setQuery] = useState("");

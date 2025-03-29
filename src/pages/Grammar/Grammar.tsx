@@ -1,8 +1,9 @@
 import React from "react";
-import Navbar from "../../Components/Navbar/Navbar";
-import Footer from "../../Components/Footer/Footer";
-import ChatBox from "../../Components/AiChatBlock/ChatBox";
-import SearchBox from "../../Components/SearchBox/SearchBox";
+// Components
+import Navbar from "@Components/Navbar/Navbar";
+import Footer from "@Components/Footer/Footer";
+import ChatBox from "@Components/AiChatBlock/ChatBox";
+import SearchBox from "@Components/SearchBox/SearchBox";
 
 const Grammar: React.FC = () => {
   return (

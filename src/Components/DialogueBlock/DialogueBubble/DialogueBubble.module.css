@@ -98,3 +98,20 @@
 .soundIcon:hover {
   opacity: 0.7;
 }
+
+.iconButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: none;
+  background-color: var(--white);
+  cursor: pointer;
+}
+
+.iconButton .icon,
+.iconButton .soundIcon {
+  width: 24px;
+  height: 24px;
+}

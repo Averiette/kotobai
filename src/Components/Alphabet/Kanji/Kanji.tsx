@@ -1,6 +1,8 @@
 import React from "react";
+//Data
+import { kanjiList } from "@data/Alphabet/Kanji"; 
+//CSS
 import styles from "./KanjiBlock.module.css";
-import { kanjiList } from "../../../data/Alphabet/Kanji"; 
 
 const KanjiBlock: React.FC = () => {
   return (

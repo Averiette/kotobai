@@ -1,9 +1,11 @@
 import React, { useState, useEffect, useRef } from "react";
+// Components
+import { playSpeech, playAudio } from "@Components/Sound/useSpeech";
+// Assets
+import SoundIcon from "@assets/Icons/Sound";
+import TranslateIcon from "@assets/Icons/Translate";
+//CSS
 import styles from "./DialogueBubble.module.css";
-import { playSpeech, playAudio } from "../../Sound/useSpeech";
-
-import { ReactComponent as SoundIcon } from "../../../assets/icons/sound.svg";
-import { ReactComponent as TranslateIcon } from "../../../assets/icons/translate.svg";
 
 interface DialogueBubbleProps {
   avatar: string;
@@ -59,7 +61,8 @@ const DialogueBubble: React.FC<DialogueBubbleProps> = ({
     }
   }, [dialogue]);
 
-  const handlePlaySound = () => {
+  const handlePlaySound = (event: React.MouseEvent) => {
+    event.stopPropagation();
     if (audio) {
       playAudio(
         audio,
@@ -102,16 +105,22 @@ const DialogueBubble: React.FC<DialogueBubbleProps> = ({
       </div>
 
       <div className={styles.iconContainer}>
-        <SoundIcon
-          className={`${styles.soundIcon} ${
-            isSoundPlaying ? styles.soundIconActive : ""
-          }`}
-          onClick={handlePlaySound}
-        />
-        <TranslateIcon
-          className={styles.icon}
-          onClick={() => setShowTranslation(!showTranslation)}
-        />
+        <button className={styles.iconButton} onClick={handlePlaySound}>
+          <SoundIcon
+            className={`${styles.soundIcon} ${
+              isSoundPlaying ? styles.soundIconActive : ""
+            }`}
+          />
+        </button>
+        <button
+          className={styles.iconButton}
+          onClick={(event) => {
+            event.stopPropagation();
+            setShowTranslation(!showTranslation);
+          }}
+        >
+          <TranslateIcon className={styles.icon} />
+        </button>
       </div>
     </div>
   );

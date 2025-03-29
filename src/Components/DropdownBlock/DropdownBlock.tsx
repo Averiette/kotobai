@@ -1,6 +1,8 @@
 import React, { useState, useCallback } from 'react';
+// Assets
+import DropdownIcon from '@assets/Icons/Dropdown'; 
+//CSS
 import styles from './DropdownBlock.module.css';
-import { ReactComponent as DropdownIcon } from '../../assets/Icons/Dropdown.svg'; 
 
 interface DropdownBlockProps {
   title: string;
@@ -22,7 +24,7 @@ const DropdownBlock: React.FC<DropdownBlockProps> = ({ title, content }) => {
         aria-expanded={isOpen}
       >
         <span>{title}</span>
-        <DropdownIcon width={16} height={16} className={styles["dropdown-icon"]} />
+        <DropdownIcon className={styles["dropdown-icon"]} />
       </div>
       {isOpen && <div className={styles["dropdown-content"]}>{content}</div>}
     </div>

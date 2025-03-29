@@ -28,6 +28,7 @@
       "@assets/*": ["assets/*"],
       "@Components/*": ["Components/*"],
       "@data/*": ["data/*"],
+      "@audio/*": ["public/audio/*"]
     }
   },
   "include": ["src"]

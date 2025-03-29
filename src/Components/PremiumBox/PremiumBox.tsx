@@ -1,8 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./PremiumBox.module.css";
-import { ReactComponent as CheckIcon} from "../../assets/Icons/check.svg";
-import { ReactComponent as DisabledCheckIcon} from "../../assets/Icons/cross.svg";
+import CheckIcon from "@assets/Icons/Check";
+import DisabledCheckIcon from "@assets/Icons/DisabledCheckIcon";
 
 
 interface PremiumBoxProps {

@@ -1,6 +1,8 @@
 import React from 'react';
+//Data
+import { hiraganaBasic, HiraganaTenten, HiraganaCombine } from '@data/Alphabet/Hiragana';
+//CSS
 import "./Hiragana.css";
-import { hiraganaBasic, HiraganaTenten, HiraganaCombine } from '../../../data/Alphabet/Hiragana';
 
 const playAudio = (romaji: string) => {
     const audio = new Audio(`/audio/hiragana/${romaji}.mp3`); 

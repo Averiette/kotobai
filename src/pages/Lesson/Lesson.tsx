@@ -1,16 +1,16 @@
 import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
-// Import Components
+// Components
 import Navbar from "../../Components/Navbar/Navbar";
 import CardItem from "../../Components/CardLayout/CardLayout";
-// Import Data
+// Assets
+import ArrowBackIcon from '@assets/Icons/BackArrow';
+import ArrowNextIcon from '@assets/Icons/NextArrow';
+//Data
 import { lessonCategories, practiceCategories } from "../../data/LearnLesson/LearnLesson";
 import { NameLesson } from "../../data/NameLesson";
-// Import Css
+//CSS
 import styles from "./Lesson.module.css";
-// Import Assets
-import { ReactComponent as ArrowBackIcon } from '../../assets/icons/back-arrow.svg';
-import { ReactComponent as ArrowNextIcon } from '../../assets/icons/next-arrow.svg';
 
 const Lesson: React.FC = () => {
     const { id } = useParams<{ id: string }>(); 

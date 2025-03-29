@@ -1,6 +1,6 @@
 import React from "react";
 // Assets
-import MessageIcon from "@assets/icons/Message";
+import MessageIcon from "@assets/Icons/Message";
 //CSS
 import styles from "./ChatBox.module.css";
 interface ChatBoxCloseProps {

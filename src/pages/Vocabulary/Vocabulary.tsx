@@ -1,19 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-
-// Import Components
+// Components
 import Navbar from "../../Components/Navbar/Navbar";
 import BackButton from "../../Components/Button/BackButton/BackButton";
 import StarIcon from "../../Components/Icons/StarIcon/StarIcon";
-
-// Import CSS
+//Data
+import { NameLesson } from "../../data/NameLesson";
+//CSS
 import lessonStyles from "../Lesson/Lesson.module.css";
 import vocabStyles from "./Vocabulary.module.css";
 
-// Import NameLesson
-import { NameLesson } from "../../data/NameLesson";
-
-// Interface cho dữ liệu từ vựng
 interface VocabWord {
     id: number;
     word: string;

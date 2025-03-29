@@ -1,21 +1,18 @@
 import React from "react";
 import { useNavigate, useLocation } from "react-router-dom";
+// Components
+import Navbar from "@Components/Navbar/Navbar";
+// Assets
+import completeImage from "@assets/Banner/Banner4.png";
+import ArrowBackIcon from "@assets/Icons/BackArrow";
+import ArrowNextIcon from "@assets/Icons/NextArrow";
+//CSS
 import styles from "./DialogueDone.module.css";
-
-// Import Navbar
-import Navbar from "../../Components/Navbar/Navbar";
-
-// Import hình ảnh minh họa Đã xong
-import completeImage from "../../assets/Banner/Banner4.png";
-
-// Import icon SVG
-import { ReactComponent as ArrowBackIcon } from "../../assets/icons/back-arrow.svg";
-import { ReactComponent as ArrowNextIcon } from "../../assets/icons/next-arrow.svg";
 
 const DialogueDone: React.FC = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const lessonId = location.state?.lessonId || "1"; // Nếu không có lessonId, dùng giá trị mặc định
+  const lessonId = location.state?.lessonId || "1"; 
 
   return (
     <div className={styles.container}>

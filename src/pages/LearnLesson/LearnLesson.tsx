@@ -1,6 +1,7 @@
 import React from 'react'
-import Navbar from '../../Components/Navbar/Navbar'
-import Cards from "../../Components/Cards/Cards";
+// Components
+import Navbar from '@Components/Navbar/Navbar'
+import Cards from "@Components/Cards/Cards";
 
 const App = () => {
   return (

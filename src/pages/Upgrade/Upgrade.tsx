@@ -1,19 +1,18 @@
 import React from "react";
-import { useNavigate } from "react-router-dom"; 
-import Navbar from "../../Components/Navbar/Navbar";
-import BackButton from "../../Components/Button/BackButton/BackButton"
-import PremiumBox from "../../Components/PremiumBox/PremiumBox";
-import Footer from "../../Components/Footer/Footer";
-
+// Components
+import Navbar from "@Components/Navbar/Navbar";
+import BackButton from "@Components/Button/BackButton/BackButton"
+import PremiumBox from "@Components/PremiumBox/PremiumBox";
+import Footer from "@Components/Footer/Footer";
+// Assets
+import Img1 from "@assets/img/Premium1.png";
+import Img2 from "@assets/img/Premium2.png";
+import Img3 from "@assets/img/Premium3.png";
+import Img4 from "@assets/img/Premium4.png";
+import Img5 from "@assets/img/Premium5.png";
+import Img6 from "@assets/img/Premium6.png";
+//CSS
 import styles from './Upgrade.module.css'
-
-// 📸 Import hình ảnh icon
-import Img1 from "../../assets/img/Premium1.png";
-import Img2 from "../../assets/img/Premium2.png";
-import Img3 from "../../assets/img/Premium3.png";
-import Img4 from "../../assets/img/Premium4.png";
-import Img5 from "../../assets/img/Premium5.png";
-import Img6 from "../../assets/img/Premium6.png";
 
 const featureIcons = [Img1, Img2, Img3, Img4, Img5, Img6];
 
@@ -56,35 +55,34 @@ const premiumFeatures = [
 
 
 const Upgrade: React.FC = () => {
-  const navigate = useNavigate();
-
   return (
-    <div>
     <div className={styles.background}>
       <div className="main-layout">
         <div className={styles.container}>
           <Navbar />
-          <BackButton to="/" label="Quay lại" /></div>
-          <div className={styles.container}>
-          <PremiumBox /></div>
+          <BackButton to="/" label="Quay lại" />
+        </div>
+        <div className={styles.container}>
+          <PremiumBox />
           <h2 className={styles.title}>Mở khóa các tính năng Premium</h2>
-        <div className={styles.featuresGrid}>
-          {premiumFeatures.map((feature, index) => (
-            <div key={index} className={styles.featureItem}>
-              <img
-                src={featureIcons[index]}
-                alt={`Feature Icon ${index + 1}`}
-                className={styles.featureIcon}
-              />
-              <div>
-                <p className={`${styles.featureTitle} s6`}>{feature.title}</p>
-                <p className={`${styles.featureDescription} b7`}>{feature.description}</p>
-
+          <div className={styles.featuresGrid}>
+            {premiumFeatures.map((feature, index) => (
+              <div key={index} className={styles.featureItem}>
+                <img
+                  src={feature.img}
+                  alt={`Feature Icon ${index + 1}`}
+                  className={styles.featureIcon}
+                />
+                <div>
+                  <p className={`${styles.featureTitle} s6`}>{feature.title}</p>
+                  <p className={`${styles.featureDescription} b7`}>{feature.description}</p>
+                </div>
               </div>
-            </div>
-          ))}
-          </div></div></div>
-          <Footer />
+            ))}
+          </div>
+        </div>
+      </div>
+      <Footer />
     </div>
   );
 };

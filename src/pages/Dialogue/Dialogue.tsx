@@ -1,24 +1,24 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+
+
+// Components
+import Navbar from "@Components/Navbar/Navbar";
+import BackButton from "@Components/Button/BackButton/BackButton";
+import DialogueBubble from "@Components/DialogueBlock/DialogueBubble/DialogueBubble";
+// Assets
+import DanielAvatar from "@assets/Avatar/Daniel.png";
+import ParkAvatar from "@assets/Avatar/Park.png";
+import WanAvatar from "@assets/Avatar/Wan.png";
+import MaryAvatar from "@assets/Avatar/Mary.png"
+import NvaAvatar from "@assets/Avatar/NVA.png";
+import NvbAvatar from "@assets/Avatar/NVB.png";
+//Data
+import dialogue1 from "@data/DialogueData/Dialogue1";
+import dialogue2 from "@data/DialogueData/Dialogue2";
+import { NameLesson } from "@data/NameLesson";
+//CSS
 import styles from "./Dialogue.module.css";
-
-// Import Components
-import Navbar from "../../Components/Navbar/Navbar";
-import BackButton from "../../Components/Button/BackButton/BackButton";
-import DialogueBubble from "../../Components/DialogueBlock/DialogueBubble/DialogueBubble";
-
-// Import dữ liệu hội thoại
-import dialogue1 from "../../data/DialogueData/Dialogue1";
-import dialogue2 from "../../data/DialogueData/Dialogue2";
-import { NameLesson } from "../../data/NameLesson";
-
-// Import Avatar
-import DanielAvatar from "../../assets/Avatar/Daniel.png";
-import ParkAvatar from "../../assets/Avatar/Park.png";
-import WanAvatar from "../../assets/Avatar/Wan.png";
-import MaryAvatar from "../../assets/Avatar/Mary.png"
-import NvaAvatar from "../../assets/Avatar/NVA.png";
-import NvbAvatar from "../../assets/Avatar/NVB.png";
 
 // Ánh xạ ID bài hội thoại
 const dialogueData = { "1": dialogue1, "2": dialogue2 };
@@ -33,12 +33,12 @@ const avatarMapping = {
   店員B: NvbAvatar,
 };
 
-const getVoiceForLanguage = (lang) => {
+const getVoiceForLanguage = (lang: string) => {
   const voices = speechSynthesis.getVoices();
   return voices.find((voice) => voice.lang === lang) || null;
 };
 
-const speakText = (text, lang) => {
+const speakText = (text: string, lang: string) => {
   if (lang === "ja-JP") {
     const utterance = new SpeechSynthesisUtterance(text);
     utterance.lang = lang;
@@ -48,7 +48,7 @@ const speakText = (text, lang) => {
   }
 };
 
-const detectLanguage = (text) => {
+const detectLanguage = (text: string) => {
   return /[ぁ-んァ-ン一-龥]/.test(text) ? "ja-JP" : "vi-VN";
 };
 
@@ -66,8 +66,7 @@ const Dialogue: React.FC = () => {
 
   // Lấy tiêu đề từ NameLesson.ts
   const lessonTitle =
-    NameLesson.find((lesson) => lesson.id.toString() === id)?.name ||
-    "Bài học không tồn tại";
+    NameLesson.find((lesson) => lesson.id.toString() === id)?.name || "Bài học không tồn tại";
 
   // State
   const [visibleCount, setVisibleCount] = useState(1);
@@ -83,18 +82,16 @@ const Dialogue: React.FC = () => {
 
   useEffect(() => {
     if (!currentDialogue?.question) {
-      // Nếu không có câu hỏi, tự động hiển thị câu tiếp theo sau 3 giây
       const timer = setTimeout(() => {
         if (visibleCount < lesson.content.length) {
           setVisibleCount((prev) => prev + 1);
         } else {
-          // ✅ Điều hướng đến /dialogue/done và truyền lessonId
           navigate("/dialogue/done", { state: { lessonId: id } });
         }
       }, 3000);
       return () => clearTimeout(timer);
     }
-  }, [visibleCount, currentDialogue, navigate, lesson.content.length, id]); // Thêm `id` vào dependency array
+  }, [visibleCount, currentDialogue, navigate, lesson.content.length, id]);
 
   useEffect(() => {
     if (dialogueContainerRef.current) {
@@ -108,11 +105,10 @@ const Dialogue: React.FC = () => {
     }
   }, [visibleCount, currentDialogue]);
 
-  // Xử lý chọn đáp án
   const handleAnswerClick = (choice: { text: string; correct: boolean }) => {
     setSelectedAnswer(choice.text);
     if (detectLanguage(choice.text) === "ja-JP") {
-      speakText(choice.text, "ja-JP"); // Phát âm thanh chỉ nếu là tiếng Nhật
+      speakText(choice.text, "ja-JP");
     }
     if (choice.correct) {
       setIsWrong(false);
@@ -123,7 +119,6 @@ const Dialogue: React.FC = () => {
     }
   };
 
-  // Xử lý khi bấm "Tiếp tục"
   const handleNext = () => {
     if (canContinue) {
       setVisibleCount((prev) => prev + 1);
@@ -145,7 +140,6 @@ const Dialogue: React.FC = () => {
         </div>
       </div>
 
-      {/* Hiển thị hội thoại */}
       <div ref={dialogueContainerRef} className={styles.dialogueContainer}>
         {lesson.content?.slice(0, visibleCount).map((dialogue, index) => (
           <DialogueBubble
@@ -160,44 +154,24 @@ const Dialogue: React.FC = () => {
         ))}
       </div>
 
-      {/* Block cố định dưới màn hình */}
       {currentDialogue?.question && (
         <div className={styles.fixedBottomContainer}>
           <div className={styles.questionContainer}>
-            <p className={`${styles.questionText} s6`}>
-              {currentDialogue.question.text}
-            </p>
-
+            <p className={`${styles.questionText} s6`}>{currentDialogue.question.text}</p>
             <div className={`${styles.choices} b7`}>
               {currentDialogue.question.choices.map((choice, index) => (
                 <button
                   key={index}
-                  className={`${styles.choiceButton} ${
-                    selectedAnswer === choice.text
-                      ? choice.correct
-                        ? styles.correct
-                        : styles.wrong
-                      : ""
-                  }`}
+                  className={`${styles.choiceButton} ${selectedAnswer === choice.text ? (choice.correct ? styles.correct : styles.wrong) : ""}`}
                   onClick={() => handleAnswerClick(choice)}
                 >
                   {choice.text}
                 </button>
               ))}
             </div>
-            <div className={styles.errorMessageContainer}>
-              {isWrong && (
-                <p className={`${styles.errorText} b7`}>
-                  ❌ Chưa đúng, bạn hãy trả lời lại nhé!
-                </p>
-              )}
-            </div>
+            {isWrong && <p className={`${styles.errorText} b7`}>❌ Chưa đúng, bạn hãy trả lời lại nhé!</p>}
           </div>
-          <button
-            className={`${styles.nextButton} b7`}
-            onClick={handleNext}
-            disabled={!canContinue}
-          >
+          <button className={`${styles.nextButton} b7`} onClick={handleNext} disabled={!canContinue}>
             Tiếp tục
           </button>
         </div>

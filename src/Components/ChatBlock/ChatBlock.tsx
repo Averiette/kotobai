@@ -1,8 +1,10 @@
 import React, { useState, useEffect, useRef } from "react";
+// Assets
+import BotIcon from "@assets/Avatar/BotChat.png";
+import AttackIcon from "@assets/Icons/Attack";
+import MicIcon from "@assets/Icons/Mic";
+//CSS
 import styles from "./ChatBlock.module.css";
-import BotIcon from "../../assets/Avatar/BotChat.png";
-import { ReactComponent as AttachIcon } from "../../assets/icons/Attach.svg";
-import { ReactComponent as MicIcon } from "../../assets/icons/mic.svg";
 
 interface Message {
   sender: "user" | "bot";
@@ -19,12 +21,11 @@ const ChatBlock: React.FC = () => {
   const sendMessage = () => {
     if (!input.trim()) return;
 
-    const newMessages = [...messages, { sender: "user", text: input }];
-    setMessages(newMessages);
+    setMessages((prevMessages) => [...prevMessages, { sender: "user", text: input }]);
     setInput("");
 
     setTimeout(() => {
-      setMessages((prev) => [...prev, { sender: "bot", text: "Đang phản hồi..." }]);
+      setMessages((prevMessages) => [...prevMessages, { sender: "bot", text: "Đang phản hồi..." }]);
     }, 1000);
   };
 
@@ -32,12 +33,7 @@ const ChatBlock: React.FC = () => {
   useEffect(() => {
     const chatContainer = chatContainerRef.current;
     if (chatContainer) {
-      const { scrollHeight, clientHeight, scrollTop } = chatContainer;
-      const distanceToBottom = scrollHeight - (scrollTop + clientHeight);
-
-      if (distanceToBottom <= 100) { // Chỉ cuộn khi cách đáy <= 100px
-        chatContainer.scrollTo({ top: scrollHeight, behavior: "smooth" });
-      }
+      chatContainer.scrollTo({ top: chatContainer.scrollHeight, behavior: "smooth" });
     }
   }, [messages]);
 
@@ -61,7 +57,7 @@ const ChatBlock: React.FC = () => {
           <div className={styles.chatInput}>
             {/* Icon đính kèm */}
             <button className={styles.iconButton}>
-              <AttachIcon width="24" height="24" />
+              <AttackIcon />
             </button>
 
             {/* Ô nhập tin nhắn */}
@@ -76,7 +72,7 @@ const ChatBlock: React.FC = () => {
 
             {/* Icon ghi âm */}
             <button className={styles.iconButton}>
-              <MicIcon width="24" height="24" />
+              <MicIcon />
             </button>
 
             {/* Nút gửi tin nhắn */}
