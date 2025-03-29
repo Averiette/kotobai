@@ -6,10 +6,10 @@ import MicIcon from "@assets/Icons/Mic";
 //CSS
 import styles from "./ChatBlock.module.css";
 
-interface Message {
+type Message = {
   sender: "user" | "bot";
   text: string;
-}
+};
 
 const ChatBlock: React.FC = () => {
   const [messages, setMessages] = useState<Message[]>([
@@ -20,14 +20,17 @@ const ChatBlock: React.FC = () => {
 
   const sendMessage = () => {
     if (!input.trim()) return;
-
-    setMessages((prevMessages) => [...prevMessages, { sender: "user", text: input }]);
+  
+    const newMessage: Message = { sender: "user", text: input };
+    setMessages((prevMessages: Message[]) => [...prevMessages, newMessage]);
     setInput("");
-
+  
     setTimeout(() => {
-      setMessages((prevMessages) => [...prevMessages, { sender: "bot", text: "Đang phản hồi..." }]);
+      const botReply: Message = { sender: "bot", text: "Đang phản hồi..." };
+      setMessages((prevMessages) => [...prevMessages, botReply]);
     }, 1000);
   };
+  
 
   // Auto-scroll khi có tin nhắn mới
   useEffect(() => {
