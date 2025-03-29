@@ -1,10 +1,12 @@
 import React from 'react';
-import NavbarIntro from '../../Components/NavbarIntro/NavbarIntro'
-import Footer from '../../Components/Footer/Footer'
-import LogInBlock from '../../Components/LogInBlock/LogInBlock'
-import styles from '../SignUp/SignUp.module.css';
-import thumbnailImg from "../../assets/Banner/Thumnail 1450px x 1080px.png";
-
+// Components
+import NavbarIntro from '@Components/NavbarIntro/NavbarIntro'
+import Footer from '@Components/Footer/Footer'
+import LogInBlock from '@Components/LogInBlock/LogInBlock'
+// Assets
+import thumbnailImg from "@assets/Banner/Thumnail 1450px x 1080px.png";
+//CSS
+import styles from '@Components/SignUpblock/SignUpBlock.module.css';
 
 const LogIn: React.FC = () => {
   return (

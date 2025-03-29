@@ -1,14 +1,14 @@
 import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
 // Components
-import Navbar from "../../Components/Navbar/Navbar";
-import CardItem from "../../Components/CardLayout/CardLayout";
+import Navbar from "@Components/Navbar/Navbar";
+import CardItem from "@Components/CardLayout/CardLayout";
 // Assets
 import ArrowBackIcon from '@assets/Icons/BackArrow';
 import ArrowNextIcon from '@assets/Icons/NextArrow';
 //Data
-import { lessonCategories, practiceCategories } from "../../data/LearnLesson/LearnLesson";
-import { NameLesson } from "../../data/NameLesson";
+import { lessonCategories, practiceCategories } from "@data/LearnLesson/LearnLesson";
+import { NameLesson } from "@data/NameLesson";
 //CSS
 import styles from "./Lesson.module.css";
 

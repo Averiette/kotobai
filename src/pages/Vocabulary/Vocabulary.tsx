@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 // Components
-import Navbar from "../../Components/Navbar/Navbar";
-import BackButton from "../../Components/Button/BackButton/BackButton";
-import StarIcon from "../../Components/Icons/StarIcon/StarIcon";
+import Navbar from "@Components/Navbar/Navbar";
+import BackButton from "@Components/Button/BackButton/BackButton";
+import StarIcon from "@Components/Icons/StarIcon/StarIcon";
 //Data
-import { NameLesson } from "../../data/NameLesson";
+import { NameLesson } from "@data/NameLesson";
 //CSS
-import lessonStyles from "../Lesson/Lesson.module.css";
+import lessonStyles from "@pages/Lesson/Lesson.module.css";
 import vocabStyles from "./Vocabulary.module.css";
 
 interface VocabWord {
@@ -48,7 +48,7 @@ const Vocabulary: React.FC = () => {
 
             try {
                 const vocabModule = await import(
-                    `../../data/VocabData/Vocabulary${id}.ts`
+                    `@data/VocabData/Vocabulary${id}.ts`
                 );
                 if (vocabModule?.vocabData) {
                     setLessonVocabData(Object.values(vocabModule.vocabData));

@@ -7,7 +7,7 @@ import GoogleIcon from "@assets/Icons/Google";
 import EyeOpenIcon from "@assets/Icons/EyeOpen";
 import EyeClosedIcon from "@assets/Icons/EyeClosed";
 //CSS
-import styles from "../SignUpblock/SignUpBlock.module.css";
+import styles from "@Components/SignUpblock/SignUpBlock.module.css";
 
 const LogInBlock: React.FC = () => {
   const navigate = useNavigate(); 

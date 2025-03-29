@@ -6,7 +6,7 @@ import DataAvaIcon from "@assets/Icons/data-avatar.svg";
 import ImgActive from "@assets/Icons/Arrow"; 
 import ImgInactive from "@assets/Icons/Lock"; 
 // CSS
-import '../PracticeList/PracticeList.css'
+import '@Components/PracticeList/PracticeList.css'
 
 interface PracticeInfo {
   id: number;
