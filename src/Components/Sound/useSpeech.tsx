@@ -1,5 +1,3 @@
-// Sound/useSpeech.ts
-
 export const playAudio = (
   audioSrc: string,
   onStart?: () => void,
@@ -43,17 +41,22 @@ const setVoiceAndSpeak = (
   onStart?: () => void,
   onEnd?: () => void
 ) => {
-  const japaneseVoices = voices.filter((voice) => voice.lang.startsWith("ja"));
-  let selectedVoice: SpeechSynthesisVoice | undefined;
-  selectedVoice = japaneseVoices.length > 0 ? japaneseVoices[0] : undefined;
+  // Tìm giọng nói phù hợp với tên hoặc chọn giọng tiếng Nhật mặc định
+  const selectedVoice =
+    voices.find((voice) => voice.name.includes(name)) ||
+    voices.find((voice) => voice.lang.startsWith("ja")) ||
+    undefined;
+
   if (selectedVoice) {
     utterance.voice = selectedVoice;
   }
+
   if (onStart) {
     utterance.onstart = onStart;
   }
   if (onEnd) {
     utterance.onend = onEnd;
   }
+
   speechSynthesis.speak(utterance);
 };
