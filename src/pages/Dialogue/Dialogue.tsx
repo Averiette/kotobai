@@ -1,7 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-
-
 // Components
 import Navbar from "@Components/Navbar/Navbar";
 import BackButton from "@Components/Button/BackButton/BackButton";
@@ -20,17 +18,35 @@ import { NameLesson } from "@data/NameLesson";
 //CSS
 import styles from "./Dialogue.module.css";
 
-// Ánh xạ ID bài hội thoại
-const dialogueData = { "1": dialogue1, "2": dialogue2 };
+interface Choice {
+  text: string;
+  correct: boolean;
+}
 
-// Mapping tên nhân vật với avatar
-const avatarMapping = {
+interface DialogueItem {
+  id: number;
+  speaker: string;
+  text: string;
+  translation: string;
+  isRight: boolean;
+  question?: {
+    text: string;
+    choices: Choice[];
+  };
+}
+
+const dialogueData: Record<string, { content: DialogueItem[] }> = {
+  "1": dialogue1,
+  "2": dialogue2,
+};
+
+const avatarMapping: Record<string, string> = {
   Daniel: DanielAvatar,
   Park: ParkAvatar,
   Wan: WanAvatar,
   Mary: MaryAvatar,
-  店員A: NvaAvatar,
-  店員B: NvbAvatar,
+  "店員A": NvaAvatar,
+  "店員B": NvbAvatar,
 };
 
 const getVoiceForLanguage = (lang: string) => {
@@ -56,19 +72,15 @@ const Dialogue: React.FC = () => {
   const params = useParams<{ id?: string }>();
   const id = params.id || "";
   const dialogueContainerRef = useRef<HTMLDivElement>(null);
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
 
   if (!id || !dialogueData[id]) {
     return <h2>Bài học không tồn tại</h2>;
   }
 
   const lesson = dialogueData[id];
+  const lessonTitle = NameLesson.find((lesson) => lesson.id.toString() === id)?.name || "Bài học không tồn tại";
 
-  // Lấy tiêu đề từ NameLesson.ts
-  const lessonTitle =
-    NameLesson.find((lesson) => lesson.id.toString() === id)?.name || "Bài học không tồn tại";
-
-  // State
   const [visibleCount, setVisibleCount] = useState(1);
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
   const [isWrong, setIsWrong] = useState(false);
@@ -105,7 +117,7 @@ const Dialogue: React.FC = () => {
     }
   }, [visibleCount, currentDialogue]);
 
-  const handleAnswerClick = (choice: { text: string; correct: boolean }) => {
+  const handleAnswerClick = (choice: Choice) => {
     setSelectedAnswer(choice.text);
     if (detectLanguage(choice.text) === "ja-JP") {
       speakText(choice.text, "ja-JP");
@@ -144,7 +156,7 @@ const Dialogue: React.FC = () => {
         {lesson.content?.slice(0, visibleCount).map((dialogue, index) => (
           <DialogueBubble
             key={dialogue.id}
-            avatar={avatarMapping[dialogue.speaker] || DefaultAvatar}
+            avatar={avatarMapping[dialogue.speaker] || ""}
             name={dialogue.speaker}
             dialogue={dialogue.text}
             translation={dialogue.translation}
