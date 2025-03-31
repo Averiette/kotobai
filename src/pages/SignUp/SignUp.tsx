@@ -4,7 +4,7 @@ import NavbarIntro from '@Components/NavbarIntro/NavbarIntro'
 import Footer from '@Components/Footer/Footer'
 import SignUpBlock from '@Components/SignUpblock/SignUpBlock';
 // Assets
-import thumbnailImg from "assets/Banner/Thumnail 1450px x 1080px.png";
+import thumbnailImg from "@assets/Banner/Thumnail 1450px x 1080px.png";
 //CSS
 import styles from '@Components/SignUpblock/SignUpBlock.module.css';
 
