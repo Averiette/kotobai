@@ -28,7 +28,7 @@ const LessonItem: React.FC<LessonItemProps> = ({ title, subtitle, category, imag
                 </span>
 
                 <span className={`lesson-item-icon ${categoryClass}`}>
-                    <ArrowIcon className="icon-svg" alt="Arrow Icon" />
+                    <ArrowIcon className="icon-svg"/>
                 </span>
             </div>
 
