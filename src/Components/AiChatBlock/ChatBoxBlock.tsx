@@ -24,15 +24,15 @@ const ChatBoxBlock: React.FC<ChatBoxBlockProps> = ({ onClose }) => {
   const sendMessage = () => {
     if (!input.trim()) return;
 
-    const newMessages = [...messages, { sender: "user", text: input }];
-    setMessages(newMessages);
+    // Create properly typed messages
+    const userMessage: Message = { sender: "user", text: input };
+    setMessages([...messages, userMessage]);
     setInput("");
 
     setTimeout(() => {
-      setMessages((prevMessages) => [
-        ...prevMessages,
-        { sender: "bot", text: "Đang phản hồi..." }
-      ]);
+      // Create properly typed bot message
+      const botMessage: Message = { sender: "bot", text: "Đang phản hồi..." };
+      setMessages(prevMessages => [...prevMessages, botMessage]);
     }, 1000);
   };
 
@@ -43,13 +43,13 @@ const ChatBoxBlock: React.FC<ChatBoxBlockProps> = ({ onClose }) => {
         <button className={styles.backButtonBlock} onClick={onClose}>
           <BackIcon />
         </button>
-        <p className={styles.s6}>Hỗ trợ trực tuyến</p> {/* Đảm bảo styles.s6 tồn tại */}
+        <p className={styles.s6}>Hỗ trợ trực tuyến</p>
         <button className={styles.closeButtonBlock} onClick={onClose}>
           <CloseIcon />
         </button>
       </div>
 
-      {/* Khung tin nhắn */}
+      {/* Message container */}
       <div className={styles.chatMessages}>
         {messages.map((msg, index) => (
           <div key={index} className={msg.sender === "user" ? styles.userMessage : styles.botMessage}>
@@ -61,7 +61,7 @@ const ChatBoxBlock: React.FC<ChatBoxBlockProps> = ({ onClose }) => {
         ))}
       </div>
 
-      {/* Ô nhập tin nhắn */}
+      {/* Input field */}
       <div className={`${styles.chatInput} ${styles.b7}`}>
         <input
           type="text"
