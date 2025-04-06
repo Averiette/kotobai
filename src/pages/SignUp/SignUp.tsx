@@ -12,14 +12,14 @@ const SignUp: React.FC = () => {
   return (
     <div className="Container">
       <NavbarIntro />
-      <div className={styles["thumbnail-container"]}>
+      <div className={styles["thumbnailContainer"]}>
       {/* Hình ảnh bên trái */}
-      <div className={styles["thumbnail-container-left"]}>
-        <img src={thumbnailImg} alt="Thumbnail" className={styles["thumbnail-img"]} />
+      <div className={styles["thumbnailContainerLeft"]}>
+        <img src={thumbnailImg} alt="Thumbnail" className={styles["thumbnailImg"]} />
       </div>
 
       {/* Nội dung bên phải */}
-      <div className={styles["thumbnail-container-right"]}>
+      <div className={styles["thumbnailContainerRight"]}>
         <SignUpBlock />
       </div>
     </div>

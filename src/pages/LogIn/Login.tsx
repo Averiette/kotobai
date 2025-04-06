@@ -6,22 +6,22 @@ import LogInBlock from '@Components/LogInBlock/LogInBlock'
 // Assets
 import thumbnailImg from "@assets/Banner/Thumnail 1450px x 1080px.png";
 //CSS
-import styles from '@Components/SignUpblock/SignUpBlock.module.css';
+import styles from "@Components/SignUpblock/SignUpBlock.module.css"
 
 const LogIn: React.FC = () => {
   return (
     <div className="Container">
       <NavbarIntro />
-      <div className={styles["thumbnail-container"]}>
-      {/* Hình ảnh bên trái */}
-      <div className={styles["thumbnail-container-left"]}>
-        <img src={thumbnailImg} alt="Thumbnail" className={styles["thumbnail-img"]} />
-      </div>
+      <div className={styles["thumbnailContainer"]}>
+        {/* Hình ảnh bên trái */}
+        <div className={styles["thumbnailContainerLeft"]}>
+          <img src={thumbnailImg} alt="Thumbnail" className={styles["thumbnailImg"]} />
+        </div>
 
-      {/* Nội dung bên phải */}
-      <div className={styles["thumbnail-container-right"]}>
-        <LogInBlock />
-      </div>
+        {/* Nội dung bên phải */}
+        <div className={styles["thumbnailContainerRight"]}>
+          <LogInBlock />
+        </div>
     </div>
       <Footer />
     </div>
