@@ -11,7 +11,7 @@ import banner1Mobile from "@assets/Banner/Banner5_Mobile.png";
 import banner2Mobile from "@assets/Banner/Banner2_Mobile.png";
 import banner3Mobile from "@assets/Banner/Banner3_Mobile.png";
 // CSS
-import styles from "./bannerSlider.module.css"; 
+import styles from "./BannerSlider.module.css"; 
 
 const bannersDesktop = [banner1, banner2, banner3];
 const bannersTablet = [banner1Tablet, banner2Tablet, banner3Tablet];
