@@ -62,7 +62,7 @@ const LogInBlock: React.FC = () => {
           {errorMessage && <p className={styles.errorMessage}>{errorMessage}</p>}
 
           <Link to="#" className={`${styles.helperText} b6`}>Quên mật khẩu</Link>
-          <BtnBlue text="Đăng nhập" type="submit" className={`${styles.submitButton} b6`} />
+          <BtnBlue text="Đăng nhập" className={`${styles.submitButton} b6`} />
         </form>
 
         <button className={`${styles.googleButton} s6`}>
