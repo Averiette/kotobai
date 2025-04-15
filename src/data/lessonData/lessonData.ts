@@ -14,36 +14,36 @@ export const lessonData = [
       id: 1,
       title: 'Bài 1', 
       subtitle: 'はじめまして', 
-      category: 'Đã xong', 
+      category: 'Đang học', 
       imageUrl: lesson1Img, 
-      progress: 100, 
+      progress: 0, 
       description: 'Rất vui được gặp bạn' 
     },
     { 
       id: 2,
       title: 'Bài 2', 
       subtitle: '買い物・食事', 
-      category: 'Đã xong', 
+      category: 'Đang học', 
       imageUrl: lesson2Img, 
-      progress: 100, 
+      progress: 0, 
       description: 'Mua sắm - Bữa ăn' 
     },
     { 
       id: 3,
       title: 'Bài 3', 
       subtitle: 'スケジュール', 
-      category: 'Đã xong', 
+      category: 'Đang học', 
       imageUrl: lesson3Img, 
-      progress: 100, 
+      progress: 0, 
       description: 'Lịch trình' 
     },
     { 
       id: 4,
       title: 'Bài 4', 
       subtitle: '私の国・町', 
-      category: 'Đang học', 
+      category: 'Chưa học', 
       imageUrl: lesson4Img, 
-      progress: 50, 
+      progress: 0, 
       description: 'Đất nước - Thị trấn của tôi' 
     },
     { 

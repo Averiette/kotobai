@@ -15,9 +15,9 @@ import './Cards.css'
 import '@Components/LessonItem/LessonItem.css'
 
 const cardData = [
-  { title: 'Hiragana', category: 'Alphabet', imageUrl: hiraganaImg, progress: 80, link: '/alphabet/hiragana' },
-  { title: 'Katakana', category: 'Alphabet', imageUrl: katakanaImg, progress: 60, link: '/alphabet/katakana' },
-  { title: 'Kanji', category: 'Characters', imageUrl: kanjiImg, progress: 40, link: '/alphabet/kanji' },
+  { title: 'Hiragana', category: 'Alphabet', imageUrl: hiraganaImg, progress: 0, link: '/alphabet/hiragana' },
+  { title: 'Katakana', category: 'Alphabet', imageUrl: katakanaImg, progress: 0, link: '/alphabet/hiragana' },
+  { title: 'Kanji', category: 'Characters', imageUrl: kanjiImg, progress: 0, link: '/alphabet/hiragana' },
 ];
 
 const Cards: React.FC = () => {

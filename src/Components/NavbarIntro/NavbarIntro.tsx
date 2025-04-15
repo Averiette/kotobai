@@ -14,7 +14,7 @@ const NavbarIntro: React.FC = () => {
     return (
         <div className={styles.navbarIntro}>
             <div className={styles.navbarLeft}>
-                <Link to="/intro">
+                <Link to="/">
                 <img src={Logo} alt="Logo" className={styles.logo} />
                 </Link>
             </div>

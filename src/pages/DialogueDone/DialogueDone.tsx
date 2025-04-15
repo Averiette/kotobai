@@ -24,7 +24,7 @@ const DialogueDone: React.FC = () => {
         <button className={`${styles.button} s6`} onClick={() => navigate(`/lesson/${lessonId}`)}>
           <ArrowBackIcon className={styles.icon} /> Bài học
         </button>
-        <button className={`${styles.button} s6`} onClick={() => navigate("/")}>
+        <button className={`${styles.button} s6`} onClick={() => navigate("/home")}>
           Trang chủ <ArrowNextIcon className={styles.icon} /> 
         </button>
       </div>

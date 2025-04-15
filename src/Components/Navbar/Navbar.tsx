@@ -34,12 +34,12 @@ const Navbar: React.FC = () => {
   return (
     <div className="navbar">
       <div className="navbar-left">
-        <Link to="/">
+        <Link to="/home">
           <img src={logo} alt="logo" className="logo" />
         </Link>
         <ul className="navbar-menu">
           <li className="s6">
-            <Link to="/" className="nav-link">
+            <Link to="/home" className="nav-link">
               <HomeIcon className="nav-icon" /> Trang chủ
             </Link>
           </li>
@@ -80,7 +80,7 @@ const Navbar: React.FC = () => {
               <a href="#" className="menu-item b6">Lịch sử mua hàng</a>
               <a href="#" className="menu-item b6">Cài đặt</a>
               <a href="#" className="menu-item b6">Trợ giúp & Phản hồi</a>
-              <Link to="/intro" className="menu-item logout b6">Đăng xuất</Link>              
+              <Link to="/" className="menu-item logout b6">Đăng xuất</Link>              
               <hr className="divider" />
               <div className="premium-section">
                 <Link to="/upgrade" className="premium-link">

@@ -6,7 +6,7 @@ import LogInBlock from '@Components/LogInBlock/LogInBlock'
 // Assets
 import thumbnailImg from "@assets/Banner/Thumnail 1450px x 1080px.png";
 //CSS
-import styles from "@Components/SignUpblock/SignUpBlock.module.css"
+import styles from './Login.module.css';
 
 const LogIn: React.FC = () => {
   return (

@@ -1,12 +1,16 @@
 import React from "react";
 import { BrowserRouter as Router } from "react-router-dom";
+import { Provider } from 'react-redux';
+import { store } from "./redux/Store";
 import AppRoutes from "./routes/routes";  // Import hệ thống điều hướng
 
 const App: React.FC = () => {
   return (
-    <Router>
-      <AppRoutes />
-    </Router>
+    <Provider store={store}>
+      <Router>
+        <AppRoutes />
+      </Router>
+    </Provider>
   );
 };
 

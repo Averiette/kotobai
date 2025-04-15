@@ -17,10 +17,10 @@ interface PracticeItemProps {
 }
 
 export const practiceData = [
-    { title: 'Khổ luyện', category: 'Practice', imageUrl: practiceImg, progress: 30, link: '/practice' },
-    { title: 'Giải đề', category: 'Test', imageUrl: testImg, progress: 60, link: '/test' },
-    { title: 'Tra từ', category: 'Dictionary', imageUrl: dictionaryImg, progress: 40, link: '/dictionary' },
-    { title: 'Ngữ pháp', category: 'Grammar', imageUrl: grammarImg, progress: 70, link: '/grammar' },
+    { title: 'Khổ luyện', category: 'Practice', imageUrl: practiceImg, progress: 0, link: '/practice' },
+    { title: 'Giải đề', category: 'Test', imageUrl: testImg, progress: 0, link: '/test' },
+    { title: 'Tra từ', category: 'Dictionary', imageUrl: dictionaryImg, progress: 0, link: '/dictionary' },
+    { title: 'Ngữ pháp', category: 'Grammar', imageUrl: grammarImg, progress: 0, link: '/grammar' },
 ];
 
 const PracticeItem: React.FC<PracticeItemProps> = ({ title, category, imageUrl, progress, link }) => {

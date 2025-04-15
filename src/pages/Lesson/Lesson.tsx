@@ -53,7 +53,7 @@ const Lesson: React.FC = () => {
             <div className={styles["lesson-container"]}>
                 <Navbar />
                 <div className={styles["heading"]}>
-                    <button onClick={() => navigate("/")} className={`${styles["back-button"]} b6`}>
+                    <button onClick={() => navigate("/home")} className={`${styles["back-button"]} b6`}>
                         <ArrowBackIcon className={styles["back-icon"]} />
                         Quay lại
                     </button>

@@ -56,7 +56,7 @@
   
   .divider {
     border: none;
-    display: block; /* Đảm bảo nó hiển thị */
+    display: block;
     visibility: visible;
     width: 100%;
     height: 2px;

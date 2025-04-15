@@ -6,7 +6,7 @@ import SignUpBlock from '@Components/SignUpblock/SignUpBlock';
 // Assets
 import thumbnailImg from "@assets/Banner/Thumnail 1450px x 1080px.png";
 //CSS
-import styles from '@Components/SignUpblock/SignUpBlock.module.css';
+import styles from './SignUp.module.css';
 
 const SignUp: React.FC = () => {
   return (
@@ -17,7 +17,6 @@ const SignUp: React.FC = () => {
       <div className={styles["thumbnailContainerLeft"]}>
         <img src={thumbnailImg} alt="Thumbnail" className={styles["thumbnailImg"]} />
       </div>
-
       {/* Nội dung bên phải */}
       <div className={styles["thumbnailContainerRight"]}>
         <SignUpBlock />

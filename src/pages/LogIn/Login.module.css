@@ -1,0 +1,67 @@
+.thumbnailContainer {
+    display: flex;
+    flex-direction: row;
+    padding: 20px 40px;
+    margin: 40px auto;
+    margin-top: 120px;
+    max-width: 1440px;
+    height: fit-content;
+  }
+  
+  /* Phần hình ảnh bên trái */
+  .thumbnailContainerLeft {
+    display: flex;
+    width: 50%;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  
+  .thumbnailImg {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    align-items: flex-end;
+  }
+  
+  /* Phần nội dung bên phải */
+  .thumbnailContainerRight {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: fit-content;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+  }
+  
+  
+  /* ✅ Tablet */
+  /* ✅ Mobile */
+  @media screen and (max-width: 768px) {
+  .thumbnailContainer {
+    flex-direction: column;
+    padding: 20px;
+    margin-top: 80px;
+    align-items: center;
+  }
+  
+  .thumbnailContainerLeft {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  } 
+  
+  .thumbnailContainerRight {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .thumbnailImg {
+    width: 100%;
+    max-width: 80vw; 
+    height: auto;
+  }
+  }
+  

@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { useAppDispatch, useAppSelector } from "../../hooks/reduxHooks";
+import { loginUser } from "../../redux/auth/authSlice";
 // Components
-import BtnBlue from '@Components/Button/Btnblue/Btnblue'
+import BtnBlue from '@Components/Button/Btnblue/Btnblue';
 // Assets
 import GoogleIcon from "@assets/Icons/Google";
 import EyeOpenIcon from "@assets/Icons/EyeOpen";
@@ -11,25 +13,17 @@ import styles from "@Components/SignUpblock/SignUpBlock.module.css";
 
 const LogInBlock: React.FC = () => {
   const navigate = useNavigate(); 
+  const dispatch = useAppDispatch();
+  const { error, loading } = useAppSelector(state => state.auth);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
-  const [errorMessage, setErrorMessage] = useState("");
 
-  const handleLogin = (e: React.FormEvent) => {
+  const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
-    
-    // Tài khoản hợp lệ
-    const validEmail = "test@gmail.com";
-    const validPassword = "123456";
-
-    if (email === validEmail && password === validPassword) {
-      // ✅ Đăng nhập thành công
-      setErrorMessage("");
-      navigate("/"); 
-    } else {
-      // ❌ Sai tài khoản/mật khẩu
-      setErrorMessage("❌ Tài khoản hoặc mật khẩu không đúng!");
+    const resultAction = await dispatch(loginUser({ emailAddress: email, password }));
+    if (loginUser.fulfilled.match(resultAction)) {
+      navigate("/home");
     }
   };
 
@@ -58,11 +52,10 @@ const LogInBlock: React.FC = () => {
             </span>
           </div>
 
-          {/* Hiển thị thông báo lỗi nếu có */}
-          {errorMessage && <p className={styles.errorMessage}>{errorMessage}</p>}
+          {error && <p className={styles.errorMessage}>{error}</p>}
 
           <Link to="#" className={`${styles.helperText} b6`}>Quên mật khẩu</Link>
-          <BtnBlue text="Đăng nhập" className={`${styles.submitButton} b6`} />
+          <BtnBlue text={loading ? "Đang đăng nhập..." : "Đăng nhập"} className={`${styles.submitButton} b6`} />
         </form>
 
         <button className={`${styles.googleButton} s6`}>

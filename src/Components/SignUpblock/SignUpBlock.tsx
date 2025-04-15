@@ -44,7 +44,7 @@ const SignUpBlock: React.FC = () => {
           </div>
 
           <Link to="/login" className={styles.helperText}>Tôi đã có tài khoản!</Link>
-          <BtnBlue text="Tạo tài khoản" to="/" className={styles.submitButton} />
+          <BtnBlue text="Tạo tài khoản" to="/home" className={styles.submitButton} />
         </form>
             <button className={styles.googleButton}>
             <GoogleIcon className={styles.googleIcon} /> Tiếp tục bằng Google
