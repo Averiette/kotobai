@@ -11,28 +11,28 @@ export const lessonCategories = [
     title: 'Học từ vựng mới Dễ trở bàn tay', 
     category: 'Vocabulary', 
     imageUrl: vocabularyImg, 
-    progress: 70,
+    progress: 0,
   },
   { 
     id: 2, 
     title: 'Rèn luyện hội thoại Tự tin giao tiếp', 
     category: 'Dialogue', 
     imageUrl: dialogueImg, 
-    progress: 50,
+    progress: 0,
   },
   { 
     id: 3, 
     title: 'Phá đảo ngữ pháp Trở thành cao thủ', 
     category: 'Grammar', 
     imageUrl: grammarImg, 
-    progress: 90,
+    progress: 0,
   },
   { 
     id: 4, 
     title: 'Nghe đều đặn Giao tiếp tự tin', 
     category: 'Listen', 
     imageUrl: listenImg, 
-    progress: 30, 
+    progress: 0, 
   },
 ];
 
@@ -42,13 +42,13 @@ export const practiceCategories = [
     title: 'Khổ luyện thành tài', 
     category: 'Practice', 
     imageUrl: practiceImg, 
-    progress: 80, 
+    progress: 0, 
   },
   { 
     id: 6, 
     title: 'Đáp án', 
     category: 'Answers', 
     imageUrl: answersImg, 
-    progress: 100, 
+    progress: 0, 
   }
 ];

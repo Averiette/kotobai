@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom"; 
 // Assets
 import logo from "@assets/logo-01.svg"; 
-import avatar from "@assets/Avatar/Avatar1.jpg"; 
+import avatar from "@assets/Avatar/Avatar.png"; 
 import crown from "@assets/Icons/crown.svg";
 import coins from "@assets/Icons/coin.svg"; 
 import UpgradeIcon from "@assets/Icons/Upgrade";
