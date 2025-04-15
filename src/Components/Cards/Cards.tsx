@@ -24,8 +24,7 @@ const Cards: React.FC = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="main-layout">
-      
+    <div className="main-card">
       <h3 className="title">BẢNG CHỮ CÁI</h3>
       <div className="cards-container">
       <div className="card-block">
