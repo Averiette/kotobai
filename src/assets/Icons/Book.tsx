@@ -7,7 +7,7 @@ interface PracticeIconProps {
 
 const PracticeIcon: React.FC<PracticeIconProps> = ({
   size = 24,
-  strokeColor = "black",
+  strokeColor = "currentColor",
   strokeWidth = 45,
   className,
 }) => {
