@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { useAppDispatch, useAppSelector } from "../../hooks/reduxHooks";
-import { loginUser } from "../../redux/auth/authSlice";
 // Components
 import BtnBlue from '@Components/Button/Btnblue/Btnblue';
 // Assets
@@ -12,19 +10,34 @@ import EyeClosedIcon from "@assets/Icons/EyeClosed";
 import styles from "@Components/SignUpblock/SignUpBlock.module.css";
 
 const LogInBlock: React.FC = () => {
-  const navigate = useNavigate(); 
-  const dispatch = useAppDispatch();
-  const { error, loading } = useAppSelector(state => state.auth);
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const [localError, setLocalError] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleLogin = async (e: React.FormEvent) => {
+  const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    const resultAction = await dispatch(loginUser({ emailAddress: email, password }));
-    if (loginUser.fulfilled.match(resultAction)) {
+    setIsSubmitting(true);
+
+    const validAccounts = [
+      { email: "test@gmail.com", password: "123456" },
+      { email: "phucontse172629@fpt.edu.vn", password: "261103" },
+    ];
+
+    const isValid = validAccounts.some(
+      (acc) => acc.email === email && acc.password === password
+    );
+
+    if (isValid) {
+      setLocalError("");
       navigate("/home");
+    } else {
+      setLocalError("❌ Thông tin đăng nhập chưa đúng");
     }
+
+    setIsSubmitting(false);
   };
 
   return (
@@ -47,15 +60,23 @@ const LogInBlock: React.FC = () => {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
-            <span onClick={() => setShowPassword(!showPassword)} className={styles.eyeIcon}>
+            <span
+              onClick={() => setShowPassword(!showPassword)}
+              className={styles.eyeIcon}
+            >
               {showPassword ? <EyeOpenIcon /> : <EyeClosedIcon />}
             </span>
           </div>
 
-          {error && <p className={styles.errorMessage}>{error}</p>}
+          {localError && <p className={styles.errorMessage}>{localError}</p>}
 
-          <Link to="#" className={`${styles.helperText} b6`}>Quên mật khẩu</Link>
-          <BtnBlue text={loading ? "Đang đăng nhập..." : "Đăng nhập"} className={`${styles.submitButton} b6`} />
+          <Link to="#" className={`${styles.helperText} b6`}>
+            Quên mật khẩu
+          </Link>
+          <BtnBlue
+            text={isSubmitting ? "Đang đăng nhập..." : "Đăng nhập"}
+            className={`${styles.submitButton} b6`}
+          />
         </form>
 
         <button className={`${styles.googleButton} s6`}>
