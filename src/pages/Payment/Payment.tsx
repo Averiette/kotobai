@@ -12,7 +12,7 @@ import QRImage144 from "@assets/img/Momo144.png";
 import QRBank144 from "@assets/img/QR144.png";
 import ThumnailPayment from "@assets/img/ThumnailPaymeny.png";
 import momoImg from "@assets/img/Momo.png";
-import vnpayImg from "@assets/img/vnpay.jpg";
+import vnpayImg from "@assets/img/VNPay.jpg";
 
 const Payment: React.FC = () => {
   const { id } = useParams<{ id: string }>();
