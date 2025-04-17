@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 // import api from '../../utils/api';
 import Cookies from 'js-cookie';
-import.meta.env.KOTOBAI_API;
+import.meta.env.VITE_KOTOBAI_API;
 
 interface AuthState {
   user: any | null;
@@ -27,18 +27,30 @@ export const loginUser = createAsyncThunk(
     { rejectWithValue }
   ) => {
     try {
-      const response = await axios.post(`${import.meta.env.VITE_KOTOBAI_API}/api/auth/login`, { emailAddress, password });
+      const response = await axios.post(`${import.meta.env.VITE_KOTOBAI_API}/api/auth/login`, {
+        emailAddress,
+        password,
+      });
 
-      if (response.data.token) {
-        Cookies.set('token', response.data.token, { expires: 7 });
-      }
+      const { accessToken, refreshToken, userId, email, fullName, role } = response.data.data;
 
-      return response.data;
+      Cookies.set('token', accessToken, { expires: 7 }); // ✅ Store token in cookie
+
+      return {
+        token: accessToken,
+        user: {
+          id: userId,
+          email,
+          fullName,
+          role,
+        },
+      };
     } catch (error: any) {
-      return rejectWithValue(error.response?.data?.message || 'Login failed');
+      return rejectWithValue(error.response?.data?.message || '❌ Thông tin đăng nhập chưa chính xác');
     }
   }
 );
+
 
 export const logoutUser = createAsyncThunk('auth/logout', async () => {
   Cookies.remove('token');
@@ -64,7 +76,7 @@ const authSlice = createSlice({
         state.isAuthenticated = true;
         state.token = action.payload.token;
         state.user = action.payload.user;
-      })
+      })      
       .addCase(loginUser.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload as string;
