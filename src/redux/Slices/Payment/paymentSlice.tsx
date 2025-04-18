@@ -8,8 +8,8 @@ export const createPayment = createAsyncThunk(
     try {
       const response = await axiosInstance.post("/payments", {
         packageId,
-        returnUrl: "http://localhost:5173/payment/success",
-        cancelUrl: "http://localhost:5173/payment/cancel",
+        returnUrl: "http://localhost:5173/",
+        cancelUrl: "http://localhost:5173/upgrade",
       });
 
       return response.data.data.paymentRedirectUrl;
