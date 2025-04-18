@@ -148,7 +148,7 @@ const Payment: React.FC = () => {
                       <strong>Số tiền:</strong>{" "}
                       <span className={styles.amount}>
                         {id === "saving"
-                          ? "45.000đ"
+                          ? "35.000đ"
                           : id === "popular"
                           ? "144.000đ"
                           : "199.000VND"}

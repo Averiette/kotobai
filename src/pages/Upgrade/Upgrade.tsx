@@ -83,7 +83,7 @@ const Upgrade: React.FC = () => {
 
             <PremiumBox
               title="Gói tiết kiệm"
-              price="45.000đ/tháng"
+              price="35.000đ/tháng"
               originalPrice=" "
               id="saving"
               features={[
