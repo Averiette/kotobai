@@ -8,8 +8,8 @@ export const createPayment = createAsyncThunk(
     try {
       const response = await axiosInstance.post("/payments", {
         packageId,
-        returnUrl: "http://localhost:5173/",
-        cancelUrl: "http://localhost:5173/upgrade",
+        returnUrl: "https://kotobai.vercel.app/home",
+        cancelUrl: "https://kotobai.vercel.app/upgrade",
       });
 
       return response.data.data.paymentRedirectUrl;
