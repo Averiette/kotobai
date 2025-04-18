@@ -10,7 +10,7 @@ import BtnBlue from "@Components/Button/Btnblue/Btnblue";
 import GoogleIcon from "@assets/Icons/Google";
 import EyeOpenIcon from "@assets/Icons/EyeOpen";
 import EyeClosedIcon from "@assets/Icons/EyeClosed";
-import Cookies from "js-cookie";
+// import Cookies from "js-cookie";
 // CSS
 import styles from "@Components/SignUpblock/SignUpBlock.module.css";
 
