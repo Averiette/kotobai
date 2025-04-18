@@ -25,6 +25,8 @@
     /* Custom alias */
     "baseUrl": "src",
     "paths": {
+      "@src/*": ["/*"],
+      "@redux/*": ["redux/*"],
       "@assets/*": ["assets/*"],
       "@Components/*": ["Components/*"],
       "@data/*": ["data/*"],
