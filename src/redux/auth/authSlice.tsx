@@ -30,7 +30,7 @@ export const loginUser = createAsyncThunk(
         { emailAddress, password }
       );
 
-      const { accessToken, refreshToken, userId, email, fullName, role } = response.data.data;
+      const { accessToken, userId, email, fullName, role } = response.data.data;
 
       Cookies.set('accessToken', accessToken, { expires: 7 }); // ✅ use consistent key
 
