@@ -1,56 +1,43 @@
 // src/store/paymentSlice.ts
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import axios from "axios";
-
-interface PaymentState {
-  status: "idle" | "loading" | "succeeded" | "failed";
-  error: string | null;
-}
-
-const initialState: PaymentState = {
-  status: "idle",
-  error: null,
-};
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import axiosInstance from "../../../service/axiosInstance";
 
 export const createPayment = createAsyncThunk(
   "payment/createPayment",
-  async (
-    {
-      packageId,
-      returnUrl,
-      cancelUrl,
-    }: { packageId: string; returnUrl: string; cancelUrl: string },
-    { rejectWithValue }
-  ) => {
+  async (packageId: string, { rejectWithValue }) => {
     try {
-      const response = await axios.post("/api/payments", {
+      const response = await axiosInstance.post("/payments", {
         packageId,
-        returnUrl,
-        cancelUrl,
+        returnUrl: "http://localhost:5173/payment/success",
+        cancelUrl: "http://localhost:5173/payment/cancel",
       });
-      return response.data;
+
+      return response.data.data.paymentRedirectUrl;
     } catch (err: any) {
-      return rejectWithValue(err.response?.data || err.message);
+      return rejectWithValue(err.response?.data || "Unknown error");
     }
   }
 );
 
 const paymentSlice = createSlice({
   name: "payment",
-  initialState,
+  initialState: {
+    loading: false,
+    error: null,
+  },
   reducers: {},
   extraReducers: (builder) => {
     builder
       .addCase(createPayment.pending, (state) => {
-        state.status = "loading";
-      })
-      .addCase(createPayment.fulfilled, (state) => {
-        state.status = "succeeded";
+        state.loading = true;
         state.error = null;
       })
+      .addCase(createPayment.fulfilled, (state) => {
+        state.loading = false;
+      })
       .addCase(createPayment.rejected, (state, action) => {
-        state.status = "failed";
-        state.error = action.payload as string;
+        state.loading = false;
+        state.error = action.payload as any;
       });
   },
 });

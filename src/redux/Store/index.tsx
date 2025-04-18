@@ -2,12 +2,12 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import authReducer from '../auth/authSlice';
 import googleReducer from '../auth/googleSlice';
-import paymentReducer from '@redux/Slices/Payment/paymentSlice'; // ✅ Thêm reducer thanh toán
+import paymentReducer from '@redux/Slices/Payment/paymentSlice'; 
 
 const rootReducer = combineReducers({
   auth: authReducer,
   google: googleReducer,
-  payment: paymentReducer, // ✅ Khai báo slice thanh toán
+  payment: paymentReducer, 
 });
 
 export const store = configureStore({

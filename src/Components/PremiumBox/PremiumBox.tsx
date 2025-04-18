@@ -1,10 +1,9 @@
+// src/components/PremiumBox.tsx
 import React from "react";
-import { useNavigate } from "react-router-dom";
-// Assets
-
+import { useAppDispatch } from "../../hooks/reduxHooks";
+import { createPayment } from "@redux/Slices/Payment/paymentSlice";
 import CheckIcon from "@assets/Icons/Check";
 import DisabledCheckIcon from "@assets/Icons/DisabledCheckIcon";
-//CSS
 import styles from "./PremiumBox.module.css";
 
 interface PremiumBoxProps {
@@ -13,7 +12,7 @@ interface PremiumBoxProps {
   originalPrice?: string;
   isPopular?: boolean;
   features: string[];
-  id: string; 
+  id: string;
 }
 
 const PremiumBox: React.FC<PremiumBoxProps> = ({
@@ -24,10 +23,24 @@ const PremiumBox: React.FC<PremiumBoxProps> = ({
   features,
   id,
 }) => {
-  const navigate = useNavigate();
+  const dispatch = useAppDispatch();
 
-  const handleSelect = () => {
-    navigate(`/payment/${id}`);
+  const handleSelect = async () => {
+    const packageId =
+      id === "saving"
+        ? "fe64a817-8c58-40eb-6eff-08dd7cead1e3"
+        : id === "popular"
+        ? "d0416828-f557-48f7-6f00-08dd7cead1e3"
+        : "";
+
+    if (!packageId) return;
+
+    try {
+      const result = await dispatch(createPayment(packageId)).unwrap();
+      window.location.href = result; // Chuyển hướng đến PayOS
+    } catch (error) {
+      console.error("Payment error:", error);
+    }
   };
 
   return (
@@ -44,7 +57,7 @@ const PremiumBox: React.FC<PremiumBoxProps> = ({
                 ? "Miễn phí"
                 : title === "Gói tiết kiệm"
                 ? "Tiết kiệm nhất"
-                : "Giá gốc "} 
+                : "Giá gốc "}
               <span className={styles.strikethrough}>{originalPrice}</span>
             </p>
           )}
@@ -59,7 +72,10 @@ const PremiumBox: React.FC<PremiumBoxProps> = ({
             {features.map((feature, index) => {
               const isDisabled = feature.startsWith("- ");
               return (
-                <li key={index} className={`${isDisabled ? styles.disabledFeature : styles.enabledFeature} b7`}>
+                <li
+                  key={index}
+                  className={`${isDisabled ? styles.disabledFeature : styles.enabledFeature} b7`}
+                >
                   {isDisabled ? (
                     <DisabledCheckIcon className={styles.disabledIcon} />
                   ) : (

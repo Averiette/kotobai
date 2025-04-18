@@ -1,8 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
-// import api from '../../utils/api';
 import Cookies from 'js-cookie';
-import.meta.env.VITE_KOTOBAI_API;
 
 interface AuthState {
   user: any | null;
@@ -14,8 +12,8 @@ interface AuthState {
 
 const initialState: AuthState = {
   user: null,
-  token: Cookies.get('token') || null,
-  isAuthenticated: !!Cookies.get('token'),
+  token: Cookies.get('accessToken') || null,
+  isAuthenticated: !!Cookies.get('accessToken'),
   loading: false,
   error: null,
 };
@@ -27,14 +25,14 @@ export const loginUser = createAsyncThunk(
     { rejectWithValue }
   ) => {
     try {
-      const response = await axios.post(`${import.meta.env.VITE_KOTOBAI_API}/api/auth/login`, {
-        emailAddress,
-        password,
-      });
+      const response = await axios.post(
+        `${import.meta.env.VITE_KOTOBAI_API}/api/auth/login`,
+        { emailAddress, password }
+      );
 
       const { accessToken, refreshToken, userId, email, fullName, role } = response.data.data;
 
-      Cookies.set('token', accessToken, { expires: 7 }); // ✅ Store token in cookie
+      Cookies.set('accessToken', accessToken, { expires: 7 }); // ✅ use consistent key
 
       return {
         token: accessToken,
@@ -51,9 +49,8 @@ export const loginUser = createAsyncThunk(
   }
 );
 
-
 export const logoutUser = createAsyncThunk('auth/logout', async () => {
-  Cookies.remove('token');
+  Cookies.remove('accessToken'); // ✅ remove correct key
   return null;
 });
 
@@ -76,7 +73,7 @@ const authSlice = createSlice({
         state.isAuthenticated = true;
         state.token = action.payload.token;
         state.user = action.payload.user;
-      })      
+      })
       .addCase(loginUser.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload as string;
