@@ -1,10 +1,13 @@
-import { configureStore } from '@reduxjs/toolkit';
-import { combineReducers } from 'redux';
+// src/redux/Store.ts
+import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import authReducer from '../auth/authSlice';
+import googleReducer from '../auth/googleSlice';
+import paymentReducer from '@redux/Slices/Payment/paymentSlice'; // ✅ Thêm reducer thanh toán
 
 const rootReducer = combineReducers({
   auth: authReducer,
-  // Add other reducers here as needed
+  google: googleReducer,
+  payment: paymentReducer, // ✅ Khai báo slice thanh toán
 });
 
 export const store = configureStore({
