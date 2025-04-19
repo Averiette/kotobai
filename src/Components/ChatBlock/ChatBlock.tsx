@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef } from "react";
 import BotIcon from "@assets/Avatar/BotChat.png";
 import AttackIcon from "@assets/Icons/Attack";
 import MicIcon from "@assets/Icons/Mic";
-//CSS
+// CSS
 import styles from "./ChatBlock.module.css";
 
 type Message = {
@@ -11,28 +11,77 @@ type Message = {
   text: string;
 };
 
+// Gemini API integration
+const getChatbotResponse = async (message: string) => {
+  try {
+    const apiKey = "AIzaSyAlJhqGnxlbR_Nm0vMy0tS4foTd9MMLBU4"; // Replace with your actual API key
+    const response = await fetch(
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          contents: [
+            {
+              parts: [
+                {
+                  text: `User message: "${message}"\n\nPlease respond in Japanese language only. Make sure to use natural Japanese expressions and appropriate levels of formality.`,
+                },
+              ],
+            },
+          ],
+        }),
+      }
+    );
+
+    if (!response.ok) {
+      console.error("API response error:", response.status, response.statusText);
+      return "APIリクエストが失敗しました。";
+    }
+
+    const data = await response.json();
+    return data.candidates?.[0]?.content?.parts?.[0]?.text || "応答を処理できません。";
+  } catch (error) {
+    console.error("Error with chatbot API:", error);
+    return "エラーが発生しました。";
+  }
+};
+
 const ChatBlock: React.FC = () => {
   const [messages, setMessages] = useState<Message[]>([
-    { sender: "bot", text: "👋 Xin chào! Hãy nhập tin nhắn của bạn..." }
+    { sender: "bot", text: "👋 Xin chào! Hãy nhập tin nhắn của bạn..." },
   ]);
   const [input, setInput] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   const chatContainerRef = useRef<HTMLDivElement>(null);
 
-  const sendMessage = () => {
+  const sendMessage = async () => {
     if (!input.trim()) return;
-  
-    const newMessage: Message = { sender: "user", text: input };
-    setMessages((prevMessages: Message[]) => [...prevMessages, newMessage]);
-    setInput("");
-  
-    setTimeout(() => {
-      const botReply: Message = { sender: "bot", text: "Đang phản hồi..." };
-      setMessages((prevMessages) => [...prevMessages, botReply]);
-    }, 1000);
-  };
-  
 
-  // Auto-scroll khi có tin nhắn mới
+    const userMessage: Message = { sender: "user", text: input };
+    setMessages((prevMessages) => [...prevMessages, userMessage]);
+    setInput("");
+    setIsLoading(true);
+
+    // Add temporary bot typing message
+    setMessages((prevMessages) => [...prevMessages, { sender: "bot", text: "..." }]);
+
+    // Fetch bot reply from Gemini
+    const botReplyText = await getChatbotResponse(userMessage.text);
+
+    // Replace "..." with actual bot reply
+    setMessages((prevMessages) => {
+      const updated = [...prevMessages];
+      updated[updated.length - 1] = { sender: "bot", text: botReplyText };
+      return updated;
+    });
+
+    setIsLoading(false);
+  };
+
+  // Auto-scroll to bottom
   useEffect(() => {
     const chatContainer = chatContainerRef.current;
     if (chatContainer) {
@@ -58,12 +107,10 @@ const ChatBlock: React.FC = () => {
 
           {/* Ô nhập tin nhắn */}
           <div className={styles.chatInput}>
-            {/* Icon đính kèm */}
             <button className={styles.iconButton}>
               <AttackIcon />
             </button>
 
-            {/* Ô nhập tin nhắn */}
             <input
               className="b6"
               type="text"
@@ -71,15 +118,14 @@ const ChatBlock: React.FC = () => {
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={(e) => e.key === "Enter" && sendMessage()}
+              disabled={isLoading}
             />
 
-            {/* Icon ghi âm */}
             <button className={styles.iconButton}>
               <MicIcon />
             </button>
 
-            {/* Nút gửi tin nhắn */}
-            <button onClick={sendMessage} className={`${styles.sendButton} b6`}>
+            <button onClick={sendMessage} className={`${styles.sendButton} b6`} disabled={isLoading}>
               Gửi
             </button>
           </div>
