@@ -15,26 +15,30 @@ import Dialogue from "@pages/Dialogue/Dialogue";
 import DialogueDone from "@pages/DialogueDone/DialogueDone";
 import Grammar from "@pages/Grammar/Grammar";
 import Payment from "@pages/Payment/Payment";
+import PaymentResultHandler from "@Components/PaymentResultHandler/PaymentResultHandler";
 
 const AppRoutes: React.FC = () => {
   return (
-    <Routes>
-      <Route path="/home" element={<Home />} />
-      <Route path="/practice" element={<Practice />} />
-      <Route path="/practice/:id" element={<PracticeDetail />} /> 
-      <Route path="/alphabet/hiragana" element={<Hiragana />} />
-      <Route path="/aichat" element={<AiChat />} />
-      <Route path="/" element={<Introduce />} />
-      <Route path="/signup" element={<SignUp />} />
-      <Route path="/login" element={<LogIn />} />
-      <Route path="/lesson/:id" element={<Lesson />} />
-      <Route path="/upgrade" element={<Upgrade />} />
-      <Route path="/vocabulary/:id" element={<Vocabulary />} />
-      <Route path="/dialogue/:id" element={<Dialogue />} />
-      <Route path="/dialogue/done" element={<DialogueDone />} />
-      <Route path="/grammar" element={<Grammar />} />
-      <Route path="/payment/:id" element={<Payment />} />
-    </Routes>
+    <>
+      <PaymentResultHandler /> {/* Always listening globally */}
+      <Routes>
+        <Route path="/home" element={<Home />} />
+        <Route path="/practice" element={<Practice />} />
+        <Route path="/practice/:id" element={<PracticeDetail />} /> 
+        <Route path="/alphabet/hiragana" element={<Hiragana />} />
+        <Route path="/aichat" element={<AiChat />} />
+        <Route path="/" element={<Introduce />} />
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/login" element={<LogIn />} />
+        <Route path="/lesson/:id" element={<Lesson />} />
+        <Route path="/upgrade" element={<Upgrade />} />
+        <Route path="/vocabulary/:id" element={<Vocabulary />} />
+        <Route path="/dialogue/:id" element={<Dialogue />} />
+        <Route path="/dialogue/done" element={<DialogueDone />} />
+        <Route path="/grammar" element={<Grammar />} />
+        <Route path="/payment/:id" element={<Payment />} />
+      </Routes>
+    </>
   );
 };
 
