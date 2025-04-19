@@ -11,9 +11,22 @@ import WanAvatar from "@assets/Avatar/Wan.png";
 import MaryAvatar from "@assets/Avatar/Mary.png"
 import NvaAvatar from "@assets/Avatar/NVA.png";
 import NvbAvatar from "@assets/Avatar/NVB.png";
+import ManGlassAvatar from "@assets/Avatar/9.png";
+import ManGreenAvatar from "@assets/Avatar/13.png";
+import WomanGlassAvatar from "@assets/Avatar/10.png";
+import WomanTie from "@assets/Avatar/Yamaguchi.png"
+
 //Data
 import dialogue1 from "@data/DialogueData/Dialogue1";
 import dialogue2 from "@data/DialogueData/Dialogue2";
+import dialogue3 from "@data/DialogueData/Dialogue3";
+import dialogue4 from "@data/DialogueData/Dialogue4";
+import dialogue5 from "@data/DialogueData/Dialogue5";
+import dialogue6 from "@data/DialogueData/Dialogue6";
+import dialogue7 from "@data/DialogueData/Dialogue7";
+import dialogue8 from "@data/DialogueData/Dialogue8";
+import dialogue9 from "@data/DialogueData/Dialogue9";
+import dialogue10 from "@data/DialogueData/Dialogue10";
 import { NameLesson } from "@data/NameLesson";
 //CSS
 import styles from "./Dialogue.module.css";
@@ -38,6 +51,14 @@ interface DialogueItem {
 const dialogueData: Record<string, { content: DialogueItem[] }> = {
   "1": dialogue1,
   "2": dialogue2,
+  "3": dialogue3,
+  "4": dialogue4,
+  "5": dialogue5,
+  "6": dialogue6,
+  "7": dialogue7,
+  "8": dialogue8,
+  "9": dialogue9,
+  "10": dialogue10,
 };
 
 const avatarMapping: Record<string, string> = {
@@ -47,6 +68,23 @@ const avatarMapping: Record<string, string> = {
   Mary: MaryAvatar,
   "店員A": NvaAvatar,
   "店員B": NvbAvatar,
+  ミラー: DanielAvatar,
+  佐藤: ParkAvatar,
+  店の人: NvaAvatar,
+  サントス: MaryAvatar,
+  女の人: NvaAvatar,
+  駅員: ManGlassAvatar,
+  男の人: ManGreenAvatar,
+  山田一郎: ManGlassAvatar,
+  山田友子: WomanGlassAvatar,
+  マリア・サントス: MaryAvatar,
+  ジョゼ・サントス: ManGreenAvatar,
+  木村: WomanTie,
+  山田: ManGreenAvatar,
+  カリナ: ParkAvatar,
+  運転手: ManGlassAvatar
+
+  
 };
 
 const getVoiceForLanguage = (lang: string) => {

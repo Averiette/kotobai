@@ -31,9 +31,9 @@ const categoryClassMap = {
 
 const practiceInfo: PracticeInfo[] = [
     { id: 1, title: "ĐỀ SỐ 1", subtitle: "Ôn tập:", desc: "JPD123", 
-        note: "Bài tập tổng hợp", category: "Đã xong", image: lesson1Img, progress: 100 },
+        note: "Bài tập tổng hợp", category: "Đang làm", image: lesson1Img, progress: 0 },
     { id: 2, title: "ĐỀ SỐ 2", subtitle: "Ôn tập:", desc: "JPD123", 
-        note: "Bài tập tổng hợp", category: "Đang làm", image: lesson2Img, progress: 20 },
+        note: "Bài tập tổng hợp", category: "Đang làm", image: lesson2Img, progress: 0 },
     { id: 3, title: "ĐỀ SỐ 3", subtitle: "Ôn tập:", desc: "JPD123", 
         note: "Bài tập tổng hợp", category: "Đang khóa", image: lesson3Img, progress: 0 },
     { id: 4, title: "ĐỀ SỐ 4", subtitle: "Ôn tập:", desc: "JPD123", 

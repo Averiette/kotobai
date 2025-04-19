@@ -23,7 +23,7 @@ interface PracticeInfo {
   subtitle: string;
   desc: string;
   note: string;
-  category: "Đã xong" | "Đang làm" | "Đang khóa";
+  category: "Đã xong" | "Đang làm" | "Đang khóa" | "Nâng cấp để mở";
   image: string;
   progress: number;
 }
@@ -32,19 +32,20 @@ const categoryClassMap = {
   "Đã xong": "completed",
   "Đang làm": "doing",
   "Đang khóa": "locked",
+  "Nâng cấp để mở": "upgrade",
 };
 
 const practiceInfo: PracticeInfo[] = [
-  { id: 1, title: "はじめまして", subtitle: "Ôn tập bài 1", desc: "Rất vui được gặp bạn", note: "Bài tập tổng hợp", category: "Đã xong", image: lesson1Img, progress: 40 },
-  { id: 2, title: "買い物・食事", subtitle: "Ôn tập bài 2", desc: "Mua sắm・Bữa ăn", note: "Bài tập tổng hợp", category: "Đã xong", image: lesson2Img, progress: 20 },
-  { id: 3, title: "スケジュール", subtitle: "Ôn tập bài 3", desc: "Lịch trình", note: "Bài tập tổng hợp", category: "Đang làm", image: lesson3Img, progress: 10 },
+  { id: 1, title: "はじめまして", subtitle: "Ôn tập bài 1", desc: "Rất vui được gặp bạn", note: "Bài tập tổng hợp", category: "Đang làm", image: lesson1Img, progress: 0 },
+  { id: 2, title: "買い物・食事", subtitle: "Ôn tập bài 2", desc: "Mua sắm・Bữa ăn", note: "Bài tập tổng hợp", category: "Đang làm", image: lesson2Img, progress: 0 },
+  { id: 3, title: "スケジュール", subtitle: "Ôn tập bài 3", desc: "Lịch trình", note: "Bài tập tổng hợp", category: "Đang khóa", image: lesson3Img, progress: 0 },
   { id: 4, title: "私の国・町", subtitle: "Ôn tập bài 4", desc: "Đất nước・Thị trấn của tôi", note: "Bài tập tổng hợp", category: "Đang khóa", image: lesson4Img, progress: 0 },
-  { id: 5, title: "休みの日", subtitle: "Ôn tập bài 5", desc: "Ngày nghỉ", note: "Bài tập tổng hợp", category: "Đang khóa", image: lesson5Img, progress: 0 },
-  { id: 6, title: "一緒に!", subtitle: "Ôn tập bài 6", desc: "Cùng nhau", note: "Bài tập tổng hợp", category: "Đang khóa", image: lesson6Img, progress: 0 },
-  { id: 7, title: "友達の家で", subtitle: "Ôn tập bài 7", desc: "Ở nhà một người bạn", note: "Bài tập tổng hợp", category: "Đang khóa", image: lesson7Img, progress: 0 },
-  { id: 8, title: "大切な人", subtitle: "Ôn tập bài 8", desc: "Người quan trọng", note: "Bài tập tổng hợp", category: "Đang khóa", image: lesson8Img, progress: 0 },
-  { id: 9, title: "好きなこと", subtitle: "Ôn tập bài 9", desc: "Những gì tôi thích", note: "Bài tập tổng hợp", category: "Đang khóa", image: lesson9Img, progress: 0 },
-  { id: 10, title: "バスツアー", subtitle: "Ôn tập bài 10", desc: "Chuyến tham quan bằng xe buýt", note: "Bài tập tổng hợp", category: "Đang khóa", image: lesson10Img, progress: 0 },
+  { id: 5, title: "休みの日", subtitle: "Ôn tập bài 5", desc: "Ngày nghỉ", note: "Bài tập tổng hợp", category: "Nâng cấp để mở", image: lesson5Img, progress: 0 },
+  { id: 6, title: "一緒に!", subtitle: "Ôn tập bài 6", desc: "Cùng nhau", note: "Bài tập tổng hợp", category: "Nâng cấp để mở", image: lesson6Img, progress: 0 },
+  { id: 7, title: "友達の家で", subtitle: "Ôn tập bài 7", desc: "Ở nhà một người bạn", note: "Bài tập tổng hợp", category: "Nâng cấp để mở", image: lesson7Img, progress: 0 },
+  { id: 8, title: "大切な人", subtitle: "Ôn tập bài 8", desc: "Người quan trọng", note: "Bài tập tổng hợp", category: "Nâng cấp để mở", image: lesson8Img, progress: 0 },
+  { id: 9, title: "好きなこと", subtitle: "Ôn tập bài 9", desc: "Những gì tôi thích", note: "Bài tập tổng hợp", category: "Nâng cấp để mở", image: lesson9Img, progress: 0 },
+  { id: 10, title: "バスツアー", subtitle: "Ôn tập bài 10", desc: "Chuyến tham quan bằng xe buýt", note: "Bài tập tổng hợp", category: "Nâng cấp để mở", image: lesson10Img, progress: 0 },
 ];
 
 const getRandomCount = () => Math.floor(Math.random() * 50) + 1;

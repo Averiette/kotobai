@@ -8,7 +8,7 @@ const dialogue3 = {
       text: "すみません、「あすか」の電話番号は何番(なんばん)ですか。",
       translation: "Xin lỗi, số điện thoại của \"Asuka\" là số mấy ạ?",
       audio: "/audio/dialogue/dialogue3/1.mp3",
-      isRight: false,
+      isRight: true,
       question: {
         text: '"何番(なんばん)ですか" có nghĩa là gì?',
         choices: [
@@ -25,7 +25,7 @@ const dialogue3 = {
       text: "「あすか」ですか。５２７５の　２７２５です。",
       translation: "\"Asuka\" ạ? Là 5275-2725.",
       audio: "/audio/dialogue/dialogue3/2.mp3",
-      isRight: true,
+      isRight: false,
       question: {
         text: '"５２７５の　２７２５" là số điện thoại nào?',
         choices: [
@@ -42,7 +42,7 @@ const dialogue3 = {
       text: "どうも　ありがとう　ございます。",
       translation: "Xin cảm ơn rất nhiều.",
       audio: "/audio/dialogue/dialogue3/3.mp3",
-      isRight: false,
+      isRight: true,
       question: {
         text: '"どうも　ありがとう　ございます" có nghĩa là gì?',
         choices: [
@@ -76,7 +76,7 @@ const dialogue3 = {
       text: "すみません。そちらは　何時までですか。",
       translation: "Xin lỗi, bên đó đến mấy giờ ạ?",
       audio: "/audio/dialogue/dialogue3/5.mp3",
-      isRight: false,
+      isRight: true,
       question: {
         text: '"何時までですか" có nghĩa là gì?',
         choices: [
@@ -110,7 +110,7 @@ const dialogue3 = {
       text: "休みは　何曜日ですか。",
       translation: "Ngày nghỉ là thứ mấy ạ?",
       audio: "/audio/dialogue/dialogue3/7.mp3",
-      isRight: false,
+      isRight: true,
       question: {
         text: '"何曜日ですか" có nghĩa là gì?',
         choices: [
@@ -144,7 +144,7 @@ const dialogue3 = {
       text: "どうも　ありがとうございました。",
       translation: "Xin cảm ơn rất nhiều.",
       audio: "/audio/dialogue/dialogue3/9.mp3",
-      isRight: false,
+      isRight: true,
       question: {
         text: '"どうも　ありがとうございました" có nghĩa là gì?',
         choices: [

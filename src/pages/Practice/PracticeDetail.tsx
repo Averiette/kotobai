@@ -5,6 +5,14 @@ import OptionsBlock from "@Components/OptionBlock/OptionBlock";
 import BackButton from "@Components/Button/BackButton/BackButton";
 import { PracticeQnA1 } from "@data/Practice/PracticeQnA1";
 import { PracticeQnA2 } from "@data/Practice/PracticeQnA2";
+import { PracticeQnA3 } from "@data/Practice/PracticeQnA_3";
+import { PracticeQnA4 } from "@data/Practice/PracticeQnA_4";
+import { PracticeQnA5 } from "@data/Practice/PracticeQnA_5";
+import { PracticeQnA6 } from "@data/Practice/PracticeQnA_6";
+import { PracticeQnA7 } from "@data/Practice/PracticeQnA_7";
+import { PracticeQnA8 } from "@data/Practice/PracticeQnA_8";
+import { PracticeQnA9 } from "@data/Practice/PracticeQnA_9";
+import { PracticeQnA10 } from "@data/Practice/PracticeQnA_10";
 import { practiceData } from "@data/Practice/PracticeData"; 
 import styles from "./PracticeDetail.module.css";
 
@@ -22,6 +30,14 @@ interface Question {
 const practiceQnAList: { [key: number]: Question[] } = {
   1: PracticeQnA1,
   2: PracticeQnA2,
+  3: PracticeQnA3,
+  4: PracticeQnA4,
+  5: PracticeQnA5,
+  6: PracticeQnA6,
+  7: PracticeQnA7,
+  8: PracticeQnA8,
+  9: PracticeQnA9,
+  10: PracticeQnA10,
 };
 
 const PracticeDetail: React.FC = () => {
