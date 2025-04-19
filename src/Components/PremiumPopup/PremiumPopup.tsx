@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom"; 
+import { useAppSelector } from "../../hooks/reduxHooks";
+import useSubscriptionCheck from "../../utils/useSubscriptionCheck";
+
 // Components
 import BtnBlue from '@Components/Button/Btnblue/Btnblue'
 // Assets
@@ -12,9 +15,16 @@ const PremiumPopup: React.FC = () => {
     const [isOpen, setIsOpen] = useState(false);
     const navigate = useNavigate();
 
+    // 👇 Get user ID and check for active subscription
+    const userId = useAppSelector((state) => state.auth.user?.id);
+    const hasActiveSub = useSubscriptionCheck(userId);
+
     useEffect(() => {
         setIsOpen(true);
     }, []);
+
+    // 👇 If user already has Pro, don’t render popup
+    if (hasActiveSub) return null;
 
     return (
         isOpen && (
