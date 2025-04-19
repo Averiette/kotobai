@@ -1,4 +1,4 @@
-// src/components/PaymentResultHandler.tsx
+// src/components/PaymentResultHandler/PaymentResultHandler.tsx
 import { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
@@ -11,21 +11,18 @@ const PaymentResultHandler: React.FC = () => {
     const code = params.get("code");
 
     if (code) {
-      // Handle the payment result here
       if (location.pathname === "/home") {
-        console.log("Payment successful with code:", code);
-        // You can show success message, update user info, etc.
+        console.log("✅ Thanh toán thành công! Code:", code);
       } else if (location.pathname === "/upgrade") {
-        console.log("Payment canceled with code:", code);
-        // You can show cancel message or retry option
+        console.log("❌ Thanh toán thất bại hoặc đã bị hủy. Code:", code);
       }
 
-      // Clean up URL: Remove code param from URL after handling
+      // Remove ?code=xxx from URL after handling
       navigate(location.pathname, { replace: true });
     }
   }, [location, navigate]);
 
-  return null; // No UI, just handle logic
+  return null;
 };
 
 export default PaymentResultHandler;
