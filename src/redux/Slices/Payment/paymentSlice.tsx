@@ -6,7 +6,7 @@ export const createPayment = createAsyncThunk(
   "payment/createPayment",
   async (packageId: string, { rejectWithValue }) => {
     try {
-      const response = await axiosInstance.post("/payments", {
+      const response = await axiosInstance.post("/api/payments", {
         packageId,
         returnUrl: "https://kotobai.vercel.app/home",
         cancelUrl: "https://kotobai.vercel.app/upgrade",
