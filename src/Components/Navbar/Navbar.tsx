@@ -1,22 +1,36 @@
 import React, { useState, useRef, useEffect } from "react";
-import { Link } from "react-router-dom"; 
-// Assets
-import logo from "@assets/logo-01.svg"; 
-import avatar from "@assets/Avatar/Avatar.png"; 
+import { Link } from "react-router-dom";
+import { useAppDispatch, useAppSelector } from "../../hooks/reduxHooks";
+import { fetchUserWithAvatar } from "@redux/auth/authSlice";
+import useSubscriptionCheck from "../../utils/useSubscriptionCheck";
+import logo from "@assets/logo-01.svg";
+import placeholderAvatar from "@assets/Avatar/Avatar.png";
 import crown from "@assets/Icons/crown.svg";
-import coins from "@assets/Icons/coin.svg"; 
+import coins from "@assets/Icons/coin.svg";
 import UpgradeIcon from "@assets/Icons/Upgrade";
 import PlusIcon from "@assets/Icons/Plus";
 import HomeIcon from "@assets/Icons/Home";
 import PracticeIcon from "@assets/Icons/Book";
 import AlphabetIcon from "@assets/Icons/Alphabet";
 import AIChatIcon from "@assets/Icons/Robot";
-//CSS
 import "./Navbar.css";
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const dispatch = useAppDispatch();
+  const user = useAppSelector((state) => state.auth.user);
+  const userId = user?.id;
+
+  const hasActiveSub = useSubscriptionCheck(userId);
+
+  useEffect(() => {
+    if (userId) {
+      dispatch(fetchUserWithAvatar(userId));
+    }
+  }, [dispatch, userId]);
+
+  const avatarSrc = user?.imagePath || placeholderAvatar;
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -46,10 +60,10 @@ const Navbar: React.FC = () => {
           <li className="s6">
             <Link to="/practice" className="nav-link">
               <PracticeIcon className="nav-icon" /> Luyện tập
-            </Link>          
+            </Link>
           </li>
           <li className="s6">
-            <Link to="/alphabet/hiragana" className="nav-link" >
+            <Link to="/alphabet/hiragana" className="nav-link">
               <AlphabetIcon className="nav-icon" /> Bảng chữ cái
             </Link>
           </li>
@@ -62,10 +76,12 @@ const Navbar: React.FC = () => {
       </div>
 
       <div className="navbar-right">
-        <Link to="/upgrade" className="btn-red s7">
-          <img src={crown} alt="crown" className="crown" />
-          <p className="s7">Nâng cấp Pro</p>
-        </Link>
+        {!hasActiveSub && (
+          <Link to="/upgrade" className="btn-red s7">
+            <img src={crown} alt="crown" className="crown" />
+            <p className="s7">Nâng cấp Pro</p>
+          </Link>
+        )}
 
         <button className="btn-yellow s7">
           <img src={coins} alt="coins" className="coins" />
@@ -73,14 +89,19 @@ const Navbar: React.FC = () => {
         </button>
 
         <div className="avatar-container" ref={dropdownRef}>
-          <img src={avatar} alt="avatar" className="avatar" onClick={() => setIsOpen(!isOpen)} />
+          <img
+            src={avatarSrc}
+            alt="avatar"
+            className="avatar"
+            onClick={() => setIsOpen(!isOpen)}
+          />
           {isOpen && (
             <div className="dropdown-menu">
               <a href="#" className="menu-item b6">Tài khoản</a>
               <a href="#" className="menu-item b6">Lịch sử mua hàng</a>
               <a href="#" className="menu-item b6">Cài đặt</a>
               <a href="#" className="menu-item b6">Trợ giúp & Phản hồi</a>
-              <Link to="/" className="menu-item logout b6">Đăng xuất</Link>              
+              <Link to="/" className="menu-item logout b6">Đăng xuất</Link>
               <hr className="divider" />
               <div className="premium-section">
                 <Link to="/upgrade" className="premium-link">

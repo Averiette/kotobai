@@ -1,6 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 import Cookies from 'js-cookie';
+import api from '../../service/axiosInstance'; // ✅ Import your authorized Axios instance
 
 interface AuthState {
   user: any | null;
@@ -54,6 +55,19 @@ export const logoutUser = createAsyncThunk('auth/logout', async () => {
   return null;
 });
 
+// ✅ New asyncThunk to fetch user info including avatar
+export const fetchUserWithAvatar = createAsyncThunk(
+  'auth/fetchUserWithAvatar',
+  async (userId: string, { rejectWithValue }) => {
+    try {
+      const response = await api.get(`/api/user/get-user-with-avatar/${userId}`);
+      return response.data.data;
+    } catch (error: any) {
+      return rejectWithValue(error.response?.data?.message || '❌ Không thể lấy thông tin người dùng');
+    }
+  }
+);
+
 const authSlice = createSlice({
   name: 'auth',
   initialState,
@@ -82,6 +96,10 @@ const authSlice = createSlice({
         state.isAuthenticated = false;
         state.token = null;
         state.user = null;
+      })
+      // ✅ Handle fetched user info with avatar
+      .addCase(fetchUserWithAvatar.fulfilled, (state, action) => {
+        state.user = { ...state.user, ...action.payload };
       });
   },
 });
