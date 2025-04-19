@@ -9,17 +9,24 @@ const PaymentResultHandler: React.FC = () => {
   useEffect(() => {
     const params = new URLSearchParams(location.search);
     const code = params.get("code");
+    const cancel = params.get("cancel") === "true";
+    const status = params.get("status");
 
-    if (code) {
-      if (location.pathname === "/home") {
-        console.log("✅ Thanh toán thành công! Code:", code);
-      } else if (location.pathname === "/upgrade") {
-        console.log("❌ Thanh toán thất bại hoặc đã bị hủy. Code:", code);
-      }
+    // If no payment params, do nothing
+    if (!code && !status && !cancel) return;
 
-      // Remove ?code=xxx from URL after handling
-      navigate(location.pathname, { replace: true });
+    // Logging or toasts can go here
+    if (code === "00" && !cancel && status === "PAID") {
+      console.log("✅ Thanh toán thành công!");
+      // Optional: trigger UI update or user upgrade
+    } else if (cancel || status === "CANCELLED") {
+      console.log("❌ Thanh toán đã bị hủy.");
+    } else {
+      console.log("⚠️ Không xác định được trạng thái thanh toán.");
     }
+
+    // Clean up URL (remove query params)
+    navigate(location.pathname, { replace: true });
   }, [location, navigate]);
 
   return null;
