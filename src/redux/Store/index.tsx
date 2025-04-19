@@ -2,12 +2,14 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import authReducer from '../auth/authSlice';
 import googleReducer from '../auth/googleSlice';
-import paymentReducer from '@redux/Slices/Payment/paymentSlice'; 
+import paymentReducer from '@redux/Slices/Payment/paymentSlice';
+import registerReducer from '@redux/auth/registerAuthSlice'; 
 
 const rootReducer = combineReducers({
   auth: authReducer,
   google: googleReducer,
-  payment: paymentReducer, 
+  payment: paymentReducer,
+  register: registerReducer, 
 });
 
 export const store = configureStore({

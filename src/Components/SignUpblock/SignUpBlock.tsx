@@ -1,6 +1,8 @@
+// src/Components/SignUpblock/SignUpBlock.tsx
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../hooks/reduxHooks";
+import { registerUser } from "@redux/auth/registerAuthSlice";
 import { googleLogin } from "../../redux/auth/googleSlice";
 import { useGoogleLogin } from "@react-oauth/google";
 
@@ -16,7 +18,13 @@ import styles from "./SignUpBlock.module.css";
 const SignUpBlock: React.FC = () => {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
-  const { loading: googleLoading, error: googleError } = useAppSelector((state) => state.google);
+
+  const { loading: registerLoading, error: registerError } = useAppSelector(
+    (state) => state.register
+  );
+  const { loading: googleLoading, error: googleError } = useAppSelector(
+    (state) => state.google
+  );
 
   const [emailOrPhone, setEmailOrPhone] = useState("");
   const [name, setName] = useState("");
@@ -35,11 +43,11 @@ const SignUpBlock: React.FC = () => {
 
   const isValidEmail = (value: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
   const isValidPhone = (value: string) => /^0\d{9}$/.test(value);
-  const isValidPassword = (value: string) => /^\d{6}$/.test(value);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    let formErrors: typeof errors = {
+
+    let formErrors = {
       emailOrPhone: "",
       name: "",
       password: "",
@@ -54,8 +62,8 @@ const SignUpBlock: React.FC = () => {
       formErrors.name = "Tên không được để trống";
     }
 
-    if (!isValidPassword(password)) {
-      formErrors.password = "Mật khẩu chưa hợp lệ (6 ký tự số)";
+    if (!password) {
+      formErrors.password = "Mật khẩu không được để trống";
     }
 
     if (confirmPassword !== password) {
@@ -66,7 +74,19 @@ const SignUpBlock: React.FC = () => {
 
     const hasErrors = Object.values(formErrors).some((msg) => msg !== "");
     if (!hasErrors) {
-      navigate("/home");
+      const resultAction = await dispatch(
+        registerUser({
+          fullName: name,
+          email: emailOrPhone,
+          password,
+        })
+      );
+
+      if (registerUser.fulfilled.match(resultAction)) {
+        navigate("/home");
+      } else {
+        console.error("Đăng ký thất bại:", resultAction.payload);
+      }
     }
   };
 
@@ -109,7 +129,7 @@ const SignUpBlock: React.FC = () => {
             onChange={(e) => setEmailOrPhone(e.target.value)}
           />
           {errors.emailOrPhone && (
-          <p className={`${styles.errorMessage} b7`}>{errors.emailOrPhone}</p>
+            <p className={`${styles.errorMessage} b7`}>{errors.emailOrPhone}</p>
           )}
 
           <input
@@ -121,11 +141,10 @@ const SignUpBlock: React.FC = () => {
           />
           {errors.name && <p className={`${styles.errorMessage} b7`}>{errors.name}</p>}
 
-          {/* Mật khẩu */}
           <div className={`${styles.passwordWrapper} ${styles.input}`}>
             <input
               type={showPassword ? "text" : "password"}
-              placeholder="Mật khẩu (ít nhất 6 ký tự)"
+              placeholder="Mật khẩu"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
@@ -138,7 +157,6 @@ const SignUpBlock: React.FC = () => {
           </div>
           {errors.password && <p className={`${styles.errorMessage} b7`}>{errors.password}</p>}
 
-          {/* Xác nhận mật khẩu */}
           <div className={`${styles.passwordWrapper} ${styles.input}`}>
             <input
               type={showConfirmPassword ? "text" : "password"}
@@ -161,15 +179,19 @@ const SignUpBlock: React.FC = () => {
             Tôi đã có tài khoản!
           </Link>
 
-          {/* Lỗi Google nếu có */}
-          {googleError && <p className={`${styles.errorMessage} b7`}>{googleError}</p>}
-           <BtnBlue
-             text="Tạo tài khoản"
+          {registerError && (
+            <p className={`${styles.errorMessage} b7`}>{registerError}</p>
+          )}
+          {googleError && (
+            <p className={`${styles.errorMessage} b7`}>{googleError}</p>
+          )}
+
+          <BtnBlue
+            text={registerLoading ? "Đang tạo tài khoản..." : "Tạo tài khoản"}
             className={`${styles.submitButton} b6`}
           />
         </form>
 
-        {/* Google button */}
         <button
           onClick={() => handleSignUpWithGoogle()}
           className={`${styles.googleButton} b7`}
